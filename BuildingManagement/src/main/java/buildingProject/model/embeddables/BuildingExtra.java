@@ -10,5 +10,6 @@ import java.io.Serializable;
 @Data
 @Embeddable
 public class BuildingExtra implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String name;
 }

@@ -17,6 +17,6 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Table(name = "water_bill_table")
 public class WaterBillEntity extends BillEntity {
-
+    private static final long serialVersionUID = 1L;
 
 }

@@ -58,6 +58,13 @@ public abstract class RoomEntity implements Serializable {
     private double rent;
     private double deposit;
     private String paintColor;
+    @ManyToOne
+    @JoinColumn(name = "level_id", referencedColumnName = "id")
+    private BuildingLevelEntity level;
+
+    @ManyToOne
+    @JoinColumn(name = "building_id", referencedColumnName = "id")
+    private BuildingEntity building;
 
     @ElementCollection
     @CollectionTable(name = "additional_rooms", joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id"))
@@ -65,14 +72,6 @@ public abstract class RoomEntity implements Serializable {
 
     @OneToMany(mappedBy = "room")
     private Set<PersonEntity> setOfPersons = new HashSet<>();
-
-    @ManyToOne
-    @JoinColumn(name = "building_id", referencedColumnName = "id")
-    private BuildingEntity building;
-
-    @ManyToOne
-    @JoinColumn(name = "level_id", referencedColumnName = "id")
-    private BuildingLevelEntity level;
 
     @ElementCollection
     @CollectionTable(name = "furniture_table", joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id"))

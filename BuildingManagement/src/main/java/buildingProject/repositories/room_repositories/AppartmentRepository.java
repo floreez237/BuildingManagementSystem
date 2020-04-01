@@ -1,4 +1,4 @@
-package buildingProject.repositories.roomRepositories;
+package buildingProject.repositories.room_repositories;
 
 import buildingProject.model.rooms.AppartmentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

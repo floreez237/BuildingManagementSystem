@@ -23,6 +23,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "buildinglevel_table")
 public class BuildingLevelEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "building_level_gen")
