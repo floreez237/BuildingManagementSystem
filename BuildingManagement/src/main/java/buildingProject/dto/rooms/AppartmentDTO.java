@@ -11,10 +11,6 @@ import java.util.List;
 @EqualsAndHashCode(exclude = {"areasOfBedrooms", "areasOfKitchens", "areasOfParlours", "areasOfToilets"}, callSuper = true)
 @NoArgsConstructor
 public class AppartmentDTO extends RoomDTO {
-    private int numberOfBedrooms;
-    private int numberOfKitchens;
-    private int numberOfParlours;
-    private int numberOfToilets;
 
     private List<Double> areasOfBedrooms = new ArrayList<>();
     private List<Double> areasOfKitchens = new ArrayList<>();

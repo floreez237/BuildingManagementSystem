@@ -15,9 +15,11 @@ import buildingProject.model.rooms.BedroomEntity;
 import buildingProject.model.rooms.RoomEntity;
 import buildingProject.model.rooms.StudioEntity;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EntityToDTOConfig {
-    public static void configure(ModelMapper modelMapper) {
+    public void configure(ModelMapper modelMapper) {
         modelMapper.createTypeMap(RoomEntity.class, RoomDTO.class)
                 .include(AppartmentEntity.class, RoomDTO.class)
                 .include(BedroomEntity.class, RoomDTO.class)
@@ -25,12 +27,15 @@ public class EntityToDTOConfig {
                 .addMappings(new RoomEntityToDTO());
 
         modelMapper.typeMap(AppartmentEntity.class, RoomDTO.class)
+                .includeBase(RoomEntity.class, RoomDTO.class)
                 .setProvider(request -> new AppartmentDTO());
 
         modelMapper.typeMap(BedroomEntity.class, RoomDTO.class)
+                .includeBase(RoomEntity.class, RoomDTO.class)
                 .setProvider(request -> new BedroomDTO());
 
         modelMapper.typeMap(StudioEntity.class, RoomDTO.class)
+                .includeBase(RoomEntity.class, RoomDTO.class)
                 .setProvider(request -> new StudioDTO());
 
         //try casting request source if error occurs

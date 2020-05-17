@@ -16,17 +16,6 @@ import java.util.stream.Collectors;
 
 public class RoomEntityToDTO extends PropertyMap<RoomEntity, RoomDTO> {
 
-    private Converter<BuildingEntity, Long> buildingEntityIdConverter
-            = context -> context.getSource() == null ? null : context.getSource().getId();
-    private Converter<BuildingLevelEntity, Long> levelEntityIdConverter
-            = context -> context.getSource() == null ? null : context.getSource().getId();
-    private Converter<Set<PersonEntity>, List<Long>> personIdConverter
-            = context -> context.getSource().stream().map(PersonEntity::getId).collect(Collectors.toList());
-    private Converter<Set<WaterBillEntity>, List<Long>> waterBillIdConverter
-            = context -> context.getSource().stream().map(WaterBillEntity::getId).collect(Collectors.toList());
-    private Converter<Set<ElectricityBillEntity>, List<Long>> electricityBillConverter
-            = context -> context.getSource().stream().map(ElectricityBillEntity::getId).collect(Collectors.toList());
-
     @Override
     protected void configure() {
         using(buildingEntityIdConverter).map(source.getBuilding(), destination.getBuildingID());
@@ -35,5 +24,16 @@ public class RoomEntityToDTO extends PropertyMap<RoomEntity, RoomDTO> {
         using(waterBillIdConverter).map(source.getWaterBills(), destination.getListOfWaterBillIDs());
         using(electricityBillConverter).map(source.getElectricityBills(), destination.getListOfElectricityBillIds());
     }
+
+    private final Converter<BuildingEntity, Long> buildingEntityIdConverter
+            = context -> context.getSource() == null ? null : context.getSource().getId();
+    private final Converter<BuildingLevelEntity, Long> levelEntityIdConverter
+            = context -> context.getSource() == null ? null : context.getSource().getId();
+    private final Converter<Set<PersonEntity>, List<Long>> personIdConverter
+            = context -> context.getSource().stream().map(PersonEntity::getId).collect(Collectors.toList());
+    private final Converter<Set<WaterBillEntity>, List<Long>> waterBillIdConverter
+            = context -> context.getSource().stream().map(WaterBillEntity::getId).collect(Collectors.toList());
+    private final Converter<Set<ElectricityBillEntity>, List<Long>> electricityBillConverter
+            = context -> context.getSource().stream().map(ElectricityBillEntity::getId).collect(Collectors.toList());
 
 }

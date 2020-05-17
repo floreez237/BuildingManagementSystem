@@ -1,14 +1,12 @@
 package buildingProject;
 
-import org.modelmapper.ModelMapper;
-import org.springframework.boot.SpringApplication;
+import javafx.application.Application;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class BootStrap {
     public static void main(String[] args) {
-        SpringApplication.run(BootStrap.class, args);
-        ModelMapper modelMapper = new ModelMapper();
+        Application.launch(MainApp.class);
 
     }
 }

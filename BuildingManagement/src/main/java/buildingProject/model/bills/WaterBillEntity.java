@@ -5,10 +5,13 @@
  */
 package buildingProject.model.bills;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author flori
@@ -16,7 +19,22 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @Table(name = "water_bill_table")
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class WaterBillEntity extends BillEntity {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "water_bill_gen")
+    @GenericGenerator(
+            name = "water_bill_gen",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "water_bill_sequence"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    @Column(updatable = false)
+    private Long id;
 }

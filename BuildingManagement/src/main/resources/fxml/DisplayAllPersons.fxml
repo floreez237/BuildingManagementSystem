@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="buildingProject.controllers.DisplayAllPersonsController">
+   <children>
+      <Label layoutX="87.0" layoutY="47.0" text="Persons" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField layoutX="325.0" layoutY="118.0" prefHeight="31.0" prefWidth="369.0" promptText="search"
+                 style="-fx-background-radius: 50;"/>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png"/>
+         </image>
+      </ImageView>
+      <TableView fx:id="expiredContracts" layoutX="26.0" layoutY="173.0" prefHeight="462.0" prefWidth="664.0">
+         <columns>
+            <TableColumn fx:id="contractId" prefWidth="93.0" text="Person ID"/>
+            <TableColumn fx:id="dateOfCreation" prefWidth="157.0" text="Name"/>
+            <TableColumn fx:id="duration" prefWidth="134.0" text="Phone Number"/>
+            <TableColumn fx:id="tenantName" prefWidth="187.0" text="National Id Number"/>
+            <TableColumn fx:id="expirationDate" prefWidth="93.0" text="Gender"/>
+         </columns>
+         <padding>
+            <Insets top="20.0"/>
+         </padding>
+      </TableView>
+      <JFXButton fx:id="back" layoutX="7.0" layoutY="34.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="257.0" layoutY="646.0" onAction="#onAddOrEdit" prefHeight="31.0" prefWidth="220.0"
+                 style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css"
+                 text="Display Person Information">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="click to add a new student"/>
+         </tooltip>
+         <styleClass>
+            <String fx:value="background"/>
+            <String fx:value="button2"/>
+         </styleClass>
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

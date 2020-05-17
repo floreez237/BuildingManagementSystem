@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.141"
+      fx:controller="buildingProject.controllers.DisplayContractController">
+   <children>
+      <Label layoutX="67.0" layoutY="147.0" prefHeight="29.0" prefWidth="78.0" text="Room Id:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="100.0" text="ContractID:">
+         <font>
+            <Font size="20.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="67.0" layoutY="309.0" prefHeight="29.0" prefWidth="78.0" text="Duration:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfContractId" editable="false" focusColor="#00e5ff" layoutX="157.0" layoutY="85.0"
+                    prefHeight="31.0" prefWidth="168.0"/>
+      <JFXTextField fx:id="tfRoomId" editable="false" focusColor="#00e5ff" layoutX="154.0" layoutY="139.0"/>
+      <Label layoutX="14.0" layoutY="259.0" text="Date of Payment:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfDateOfPayment" editable="false" focusColor="#00e5ff" layoutX="154.0" layoutY="251.0"/>
+      <Label layoutX="367.0" layoutY="313.0" text="Expiration Date:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfDateOfCreation" editable="false" focusColor="#00e5ff" layoutX="527.0" layoutY="255.0"/>
+      <JFXTextField fx:id="tfDuratiion" editable="false" focusColor="#00e5ff" layoutX="154.0" layoutY="298.0"/>
+      <JFXTextField editable="false" focusColor="#00e5ff" layoutX="527.0" layoutY="298.0"/>
+      <Label layoutX="365.0" layoutY="260.0" text="Date of Creation:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="211.0" text="Tenant Name:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfTenantName" editable="false" focusColor="#00e5ff" layoutX="154.0" layoutY="196.0"
+                    prefHeight="31.0" prefWidth="545.0"/>
+      <Label layoutX="85.0" layoutY="32.0" text="Contract Information" underline="true">
+         <font>
+            <Font size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton layoutX="5.0" layoutY="23.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="281.0" layoutY="379.0" onAction="#displayTenant" style="-fx-background-radius: 50;"
+                 stylesheets="@../style/mainview.css" text="Display Tenant &#10;information">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background"/>
+            <String fx:value="button2"/>
+         </styleClass>
+      </JFXButton>
+      <JFXButton layoutX="325.0" layoutY="96.0" onAction="#onRenew" text="Renew">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_renew_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>

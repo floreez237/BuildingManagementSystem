@@ -36,7 +36,8 @@ public class RoomDTOtoEntity extends PropertyMap<RoomDTO, RoomEntity> {
     private BuildingRepository buildingRepository;
     @Autowired
     private BuildingLevelRepository buildingLevelRepository;
-    private Converter<List<Long>, Set<PersonEntity>> idPersonConverter =
+
+    private final Converter<List<Long>, Set<PersonEntity>> idPersonConverter =
             new Converter<List<Long>, Set<PersonEntity>>() {
                 @Override
                 @Transactional
@@ -45,7 +46,7 @@ public class RoomDTOtoEntity extends PropertyMap<RoomDTO, RoomEntity> {
                     return context.getSource().stream().map((id) -> personRepository.getOne(id)).collect(Collectors.toSet());
                 }
             };
-    private Converter<List<Long>, Set<WaterBillEntity>> idWaterBillConverter =
+    private final Converter<List<Long>, Set<WaterBillEntity>> idWaterBillConverter =
             new Converter<List<Long>, Set<WaterBillEntity>>() {
                 @Override
                 @Transactional
@@ -53,7 +54,7 @@ public class RoomDTOtoEntity extends PropertyMap<RoomDTO, RoomEntity> {
                     return context.getSource().stream().map(id -> waterBillRepository.getOne(id)).collect(Collectors.toSet());
                 }
             };
-    private Converter<List<Long>, Set<ElectricityBillEntity>> idElectricityBillConverter =
+    private final Converter<List<Long>, Set<ElectricityBillEntity>> idElectricityBillConverter =
             new Converter<List<Long>, Set<ElectricityBillEntity>>() {
                 @Override
                 @Transactional
@@ -61,18 +62,18 @@ public class RoomDTOtoEntity extends PropertyMap<RoomDTO, RoomEntity> {
                     return context.getSource().stream().map((id) -> electricityBillRepository.getOne(id)).collect(Collectors.toSet());
                 }
             };
-    private Converter<Long, BuildingEntity> idBuildingEntityConverter =
+    private final Converter<Long, BuildingEntity> idBuildingEntityConverter =
             new Converter<Long, BuildingEntity>() {
                 @Override
                 public BuildingEntity convert(MappingContext<Long, BuildingEntity> context) {
-                    return buildingRepository.getOne(context.getSource());
+                    return context.getSource() == null ? null : buildingRepository.getOne(context.getSource());
                 }
             };
-    private Converter<Long, BuildingLevelEntity> idBuildingLevelEntityConverter =
+    private final Converter<Long, BuildingLevelEntity> idBuildingLevelEntityConverter =
             new Converter<Long, BuildingLevelEntity>() {
                 @Override
                 public BuildingLevelEntity convert(MappingContext<Long, BuildingLevelEntity> context) {
-                    return buildingLevelRepository.getOne(context.getSource());
+                    return context.getSource() == null ? null : buildingLevelRepository.getOne(context.getSource());
                 }
             };
 
@@ -84,4 +85,6 @@ public class RoomDTOtoEntity extends PropertyMap<RoomDTO, RoomEntity> {
         using(idBuildingEntityConverter).map(source.getBuildingID(), destination.getBuilding());
         using(idBuildingLevelEntityConverter).map(source.getBuildingLevelId(), destination.getLevel());
     }
+
+
 }

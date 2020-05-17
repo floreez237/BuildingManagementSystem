@@ -1,0 +1,18 @@
+truncate additional_rooms cascade
+truncate appartment_table cascade
+truncate bedroom_areas cascade
+truncate bedroom_table cascade
+truncate building_extras cascade
+truncate building_table cascade
+truncate buildinglevel_table cascade
+truncate contract_table cascade
+truncate electricity_bill_table cascade
+truncate furniture_table cascade
+truncate kitchen_areas cascade
+truncate parlour_areas cascade
+truncate person_table cascade
+truncate room_table cascade
+truncate studio_table cascade
+truncate toilet_areas cascade
+truncate water_bill_table cascade
+

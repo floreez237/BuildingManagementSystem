@@ -13,4 +13,5 @@ public class ContractDTO {
     private Date dateOfPayment;
     private Date dateOfCreation;
     private int duration;
+
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="buildingProject.controllers.ExpiredContractsController">
+   <children>
+      <Label layoutX="87.0" layoutY="47.0" text="Expired Contracts" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXRadioButton layoutX="30.0" layoutY="123.0" text="Most Recent">
+         <toggleGroup>
+            <ToggleGroup fx:id="selection"/>
+         </toggleGroup>
+         <font>
+            <Font name="Cambria" size="15.0"/>
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="212.0" layoutY="123.0" text="All" toggleGroup="$selection"/>
+      <TextField layoutX="440.0" layoutY="118.0" onAction="#onSearch" prefHeight="31.0" prefWidth="254.0"
+                 promptText="search" style="-fx-background-radius: 50;"/>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png"/>
+         </image>
+      </ImageView>
+      <TableView fx:id="tblExpiredContracts" layoutX="26.0" layoutY="173.0" prefHeight="502.0" prefWidth="664.0">
+         <columns>
+            <TableColumn fx:id="contractIdCol" prefWidth="93.0" text="Contract ID"/>
+            <TableColumn fx:id="dateOfCreationCol" prefWidth="128.0" text="Date of creation"/>
+            <TableColumn fx:id="durationCol" text="Duration"/>
+            <TableColumn fx:id="roomIdCol" prefWidth="90.0" text="Room ID"/>
+            <TableColumn fx:id="tenantNameCol" prefWidth="154.0" text="Tenant Name"/>
+            <TableColumn fx:id="expirationDateCol" prefWidth="119.0" text="Expiration Date"/>
+         </columns>
+      </TableView>
+      <JFXButton layoutX="7.0" layoutY="34.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

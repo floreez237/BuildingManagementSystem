@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.141"
+      fx:controller="buildingProject.controllers.DisplayLevelController">
+   <children>
+      <Label layoutX="49.0" layoutY="117.0" text="Level Number:">
+         <font>
+            <Font size="20.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="85.0" layoutY="32.0" text="Level Information" underline="true">
+         <font>
+            <Font size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton layoutX="5.0" layoutY="23.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="tfLevelNumber" layoutX="186.0" layoutY="117.0" prefHeight="31.0" prefWidth="80.0"/>
+      <TableView fx:id="tblRooms" layoutX="49.0" layoutY="176.0" prefHeight="437.0" prefWidth="664.0">
+         <columns>
+            <TableColumn fx:id="roomIdCol" prefWidth="126.0" text="Room Id"/>
+            <TableColumn fx:id="roomTypeCol" prefWidth="315.0" text="RoomType"/>
+            <TableColumn fx:id="statusCol" prefWidth="221.0" text="Status"/>
+         </columns>
+      </TableView>
+      <JFXButton layoutX="555.0" layoutY="107.0" onAction="#onDisplay" prefHeight="52.0" prefWidth="105.0"
+                 text="Room&#10;details">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_view_details_26px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>

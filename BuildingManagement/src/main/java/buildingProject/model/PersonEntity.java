@@ -16,7 +16,7 @@ import java.util.Date;
 @Table(name = "person_table")
 public class PersonEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 14L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_gen")

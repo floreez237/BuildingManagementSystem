@@ -25,7 +25,7 @@ import java.util.Date;
 @Table(name = "contract_table")
 public class ContractEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 13L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contract_gen")
@@ -39,7 +39,11 @@ public class ContractEntity implements Serializable {
             }
     )
     private Long id;
+    @OneToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
     private PersonEntity tenant;
+    @OneToOne
+    @JoinColumn(name = "room_id", referencedColumnName = "id")
     private RoomEntity room;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfPayment;
@@ -48,7 +52,7 @@ public class ContractEntity implements Serializable {
     private int duration;
 
     public ContractEntity(RoomEntity room, int duration, Date dateOfPayment, PersonEntity tenant) {
-        
+
         this.tenant = tenant;
         this.room = room;
         this.dateOfPayment = dateOfPayment;

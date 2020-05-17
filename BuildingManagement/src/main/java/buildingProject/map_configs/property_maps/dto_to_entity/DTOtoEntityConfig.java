@@ -15,22 +15,44 @@ import buildingProject.model.rooms.BedroomEntity;
 import buildingProject.model.rooms.RoomEntity;
 import buildingProject.model.rooms.StudioEntity;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DTOtoEntityConfig {
-    public static void configure(ModelMapper modelMapper) {
+    @Autowired
+    private BuildingLevelDTOtoEntity buildingLevelDTOtoEntity;
+    @Autowired
+    private RoomDTOtoEntity roomDTOtoEntity;
+    @Autowired
+    private ElectricityBillDTOtoEntity electricityBillDTOtoEntity;
+    @Autowired
+    private WaterBillDTOtoEntity waterBillDTOtoEntity;
+    @Autowired
+    private BuildingDTOtoEntity buildingDTOtoEntity;
+    @Autowired
+    private ContractDTOtoEntity contractDTOtoEntity;
+    @Autowired
+    private PersonDTOtoEntity personDTOtoEntity;
+
+
+    public void configure(ModelMapper modelMapper) {
         modelMapper.createTypeMap(RoomDTO.class, RoomEntity.class)
                 .include(AppartmentDTO.class, RoomEntity.class)
                 .include(BedroomDTO.class, RoomEntity.class)
                 .include(StudioDTO.class, RoomEntity.class)
-                .addMappings(new RoomDTOtoEntity());
+                .addMappings(roomDTOtoEntity);
 
         modelMapper.typeMap(AppartmentDTO.class, RoomEntity.class)
+                .includeBase(RoomDTO.class, RoomEntity.class)
                 .setProvider(request -> new AppartmentEntity());
 
         modelMapper.typeMap(BedroomDTO.class, RoomEntity.class)
+                .includeBase(RoomDTO.class, RoomEntity.class)
                 .setProvider(request -> new BedroomEntity());
 
         modelMapper.typeMap(StudioDTO.class, RoomEntity.class)
+                .includeBase(RoomDTO.class, RoomEntity.class)
                 .setProvider(request -> new StudioEntity());
 
 
@@ -46,15 +68,17 @@ public class DTOtoEntityConfig {
         modelMapper.typeMap(StudioDTO.class, StudioEntity.class)
                 .setProvider(request -> (StudioEntity) modelMapper.map(request.getSource(), RoomEntity.class));
 
-        modelMapper.addMappings(new ElectricityBillDTOtoEntity());
-        modelMapper.addMappings(new WaterBillDTOtoEntity());
+        modelMapper.addMappings(electricityBillDTOtoEntity);
+        modelMapper.addMappings(waterBillDTOtoEntity);
         modelMapper.addMappings(new AppartmentDTOtoEntity());
         modelMapper.addMappings(new BedroomDTOtoEntity());
         modelMapper.addMappings(new StudioDTOtoEntity());
-        modelMapper.addMappings(new BuildingDTOtoEntity());
-        modelMapper.addMappings(new ContractDTOtoEntity());
-        modelMapper.addMappings(new PersonDTOtoEntity());
-        modelMapper.addMappings(new BuildingLevelDTOtoEntity());
+        modelMapper.addMappings(buildingDTOtoEntity);
+        modelMapper.addMappings(contractDTOtoEntity);
+        modelMapper.addMappings(personDTOtoEntity);
+
+
+        modelMapper.addMappings(buildingLevelDTOtoEntity);
 
     }
 }

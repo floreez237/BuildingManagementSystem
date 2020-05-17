@@ -7,10 +7,10 @@ import org.modelmapper.Converter;
 import org.modelmapper.PropertyMap;
 
 public class WaterBillEntitytoDTO extends PropertyMap<WaterBillEntity, WaterBillDTO> {
-    private Converter<RoomEntity, Long> entityLongConverter = context -> context.getSource() == null ? null : context.getSource().getId();
+    private final Converter<RoomEntity, Long> entityLongConverter = context -> context.getSource() == null ? null : context.getSource().getId();
 
     @Override
     protected void configure() {
-        using(entityLongConverter).map(source.getRoom(), destination.getId());
+        using(entityLongConverter).map(source.getRoom()).setRoomId(null);
     }
 }

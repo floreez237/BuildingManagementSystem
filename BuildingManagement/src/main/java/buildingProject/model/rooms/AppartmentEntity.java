@@ -5,8 +5,6 @@
  */
 package buildingProject.model.rooms;
 
-import buildingProject.model.BuildingEntity;
-import buildingProject.model.BuildingLevelEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,13 +23,14 @@ import java.util.List;
 @Table(name = "appartment_table")
 @EqualsAndHashCode(exclude = {"areasOfBedrooms", "areasOfKitchens", "areasOfParlours", "areasOfToilets"}, callSuper = true)
 public class AppartmentEntity extends RoomEntity {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 7L;
 
-    private int numberOfBedrooms;
-    private int numberOfKitchens;
-    private int numberOfParlours;
-    private int numberOfToilets;
-
+    /*todo make queries for these
+     private int numberOfBedrooms;
+     private int numberOfKitchens;
+     private int numberOfParlours;
+     private int numberOfToilets;
+ */
     @ElementCollection
     @CollectionTable(name = "bedroom_areas", joinColumns = @JoinColumn(name = "apt_id", referencedColumnName = "id"))
     private List<Double> areasOfBedrooms = new ArrayList<>();
@@ -48,15 +47,6 @@ public class AppartmentEntity extends RoomEntity {
     @CollectionTable(name = "toilet_areas", joinColumns = @JoinColumn(name = "apt_id", referencedColumnName = "id"))
     private List<Double> areasOfToilets = new ArrayList<>();
 
-    public AppartmentEntity(int numberOfBedrooms, int numberOfKitchens, int numberOfParlours,
-                            int numberOfToilets, double rent, double deposit, String paintColor, BuildingEntity building, BuildingLevelEntity level) {
-        super(rent, deposit, paintColor, building, level);
-        this.numberOfBedrooms = numberOfBedrooms;
-        this.numberOfKitchens = numberOfKitchens;
-        this.numberOfParlours = numberOfParlours;
-        this.numberOfToilets = numberOfToilets;
-
-    }
 
     //TODO write all of these methods in the service layer
     public void addBedroom(double area) {

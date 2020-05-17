@@ -27,7 +27,7 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class StudioEntity extends RoomEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 10L;
     private double areaOfBedroom;
     private double areaOfToilet;
     private double areaOfKitchen;

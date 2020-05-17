@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="buildingProject.controllers.UnpaidBillsController">
+   <children>
+      <Label layoutX="87.0" layoutY="47.0" text=" Bills" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton layoutX="14.0" layoutY="40.0" onAction="#goBack" prefHeight="51.0" prefWidth="46.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField layoutX="440.0" layoutY="118.0" onAction="#onSearch" prefHeight="31.0" prefWidth="254.0"
+                 promptText="search" style="-fx-background-radius: 50;"/>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png"/>
+         </image>
+      </ImageView>
+      <TableView layoutX="14.0" layoutY="166.0" prefHeight="499.0" prefWidth="695.0">
+         <columns>
+            <TableColumn fx:id="billIdCol" prefWidth="113.0" text="Bill ID"/>
+            <TableColumn fx:id="issueDateCol" prefWidth="123.0" text="Issue Date"/>
+            <TableColumn fx:id="dueDateCol" prefWidth="149.0" text="Due Date"/>
+            <TableColumn fx:id="amountCol" prefWidth="174.0" text="Amount"/>
+            <TableColumn fx:id="statusCol" prefWidth="135.0" text="Status"/>
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

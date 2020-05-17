@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.141"
+      fx:controller="buildingProject.controllers.AddContractController">
+   <children>
+      <Label layoutX="21.0" layoutY="111.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0"
+             text="CONTRACT INFORMATION" textAlignment="CENTER" underline="true">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="0.6702898550724637"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Cambria" size="20.0"/>
+         </font>
+      </Label>
+      <GridPane layoutY="172.0" prefHeight="43.0" prefWidth="705.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="161.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="197.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="148.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="181.0"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         </rowConstraints>
+         <children>
+            <Label text="Date of Payment:">
+               <font>
+                  <Font name="Cambria" size="18.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" top="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <Label text="Date of Creation:" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Cambria" size="18.0"/>
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0"/>
+               </GridPane.margin>
+            </Label>
+            <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" prefHeight="31.0" prefWidth="171.0"
+                           GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets right="25.0"/>
+               </GridPane.margin>
+            </JFXDatePicker>
+            <JFXDatePicker fx:id="creationDatePicker" defaultColor="#00e5ff" prefHeight="31.0" prefWidth="177.0"
+                           GridPane.columnIndex="3"/>
+         </children>
+      </GridPane>
+      <JFXButton layoutX="226.0" layoutY="306.0" onAction="#onSave" style="-fx-background-radius: 50;"
+                 stylesheets="@../style/mainview.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background"/>
+            <String fx:value="button2"/>
+         </styleClass>
+      </JFXButton>
+      <JFXButton layoutX="353.0" layoutY="306.0" onAction="#onCancel" style="-fx-background-radius: 50;"
+                 styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_cancel_24px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="12.0"/>
+         </font>
+      </JFXButton>
+      <Label layoutX="73.0" layoutY="37.0" text="Renew Contract" underline="true">
+         <font>
+            <Font size="29.0"/>
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="62.0" layoutY="239.0" prefHeight="29.0" prefWidth="78.0" text="Duration:">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="tfDuration" layoutX="161.0" layoutY="239.0" prefHeight="31.0" prefWidth="154.0"
+                 style="-fx-background-radius: 50;"/>
+      <JFXButton layoutY="28.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>

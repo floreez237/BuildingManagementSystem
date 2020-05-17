@@ -40,7 +40,7 @@ public abstract class RoomEntity implements Serializable {
     should write function to remove last added bill? Discuss with Yas.
     */
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 9L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "room_gen")

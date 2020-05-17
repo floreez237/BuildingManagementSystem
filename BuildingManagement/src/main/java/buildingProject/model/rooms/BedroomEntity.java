@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Table(name = "bedroom_table")
 @EqualsAndHashCode(callSuper = true)
 public class BedroomEntity extends RoomEntity {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 8L;
     
     private boolean isToiletInternal;
     private double area;

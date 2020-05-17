@@ -1,0 +1,58 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#vbox {
+
+    -fx-background-color: linear-gradient(#00e5ff, #2979ff);
+
+}
+
+.button:hover {
+    -fx-hover-color: #ffffff;
+}
+
+.button2 {
+    -fx-background-color: linear-gradient(#00e5ff, #2979ff);
+}
+
+.button1:focused {
+    -fx-focus-color: #ffffff;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.default-color0.chart-pie {
+    -fx-pie-color: #00e5ff;
+}
+
+.default1-color0.chart-pie {
+    -fx-pie-color: #00e5ff;
+}
+
+.default1-color1.chart-pie {
+    -fx-pie-color: #686D6F;
+}
+
+.default-color1.chart-pie {
+    -fx-pie-color: #2979ff;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #00e5ff;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #00e5ff, #ffffff;
+}
+
+.default-color1.chart-line-symbol {
+    -fx-background-color: #2979ff, #ffffff;
+}
+
+.background {
+    -fx-background-color: linear-gradient(to bottom right, #3e96da, #00e5ff, #2979ff);
+}
+
+.button3 {
+    -fx-background-color: linear-gradient(to bottom right, #a70707, #FB0000, #990A0A);
+}

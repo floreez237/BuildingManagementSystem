@@ -8,10 +8,11 @@ package buildingProject.model.bills;
 import buildingProject.model.rooms.RoomEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
-import javax.persistence.*;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -26,19 +27,6 @@ public class BillEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bill_gen")
-    @GenericGenerator(
-            name = "bill_gen",
-            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-            parameters = {
-                    @Parameter(name = "sequence_name", value = "bill_sequence"),
-                    @Parameter(name = "initial_value", value = "1"),
-                    @Parameter(name = "increment_size", value = "1")
-            }
-    )
-    @Column(updatable = false)
-    private Long id;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfIssue;
