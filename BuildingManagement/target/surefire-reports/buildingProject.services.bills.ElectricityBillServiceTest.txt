@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: buildingProject.services.bills.ElectricityBillServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.751 s <<< FAILURE! - in buildingProject.services.bills.ElectricityBillServiceTest
+save  Time elapsed: 0.002 s  <<< ERROR!
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'buildingProject.services.bills.ElectricityBillServiceTest': Unsatisfied dependency expressed through field 'billService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'buildingProject.services.bills.ElectricityBillService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'buildingProject.services.bills.ElectricityBillService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+

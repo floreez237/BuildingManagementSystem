@@ -1,0 +1,13 @@
+buildingProject\repositories\room_repositories\RoomRepositoryTest.class
+buildingProject\security\PasswordUtilsTest.class
+buildingProject\services\rooms\RoomServiceTest.class
+buildingProject\repositories\bill_repositories\ElectricityBillRepositoryTest.class
+buildingProject\map_configs\CustomMapperConfigEtoDTOTest.class
+buildingProject\map_configs\CustomMapperDTOtoETest.class
+buildingProject\repositories\PersonRepositoryTest.class
+buildingProject\services\bills\ElectricityBillServiceTest.class
+buildingProject\repositories\ContractRepositoryTest.class
+buildingProject\services\BuildingLevelServiceTest.class
+buildingProject\repositories\bill_repositories\WaterBillRepositoryTest.class
+buildingProject\services\PersonServiceTest.class
+buildingProject\services\BuildingServiceTest.class

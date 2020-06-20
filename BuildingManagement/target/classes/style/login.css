@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+.button1 {
+    -fx-background-color: linear-gradient(#00e5ff, #2979ff);
+}
+
+#imageView {
+
+    -fx-background-color: linear-gradient(#00e5ff, #2979ff);
+
+}
+
+#anchorPane {
+    -fx-background-color: linear-gradient(to right, #000000, #00e5ff, #2979ff);
+}

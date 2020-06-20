@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.ExpiredContractsController">
+   <children>
+      <Label layoutX="87.0" layoutY="47.0" text="Expired Contracts" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="tfSearch" layoutX="440.0" layoutY="118.0" prefHeight="31.0" prefWidth="254.0" promptText="search" style="-fx-background-radius: 50;" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblExpiredContracts" layoutX="26.0" layoutY="173.0" prefHeight="502.0" prefWidth="664.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="93.0" text="Contract ID" />
+            <TableColumn fx:id="colPaymentDate" prefWidth="95.0" text="Payment Date" />
+            <TableColumn fx:id="colDuration" prefWidth="138.0" text="Duration (In Months)" />
+            <TableColumn fx:id="colExpirationDate" prefWidth="94.0" text="Expiration Date" />
+            <TableColumn fx:id="colRoomId" prefWidth="90.0" text="Room ID" />
+            <TableColumn fx:id="colTenantName" prefWidth="154.0" text="Tenant Name" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="7.0" layoutY="34.0" onAction="#goBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="40.0" layoutY="133.0" onAction="#handleDelete" text="Delete">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

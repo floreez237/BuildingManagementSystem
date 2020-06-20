@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="711.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DashboardController">
+   <children>
+      <Label layoutX="65.0" layoutY="40.0" text="Dashboard" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Group layoutX="75.0" layoutY="492.0" onMouseClicked="#displayExpiredContracts">
+         <children>
+            <Rectangle arcHeight="64.0" arcWidth="64.0" height="282.0" layoutX="-33.0" layoutY="-82.0" stroke="BLACK" strokeType="INSIDE" width="353.0">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.35" color="#110ee1" height="0.0" radius="4.0075" width="18.03" />
+               </effect>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff" />
+                        <Stop color="#0073ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Rectangle>
+            <Label alignment="CENTER_RIGHT" layoutX="33.0" layoutY="71.0" prefHeight="23.0" prefWidth="122.0" text="Expired Contracts: " textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="117.0" prefHeight="23.0" prefWidth="122.0" text="Expire in 5 days: " textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblExpireInFiveDays" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="117.0" prefHeight="23.0" prefWidth="20.0" text="2" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblExpiredContracts" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="71.0" prefHeight="23.0" prefWidth="20.0" text="2" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="94.0" fitWidth="87.0" layoutX="-15.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_agreement_32px.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Group>
+      <LineChart fx:id="lineChart" layoutX="404.0" layoutY="411.0" prefHeight="309.0" prefWidth="363.0" stylesheets="@../style/mainview.css" title="Revenue Variation">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+         <styleClass>
+            <String fx:value="chart-series-line" />
+            <String fx:value="chart-line-symbol" />
+            <String fx:value="default-color0" />
+            <String fx:value="default-color1" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </LineChart>
+      <PieChart fx:id="piechart" layoutX="43.0" layoutY="109.0" prefHeight="282.0" prefWidth="353.0" stylesheets="@../style/mainview.css" title="Room Distribution">
+         <styleClass>
+            <String fx:value="default-color0" />
+            <String fx:value="default-color1" />
+            <String fx:value="chart-line-symbol" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </PieChart>
+      <Group layoutX="552.0" layoutY="175.0" onMouseClicked="#displayBills">
+         <children>
+            <Rectangle arcHeight="64.0" arcWidth="64.0" height="282.0" layoutX="-132.0" layoutY="-66.0" stroke="BLACK" strokeType="INSIDE" width="353.0">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.35" color="#110ee1" height="0.0" radius="4.0075" width="18.03" />
+               </effect>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff" />
+                        <Stop color="#0073ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Rectangle>
+            <Label alignment="CENTER_RIGHT" layoutX="-50.0" layoutY="95.0" prefHeight="23.0" prefWidth="129.0" text="Unpaid Water Bills: " textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="117.0" fitWidth="115.0" layoutX="-62.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-check-40.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER_RIGHT" layoutX="-90.0" layoutY="143.0" prefHeight="23.0" prefWidth="172.0" text="Unpaid Electricity Bills: " textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUnpaidWater" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="99.0" text="2" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUnPaidElectricity" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="147.0" text="2" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Group>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="25.0" />
+   </padding>
+</Pane>
