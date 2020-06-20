@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DisplayBillController">
+   <children>
+      <Label layoutX="73.0" layoutY="37.0" lineSpacing="10.0" prefHeight="43.0" prefWidth="223.0" text="Bill  Information" textAlignment="CENTER">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="0.6702898550724637" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Cambria" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="180.0" text="Issue Date:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="427.0" layoutY="178.0" text="Due Date:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="37.0" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="436.0" layoutY="229.0" prefHeight="29.0" prefWidth="78.0" text="Amount:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutY="28.0" onAction="#handleGoBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="tfBillId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="158.0" layoutY="113.0" prefHeight="31.0" prefWidth="137.0" />
+      <JFXTextField fx:id="tfBillType" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="158.0" layoutY="228.0" prefHeight="31.0" prefWidth="196.0" />
+      <JFXTextField fx:id="tfAmount" alignment="CENTER" focusColor="#00e5ff" layoutX="513.0" layoutY="228.0" prefHeight="31.0" prefWidth="137.0">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <Label layoutX="73.0" layoutY="114.0" text="Bill ID: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="lblCurrency" layoutX="650.0" layoutY="231.0" prefHeight="25.0" prefWidth="52.0" text="XAF">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="issueDatePicker" defaultColor="#00e5ff" layoutX="158.0" layoutY="174.0" prefHeight="31.0" prefWidth="223.0" style="-fx-alignment: CENTER;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <JFXDatePicker fx:id="dueDatePicker" defaultColor="#00e5ff" layoutX="511.0" layoutY="174.0" prefHeight="31.0" prefWidth="177.0" style="-fx-alignment: CENTER;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <JFXButton layoutX="340.0" layoutY="401.0" onAction="#handleUpdate" prefHeight="31.0" prefWidth="96.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="75.0" layoutY="229.0" prefHeight="29.0" prefWidth="78.0" text="Bill Type:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="290.0" prefHeight="29.0" prefWidth="78.0" text="Bill Paid: ">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="radYes" layoutX="180.0" layoutY="296.0" style="-jfx-selected-color: #2979ff;" text="Yes">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="paid" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="radNo" layoutX="245.0" layoutY="295.0" selected="true" style="-jfx-selected-color: #2979ff;" text="No" toggleGroup="$paid">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXRadioButton>
+      <Label fx:id="lblPaymentDate" layoutX="388.0" layoutY="295.0" text="Payment Date : ">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" layoutX="511.0" layoutY="289.0" prefHeight="31.0" prefWidth="177.0" style="-fx-alignment: CENTER;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+   </children>
+</Pane>

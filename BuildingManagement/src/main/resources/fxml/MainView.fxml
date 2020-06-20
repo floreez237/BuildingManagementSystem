@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="779.0" prefWidth="1005.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="buildingProject.controllers.MainViewController">
+   <children>
+      <BorderPane fx:id="mainPage" prefHeight="509.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox fx:id="vbox" prefHeight="467.0" prefWidth="209.0" style="-fx-background-radius: 0 80 0 0;"
+                  stylesheets="@../style/mainview.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="147.0" prefWidth="209.0">
+                     <VBox.margin>
+                        <Insets top="10.0"/>
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="119.0" fitWidth="94.0" layoutX="51.0" layoutY="47.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_business_building_32px.png"/>
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <JFXButton onAction="#handleDashboardBtn" prefHeight="38.0" prefWidth="223.0"
+                             stylesheets="@../style/mainview.css" text="   Dashboard               "
+                             textAlignment="CENTER" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_combo_chart_32px_2.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="button1"/>
+                        <String fx:value="button"/>
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="3.0" layoutX="10.0" layoutY="10.0" onAction="#handleBuildingManagementBtn"
+                             prefHeight="38.0" prefWidth="236.0" text="Building Management " textAlignment="CENTER"
+                             textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_home_50px_1.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="3.0" layoutX="10.0" layoutY="168.0" onAction="#handleContractManagementBtn"
+                             prefHeight="38.0" prefWidth="211.0" text="Contract Management" textAlignment="CENTER"
+                             textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_lease_32px_1.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="3.0" layoutX="10.0" layoutY="206.0" onAction="#handleSettingsBtn"
+                             prefHeight="38.0" prefWidth="217.0" text="    Settings                    "
+                             textAlignment="CENTER" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_settings_50px_2.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="3.0" layoutX="10.0" layoutY="244.0" onAction="#handleHelpBtn"
+                             prefHeight="38.0" prefWidth="212.0" stylesheets="@../style/mainview.css"
+                             text="     Help                       " textAlignment="JUSTIFY" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_help_50px_1.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0"/>
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button"/>
+                        <String fx:value="button1"/>
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+                  <Pane prefHeight="120.0" prefWidth="184.0"/>
+                  <JFXButton onAction="#handleExitBtn" prefHeight="67.0" prefWidth="211.0" text="EXIT" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_exit_50px_1.png"/>
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND"/>
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
