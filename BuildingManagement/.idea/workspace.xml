@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9fb6a24-dc23-4c9f-a7fc-83427e5bbe07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a9fb6a24-dc23-4c9f-a7fc-83427e5bbe07" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,6 +302,7 @@
       <workItem from="1592652842223" duration="32000" />
       <workItem from="1592652934528" duration="742000" />
       <workItem from="1592653770463" duration="91000" />
+      <workItem from="1592653885079" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="Completion of the model layer and addition of the maven framework">
       <created>1585487912607</created>
