@@ -29,8 +29,8 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,7 +54,7 @@ class CustomMapperDTOtoETest {
     void electricityBillEntityTest() {
         ElectricityBillDTO electricityBillDTO = new ElectricityBillDTO();
         electricityBillDTO.setId(1L);
-        electricityBillDTO.setDateOfPayment(new Date());
+        electricityBillDTO.setDateOfPayment(LocalDate.now());
         electricityBillDTO.setRoomId(2L);
         electricityBillDTO.setAmount(45000);
 
@@ -70,7 +70,7 @@ class CustomMapperDTOtoETest {
         WaterBillDTO billDTO = new WaterBillDTO();
         billDTO.setId(1L);
         billDTO.setRoomId(1L);
-        billDTO.setDateOfIssue(new Date());
+        billDTO.setDateOfIssue(LocalDate.now());
         billDTO.setAmount(48000);
 
         WaterBillEntity billEntity = modelMapper.map(billDTO, WaterBillEntity.class);
@@ -158,7 +158,7 @@ class CustomMapperDTOtoETest {
     void buildingLevelEntityTest() {
         BuildingLevelDTO dto = new BuildingLevelDTO();
         dto.setId(1L);
-        dto.setBuildindID(2L);
+        dto.setBuildingID(2L);
 
         BuildingLevelEntity entity = modelMapper.map(dto, BuildingLevelEntity.class);
         assertEquals(dto.getId(), entity.getId());
@@ -169,7 +169,7 @@ class CustomMapperDTOtoETest {
     void contractEntityTest() {
         ContractDTO dto = new ContractDTO();
         dto.setId(1L);
-        dto.setDateOfPayment(new Date());
+        dto.setDateOfPayment(LocalDate.now());
         dto.setRoomId(3L);
         dto.setTenantId(2L);
 
@@ -183,7 +183,7 @@ class CustomMapperDTOtoETest {
     @Test
     void personEntityTest() {
         PersonDTO dto = new PersonDTO();
-        dto.setDateOfBirth(new Date());
+        dto.setDateOfBirth(LocalDate.now());
         dto.setRoomId(1L);
         dto.setName("florian");
 

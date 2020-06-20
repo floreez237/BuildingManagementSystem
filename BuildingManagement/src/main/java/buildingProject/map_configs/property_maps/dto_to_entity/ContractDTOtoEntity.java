@@ -18,14 +18,14 @@ public class ContractDTOtoEntity extends PropertyMap<ContractDTO, ContractEntity
     PersonRepository personRepository;
     @Autowired
     RoomRepository roomRepository;
-    private Converter<Long, PersonEntity> idPersonEntityConverter
+    private final Converter<Long, PersonEntity> idPersonEntityConverter
             = new Converter<Long, PersonEntity>() {
         @Override
         public PersonEntity convert(MappingContext<Long, PersonEntity> context) {
             return personRepository.getOne(context.getSource());
         }
     };
-    private Converter<Long, RoomEntity> idRoomEntityConverter
+    private final Converter<Long, RoomEntity> idRoomEntityConverter
             = new Converter<Long, RoomEntity>() {
         @Override
         public RoomEntity convert(MappingContext<Long, RoomEntity> context) {
@@ -36,6 +36,6 @@ public class ContractDTOtoEntity extends PropertyMap<ContractDTO, ContractEntity
     @Override
     protected void configure() {
         using(idPersonEntityConverter).map(source.getTenantId(), destination.getTenant());
-        using(idRoomEntityConverter).map(source.getId(), destination.getRoom());
+        using(idRoomEntityConverter).map(source.getRoomId(), destination.getRoom());
     }
 }

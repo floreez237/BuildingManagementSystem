@@ -2,13 +2,13 @@ package buildingProject.dto;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 public class PersonDTO {
     private Long id;
     private String name;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String nationalIdNumber;
     private char sex;
     private String maritalStatus;

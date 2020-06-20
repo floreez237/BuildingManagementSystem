@@ -7,7 +7,6 @@ import buildingProject.repositories.BuildingLevelRepository;
 import org.modelmapper.Converter;
 import org.modelmapper.PropertyMap;
 import org.modelmapper.spi.MappingContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,19 +14,22 @@ import java.util.stream.Collectors;
 
 @Component
 public class BuildingDTOtoEntity extends PropertyMap<BuildingDTO, BuildingEntity> {
-    @Autowired
-    private BuildingLevelRepository buildingLevelRepository;
-    private Converter<List<Long>, List<BuildingLevelEntity>> idBuildinLevelListConverter
+    private final BuildingLevelRepository buildingLevelRepository;
+    private final Converter<List<Long>, List<BuildingLevelEntity>> idBuildingLevelListConverter
             = new Converter<List<Long>, List<BuildingLevelEntity>>() {
         @Override
         public List<BuildingLevelEntity> convert(MappingContext<List<Long>, List<BuildingLevelEntity>> context) {
-            return context.getSource().stream().map((id) -> buildingLevelRepository.getOne(id))
+            return context.getSource().stream().map(buildingLevelRepository::getOne)
                     .collect(Collectors.toList());
         }
     };
 
+    public BuildingDTOtoEntity(BuildingLevelRepository buildingLevelRepository) {
+        this.buildingLevelRepository = buildingLevelRepository;
+    }
+
     @Override
     protected void configure() {
-        using(idBuildinLevelListConverter).map(source.getListOfLevelId(), destination.getListOfLevels());
+        using(idBuildingLevelListConverter).map(source.getListOfLevelId(), destination.getListOfLevels());
     }
 }

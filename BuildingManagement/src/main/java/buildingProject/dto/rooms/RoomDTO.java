@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Data
 @NoArgsConstructor
-public abstract class RoomDTO {
+public class RoomDTO {
     private Long id;
     private boolean occupied;
     private double rent;

@@ -15,16 +15,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class RoomEntityToDTO extends PropertyMap<RoomEntity, RoomDTO> {
-
-    @Override
-    protected void configure() {
-        using(buildingEntityIdConverter).map(source.getBuilding(), destination.getBuildingID());
-        using(levelEntityIdConverter).map(source.getLevel(), destination.getBuildingLevelId());
-        using(personIdConverter).map(source.getSetOfPersons(), destination.getListOfPersonIds());
-        using(waterBillIdConverter).map(source.getWaterBills(), destination.getListOfWaterBillIDs());
-        using(electricityBillConverter).map(source.getElectricityBills(), destination.getListOfElectricityBillIds());
-    }
-
     private final Converter<BuildingEntity, Long> buildingEntityIdConverter
             = context -> context.getSource() == null ? null : context.getSource().getId();
     private final Converter<BuildingLevelEntity, Long> levelEntityIdConverter
@@ -35,5 +25,16 @@ public class RoomEntityToDTO extends PropertyMap<RoomEntity, RoomDTO> {
             = context -> context.getSource().stream().map(WaterBillEntity::getId).collect(Collectors.toList());
     private final Converter<Set<ElectricityBillEntity>, List<Long>> electricityBillConverter
             = context -> context.getSource().stream().map(ElectricityBillEntity::getId).collect(Collectors.toList());
+
+    @Override
+    protected void configure() {
+        using(buildingEntityIdConverter).map(source.getBuilding(), destination.getBuildingID());
+        using(levelEntityIdConverter).map(source.getLevel(), destination.getBuildingLevelId());
+        using(personIdConverter).map(source.getSetOfPersons(), destination.getListOfPersonIds());
+        using(waterBillIdConverter).map(source.getWaterBills(), destination.getListOfWaterBillIDs());
+        using(electricityBillConverter).map(source.getElectricityBills(), destination.getListOfElectricityBillIds());
+    }
+
+
 
 }

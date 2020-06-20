@@ -6,5 +6,5 @@ import lombok.Data;
 public class BuildingLevelDTO {
     private Long id;
     private Long levelNumber;
-    private Long buildindID;
+    private Long buildingID;
 }

@@ -8,6 +8,7 @@ import buildingProject.dto.bills.ElectricityBillDTO;
 import buildingProject.dto.bills.WaterBillDTO;
 import buildingProject.dto.rooms.AppartmentDTO;
 import buildingProject.dto.rooms.BedroomDTO;
+import buildingProject.dto.rooms.RoomDTO;
 import buildingProject.dto.rooms.StudioDTO;
 import buildingProject.model.BuildingEntity;
 import buildingProject.model.BuildingLevelEntity;
@@ -17,7 +18,9 @@ import buildingProject.model.bills.ElectricityBillEntity;
 import buildingProject.model.bills.WaterBillEntity;
 import buildingProject.model.rooms.AppartmentEntity;
 import buildingProject.model.rooms.BedroomEntity;
+import buildingProject.model.rooms.RoomEntity;
 import buildingProject.model.rooms.StudioEntity;
+import buildingProject.repositories.room_repositories.RoomRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -51,6 +54,9 @@ class CustomMapperConfigEtoDTOTest {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private RoomRepository roomRepo;
+
     @BeforeEach
     void setUp() {
 
@@ -58,11 +64,10 @@ class CustomMapperConfigEtoDTOTest {
 
     @Test
     void electricityBill() {
+        modelMapper.validate();
         TypedQuery<ElectricityBillEntity> query = entityManager.createQuery("select b from ElectricityBillEntity b where b.id = ?1", ElectricityBillEntity.class);
         ElectricityBillEntity billEntity = query.setParameter(1, 1L).getSingleResult();
         ElectricityBillDTO billDTO = modelMapper.map(billEntity, ElectricityBillDTO.class);
-        modelMapper.validate();
-
         assertEquals(new Long(1), billDTO.getRoomId());
         assertEquals(new Long(1), billDTO.getId());
         assertNull(billDTO.getDateOfIssue());
@@ -85,10 +90,11 @@ class CustomMapperConfigEtoDTOTest {
     }
 
     @Test
-    void appartmentEntityToDTO() {
+    void apartmentEntityToDO() {
         TypedQuery<AppartmentEntity> query = entityManager.createQuery("select a from AppartmentEntity a where a.id = ?1", AppartmentEntity.class);
         AppartmentEntity entity = query.setParameter(1, 2L).getSingleResult();
-        AppartmentDTO dto = modelMapper.map(entity, AppartmentDTO.class);
+
+        AppartmentDTO dto = modelMapper.map(entity,AppartmentDTO.class);
 
         assertEquals(2, dto.getAreasOfBedrooms().size());
         assertEquals(1, dto.getAreasOfKitchens().size());
@@ -172,6 +178,12 @@ class CustomMapperConfigEtoDTOTest {
         assertEquals(1, dto.getTenantId().longValue());
     }
 
-
+    @Test
+    void roomEntityToDto() {
+        TypedQuery<RoomEntity> query = entityManager.createQuery("select a from AppartmentEntity a where a.id = ?1", RoomEntity.class);
+        RoomEntity entity = query.setParameter(1, 2L).getSingleResult();
+        RoomDTO roomDTO = modelMapper.map(entity, RoomDTO.class);
+        assertTrue(roomDTO instanceof AppartmentDTO);
+    }
 }
 

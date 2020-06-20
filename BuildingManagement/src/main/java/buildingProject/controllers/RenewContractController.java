@@ -1,31 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buildingProject.controllers;
 
+import buildingProject.dto.ContractDTO;
+import buildingProject.services.ContractService;
+import buildingProject.services.PersonService;
+import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.Tools;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Alert;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.time.format.DateTimeFormatter;
 
-/**
- * FXML Controller class
- *
- * @author YASMINE
- */
 @Component
-public class RenewContractController implements Initializable {
+public class RenewContractController {
+
+    private static ContractDTO previousContract;
+    private final ApplicationContext applicationContext;
+    private final FXMLResources fxmlResources;
+    private final PersonService personService;
+    private final ContractService contractService;
 
     @FXML
     private JFXDatePicker paymentDatePicker;
@@ -34,37 +33,66 @@ public class RenewContractController implements Initializable {
     private JFXDatePicker creationDatePicker;
 
     @FXML
-    private TextField tfDuration;
+    private JFXTextField tfRoomId;
 
     @FXML
-    void goBack(ActionEvent event) throws IOException {
-
-        //Set the contract fxml with the contract information
-
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        Pane contract = FXMLLoader.load(getClass().getResource("/resources/fxml/DisplayContract.fxml"));
-        borderPane.setCenter(contract);
-    }
+    private JFXTextField tfDuration;
 
     @FXML
-    void onCancel(ActionEvent event) throws IOException {
-        //Set the contract fxml with the contract information
+    private JFXTextField tfTenantName;
 
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        Pane contract = FXMLLoader.load(getClass().getResource("/resources/fxml/DisplayContract.fxml"));
-        borderPane.setCenter(contract);
+    public RenewContractController(ApplicationContext applicationContext, FXMLResources fxmlResources, PersonService personService, ContractService contractService) {
+        this.applicationContext = applicationContext;
+        this.fxmlResources = fxmlResources;
+        this.personService = personService;
+        this.contractService = contractService;
     }
 
     @FXML
-    void onSave(ActionEvent event) {
-
-        //Save the new information and update it in object
-        //on saving display directly Contract with updated information
+    void handleGoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(fxmlResources.getContractsManagementResource().getURL());
+        loader.setControllerFactory(applicationContext::getBean);
+        MainViewController.getGlobalMainPage().setCenter(loader.load());
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    void handleSave(ActionEvent event) {
+        if (!areAllFieldsEntered()) {
+            new Alert(Alert.AlertType.ERROR, "Some fields were not entered").showAndWait();
+            return;
+        }
+        if (paymentDatePicker.getValue().isBefore(creationDatePicker.getValue())) {
+            new Alert(Alert.AlertType.ERROR, "The date of payment cannot occur before the date of creation").showAndWait();
+            return;
+        }
 
+        ContractDTO newContract = new ContractDTO();
+        newContract.setRoomId(previousContract.getRoomId());
+        newContract.setTenantId(previousContract.getTenantId());
+        newContract.setDuration(Integer.parseInt(tfDuration.getText()));
+        newContract.setDateOfPayment(paymentDatePicker.getValue());
+        newContract.setDateOfCreation(creationDatePicker.getValue());
+        long id = contractService.save(newContract);
+        Alert creationAlert = new Alert(Alert.AlertType.INFORMATION, String.format("NEW ID: CON%d", id));
+        creationAlert.setHeaderText("SUCCESSFUL RENEWAL");
+        creationAlert.showAndWait();
     }
 
+    private boolean areAllFieldsEntered() {
+        return creationDatePicker.getValue() != null && paymentDatePicker.getValue() != null && tfDuration.getText() != null && !tfDuration.getText().isEmpty();
+    }
+
+    @FXML
+    public void initialize() {
+        tfRoomId.setText("ROOM" + previousContract.getRoomId());
+        tfTenantName.setText(personService.findPerson(previousContract.getTenantId()).getName());
+        Tools.addNaturalNumberValidation(tfDuration);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Tools.changeDateConverter(formatter,creationDatePicker);
+        Tools.changeDateConverter(formatter,paymentDatePicker);
+    }
+
+    public static void setPreviousContract(ContractDTO previousContract) {
+        RenewContractController.previousContract = previousContract;
+    }
 }

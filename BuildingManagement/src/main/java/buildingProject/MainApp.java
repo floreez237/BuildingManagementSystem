@@ -22,14 +22,6 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         applicationContext.publishEvent(new StageReadyEvent(stage));
-        /*Parent root = FXMLLoader.load(getClass().getResource("/resources/fxml/MainView.fxml"));
-
-        Scene scene1 = new Scene(root);
-        stage = new Stage(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(MainApp.class.getResourceAsStream("/resources/images/icons8-building-with-top-view-24.png")));
-        stage.setScene(scene1);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.show();*/
     }
 
     @Override

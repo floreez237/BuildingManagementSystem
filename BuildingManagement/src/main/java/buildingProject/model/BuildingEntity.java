@@ -47,26 +47,19 @@ public class BuildingEntity implements Serializable {
     )
     private Long id;
 
-    //todo query for these two
-//    @OneToMany(cascade = {CascadeType.PERSIST})
-//    private List<Contract> listOfContracts; // REMOVE THIS AND DO A QUEERY
-    //private int numberOflevels;
 
     private String buildingName;
     private String location;
 
-    @OneToMany(mappedBy = "building")
+    @OneToMany(mappedBy = "building",orphanRemoval = true)
     @Cascade(ALL)
     private List<BuildingLevelEntity> listOfLevels = new ArrayList<>();
 
     @ElementCollection
-    @CollectionTable(name = "building_extras", joinColumns = {
-            @JoinColumn(name = "building_id", referencedColumnName = "id")})
+    @CollectionTable(name = "building_extras")
+    /*@OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "id", referencedColumnName = "id")*/
     private Set<BuildingExtra> buildingExtraSet = new HashSet<>();
-
-    //todo a query for this in person repo
-//    @OneToMany(cascade = CascadeType.PERSIST)
-//    private List<Person> listOfPersons; //DO A QUERY FOR THIS IN THE DAO
 
 
     public BuildingEntity(String buildingName, String location) {

@@ -2,68 +2,70 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171"
-            fx:controller="buildingProject.controllers.DisplayAllLevelsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DisplayAllLevelsController">
    <children>
       <Label layoutX="87.0" layoutY="47.0" text="Levels" underline="true">
          <font>
-            <Font name="Cambria Bold" size="29.0"/>
+            <Font name="Cambria Bold" size="29.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff"/>
-                  <Stop color="#2979ff" offset="1.0"/>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <TextField fx:id="tfSearch" layoutX="325.0" layoutY="118.0" onAction="#onSearch" prefHeight="31.0"
-                 prefWidth="369.0" promptText="search" style="-fx-background-radius: 50;"/>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true"
-                 preserveRatio="true">
+      <TextField fx:id="tfSearch" layoutX="325.0" layoutY="118.0" prefHeight="31.0" prefWidth="369.0" promptText="search level number" style="-fx-background-radius: 50;" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/icons8_search_30px_2.png"/>
+            <Image url="@../images/icons8_search_30px_2.png" />
          </image>
       </ImageView>
       <TableView fx:id="tblLevels" layoutX="26.0" layoutY="173.0" prefHeight="465.0" prefWidth="664.0">
          <columns>
-            <TableColumn fx:id="levelNumberCol" prefWidth="126.0" text="Level Number"/>
-            <TableColumn fx:id="totalRoomCol" prefWidth="199.0" text="Total number of rooms"/>
-            <TableColumn fx:id="occupiedRoomsCol" prefWidth="160.0" text="Occupied Rooms"/>
-            <TableColumn fx:id="freeRoomsCol" prefWidth="179.0" text="Free Rooms"/>
+            <TableColumn fx:id="colLevelNumber" prefWidth="126.0" text="Level Number" />
+            <TableColumn fx:id="colTotalRoom" prefWidth="199.0" text="Total number of rooms" />
+            <TableColumn fx:id="colOccupiedRooms" prefWidth="160.0" text="Occupied Rooms" />
+            <TableColumn fx:id="colFreeRooms" prefWidth="179.0" text="Free Rooms" />
          </columns>
       </TableView>
-      <JFXButton layoutX="7.0" layoutY="34.0" onAction="#goBack" text=" ">
+      <JFXButton layoutX="7.0" layoutY="34.0" onAction="#handleGoBack" text=" ">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="87.0" layoutY="108.0" onAction="#onDisplay" prefHeight="41.0" prefWidth="140.0"
-                 text=" Level Details">
+      <JFXButton layoutX="87.0" layoutY="118.0" onAction="#handleDisplayLevel" prefHeight="41.0" prefWidth="140.0" text=" Level Details">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_view_details_26px.png"/>
+                  <Image url="@../images/icons8_view_details_26px.png" />
                </image>
             </ImageView>
          </graphic>
          <tooltip>
-            <Tooltip text="click to add a new student"/>
+            <Tooltip text="click to add a new student" />
          </tooltip>
          <font>
-            <Font size="14.0"/>
+            <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </AnchorPane>

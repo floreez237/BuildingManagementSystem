@@ -8,7 +8,7 @@ import org.hibernate.annotations.Parameter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +21,7 @@ public class PersonEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_gen")
     @GenericGenerator(
-            name = "person_level_gen",
+            name = "person_gen",
             strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
             parameters = {
                     @Parameter(name = "sequence_name", value = "person_sequence"),
@@ -31,8 +31,7 @@ public class PersonEntity implements Serializable {
     )
     private Long id;
     private String name;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String nationalIdNumber;
     private char sex;
     private String maritalStatus;
@@ -43,13 +42,13 @@ public class PersonEntity implements Serializable {
     private RoomEntity room;
 
 
-    public PersonEntity(String name, Date dateOfBirth, char sex) {
+    public PersonEntity(String name, LocalDate dateOfBirth, char sex) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
     }
 
-    public PersonEntity(String name, Date dateOfBirth, String nationalIdNumber, char sex, String maritalStatus, String phoneNumber) {
+    public PersonEntity(String name, LocalDate dateOfBirth, String nationalIdNumber, char sex, String maritalStatus, String phoneNumber) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.nationalIdNumber = nationalIdNumber;

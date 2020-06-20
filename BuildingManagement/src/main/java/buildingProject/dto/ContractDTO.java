@@ -3,15 +3,15 @@ package buildingProject.dto;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 public class ContractDTO {
     private Long id;
     private Long tenantId;
     private Long roomId;
-    private Date dateOfPayment;
-    private Date dateOfCreation;
+    private LocalDate dateOfPayment;
+    private LocalDate dateOfCreation;
     private int duration;
 
 }

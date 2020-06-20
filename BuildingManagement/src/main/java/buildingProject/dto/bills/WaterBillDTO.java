@@ -1,18 +1,10 @@
 package buildingProject.dto.bills;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
-@Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class WaterBillDTO {
-    private Long id;
-    private Date dateOfIssue;
-    private Date dateOfDue;
-    private Date dateOfPayment;
-    private double amount;
-    private boolean isPaid;
-    private Long roomId;
+public class WaterBillDTO extends BillDTO{
+
 }

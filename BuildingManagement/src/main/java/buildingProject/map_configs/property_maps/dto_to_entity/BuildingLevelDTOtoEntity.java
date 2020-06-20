@@ -8,14 +8,12 @@ import buildingProject.repositories.BuildingRepository;
 import org.modelmapper.Converter;
 import org.modelmapper.PropertyMap;
 import org.modelmapper.spi.MappingContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BuildingLevelDTOtoEntity extends PropertyMap<BuildingLevelDTO, BuildingLevelEntity> {
-    @Autowired
-    private BuildingRepository buildingRepository;
-    private Converter<Long, BuildingEntity> idBuildingEntityConverter =
+    private final BuildingRepository buildingRepository;
+    private final Converter<Long, BuildingEntity> idBuildingEntityConverter =
             new Converter<Long, BuildingEntity>() {
                 @Override
                 public BuildingEntity convert(MappingContext<Long, BuildingEntity> context) {
@@ -23,8 +21,12 @@ public class BuildingLevelDTOtoEntity extends PropertyMap<BuildingLevelDTO, Buil
                 }
             };
 
+    public BuildingLevelDTOtoEntity(BuildingRepository buildingRepository) {
+        this.buildingRepository = buildingRepository;
+    }
+
     @Override
     protected void configure() {
-        using(idBuildingEntityConverter).map(source.getBuildindID(), destination.getBuilding());
+        using(idBuildingEntityConverter).map(source.getBuildingID(), destination.getBuilding());
     }
 }

@@ -5,23 +5,22 @@
  */
 package buildingProject.controllers;
 
+import buildingProject.services.ContractService;
+import buildingProject.services.bills.ElectricityBillService;
+import buildingProject.services.bills.WaterBillService;
+import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
-import javafx.scene.chart.XYChart.Series;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
  * FXML Controller class
@@ -30,50 +29,78 @@ import java.util.ResourceBundle;
  */
 
 @Component
-public class DashboardController implements Initializable {
+public class DashboardController{
 
-    final NumberAxis revenue = new NumberAxis(0, 1000000, 100000);
-    final CategoryAxis MonthAxis = new CategoryAxis();
+    private static final NumberAxis revenue = new NumberAxis(0, 1000000, 100000);
+    private static final CategoryAxis MonthAxis = new CategoryAxis();
 
     private final FXMLResources fxmlResources;
+    private final ApplicationContext applicationContext;
+    private final ElectricityBillService electricityBillService;
+    private final WaterBillService waterBillService;
+    private final ContractService contractService;
+    private final RoomService roomService;
 
     @FXML
-    private final LineChart<String, Number> lineChart = new LineChart<>(MonthAxis, revenue);
+    private LineChart<String, Number> lineChart;
 
     @FXML
     private PieChart piechart;
+    @FXML
+    private Label lblUnpaidWater;
 
-    public DashboardController(FXMLResources fxmlResources) {
+    @FXML
+    private Label lblUnPaidElectricity;
+
+    @FXML
+    private Label lblExpireInFiveDays;
+
+    @FXML
+    private Label lblExpiredContracts;
+
+    public DashboardController(FXMLResources fxmlResources, ApplicationContext applicationContext, ElectricityBillService electricityBillService, WaterBillService waterBillService, ContractService contractService, RoomService roomService) {
         this.fxmlResources = fxmlResources;
+        this.applicationContext = applicationContext;
+        this.electricityBillService = electricityBillService;
+        this.waterBillService = waterBillService;
+        this.contractService = contractService;
+        this.roomService = roomService;
     }
 
     @FXML
     void displayExpiredContracts(MouseEvent event) throws IOException {
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        Pane expiredContracts = FXMLLoader.load(fxmlResources.getExpiredContractsResource().getURL());
-        borderPane.setCenter(expiredContracts);
+        FXMLLoader loader = new FXMLLoader(fxmlResources.getExpiredContractsResource().getURL());
+        loader.setControllerFactory(applicationContext::getBean);
+        MainViewController.getGlobalMainPage().setCenter(loader.load());
 
     }
 
     @FXML
-    void displaybills(MouseEvent event) throws IOException {
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        AnchorPane unpaidBills = FXMLLoader.load(fxmlResources.getUnpaidBillsResource().getURL());
-        borderPane.setCenter(unpaidBills);
+    void displayBills(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(fxmlResources.getUnpaidBillsResource().getURL());
+        loader.setControllerFactory(applicationContext::getBean);
+        MainViewController.getGlobalMainPage().setCenter(loader.load());
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    public void initialize() {
         //initialise the pie chart with the values of free and occupied rooms
         //for all the buildings registered
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Occupied", 2), new PieChart.Data("Free", 10));
+                new PieChart.Data("Occupied", roomService.countOccupiedRooms()),
+                new PieChart.Data("Free", roomService.countFreeRooms()));
 
         piechart.setData(pieChartData);
 
+        lblUnPaidElectricity.setText("" + electricityBillService.countUnPaidBills());
+        lblUnpaidWater.setText("" + waterBillService.countUnPaidBills());
+        lblExpiredContracts.setText("" + contractService.countExpiredContracts());
+        lblExpireInFiveDays.setText("" + contractService.countExpireIn(5));
+
+        lineChart = new LineChart<>(MonthAxis, revenue);
         //initialise the line chart with the revenue of the different months
-        Series<String, Number> series = new Series<>();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Revenue");
         series.getData().add(new XYChart.Data<>("Jan", 10000));
         series.getData().add(new XYChart.Data<>("Feb", 550000));

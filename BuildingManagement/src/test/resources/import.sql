@@ -1,15 +1,14 @@
---bhhjhj
-insert into building_table(id,building_name)values (1,'florian'),(2,'yasmine');
+insert into building_table(id,building_name,location)values (nextval('building_sequence'),'florian','emana'),(nextval('building_sequence'),'yasmine','bastos');
 
-insert into building_extras (building_id,name)values ('1','pool'),('2','tennis');
+insert into building_extras (building_entity_id,name)values ('1','pool'),('2','tennis');
 
-insert into buildinglevel_table (id,building_id,level_number)values ('1','1','1'),('2','1','2'),('3','2','1');
+insert into buildinglevel_table (id,building_id,level_number)values (nextval('building_level_sequence'),'1','1'),(nextval('building_level_sequence'),'1','2'),(nextval('building_level_sequence'),'2','1');
 --end building anf level population
 
 --rooms population
-insert into room_table (id,building_id,level_id,rent,deposit,occupied)values ('1','1','1','20000',2000,false),('2','1','2','25000',2000,false),('3','1','2','35000',2000,false),('4','2','3','10000',2000,false);
+insert into room_table (id,building_id,level_id,rent,deposit,occupied)values (nextval('room_sequence'),'1','1','20000',2000,false),(nextval('room_sequence'),'1','2','25000',2000,false),(nextval('room_sequence'),'1','2','35000',2000,false),(nextval('room_sequence'),'2','3','10000',2000,false);
 
-insert into additional_rooms (area,name,room_id)values (20,'ceiling room',1);
+insert into additional_rooms (area,name,room_entity_id)values (20,'ceiling room',1);
 
 insert into bedroom_table (id,is_toilet_internal,area)values (1,true,45),(4,false,60);
 
@@ -23,19 +22,19 @@ insert into kitchen_areas (apt_id,areas_of_kitchens)values (2,5);
 
 insert into parlour_areas (apt_id,areas_of_parlours)values (2,40);
 
-insert into furniture_table (name,room_id)values ('bed',1),('table',2);
+insert into furniture_table (name,room_entity_id)values ('bed',1),('table',2);
 --end room population
 
 --bills population
-insert into electricity_bill_table (id,amount,is_paid,room_id)values (1,12000,true,1),(2,15000,true,2);
+insert into electricity_bill_table (id,amount,is_paid,room_id)values (nextval('elec_bill_sequence'),12000,true,1),(nextval('elec_bill_sequence'),15000,true,2);
 
-insert into water_bill_table (id,amount,is_paid,room_id)values (1,15000,false,1),(2,15000,false,2);
+insert into water_bill_table (id,amount,is_paid,room_id)values (nextval('water_bill_sequence'),15000,false,1),(nextval('water_bill_sequence'),15000,false,2);
 --end bills population
 
 --person and contract population
-insert into person_table (id,name,room_id,sex)values (1,'florian lowe',1,'M'),(2,'bouloulna yasmine',2,'F'),(3,'alliance lowe',3,'F'),(4,'kouekam nathan',4,'M'),(5,'lowe gabriel',1,'M');
+insert into person_table (id,name,room_id,sex)values (nextval('person_sequence'),'florian lowe',1,'M'),(nextval('person_sequence'),'bouloulna yasmine',2,'F'),(nextval('person_sequence'),'alliance lowe',3,'F'),(nextval('person_sequence'),'kouekam nathan',4,'M'),(nextval('person_sequence'),'lowe gabriel',1,'M');
 
-insert into contract_table (id,duration,person_id,room_id)values (1,10,1,1),(2,15,2,2),(3,12,3,3);
+insert into contract_table (id,duration,person_id,room_id)values (nextval('contract_sequence'),10,1,1),(nextval('contract_sequence'),15,2,2),(nextval('contract_sequence'),12,3,3);
 
 
 

@@ -1,34 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buildingProject.controllers;
 
+import buildingProject.dto.ContractDTO;
+import buildingProject.services.ContractService;
+import buildingProject.services.PersonService;
+import buildingProject.services.rooms.RoomService;
+import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.Tools;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import org.springframework.stereotype.Component;
+import javafx.scene.control.Alert;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.time.format.DateTimeFormatter;
+import java.util.stream.Collectors;
 
-/**
- * FXML Controller class
- *
- * @author YASMINE
- */
+@Controller
+public class AddContractController {
 
-@Component
-public class AddContractController implements Initializable {
+    private final ApplicationContext applicationContext;
+    private final FXMLResources fxmlResources;
+    private final ContractService contractService;
+    private final RoomService roomService;
+    private final PersonService personService;
 
     @FXML
     private JFXDatePicker paymentDatePicker;
@@ -37,41 +36,71 @@ public class AddContractController implements Initializable {
     private JFXDatePicker creationDatePicker;
 
     @FXML
-    private ComboBox<String> cmbRoomId;
+    private JFXComboBox<String> cmbRoomId;
 
     @FXML
-    private TextField tfDuration;
+    private JFXComboBox<String> cmbPersonId;
 
     @FXML
-    void onCancel(ActionEvent event) throws IOException {
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        AnchorPane contracts = FXMLLoader.load(getClass().getResource("/resources/fxml/ContractsManagement.fxml"));
-        borderPane.setCenter(contracts);
+    private JFXTextField tfDuration;
+
+    public AddContractController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, RoomService roomService, PersonService personService) {
+        this.applicationContext = applicationContext;
+        this.fxmlResources = fxmlResources;
+        this.contractService = contractService;
+        this.roomService = roomService;
+        this.personService = personService;
     }
 
     @FXML
-    void onSave(ActionEvent event) {
-        //compute expiration date and add all information to list and table
+    void handleGoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(fxmlResources.getContractsManagementResource().getURL());
+        loader.setControllerFactory(applicationContext::getBean);
+        MainViewController.getGlobalMainPage().setCenter(loader.load());
     }
 
     @FXML
-    void onDisplay(ActionEvent event) throws IOException {
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        Pane contract = FXMLLoader.load(getClass().getResource("/resources/fxml/DisplayContract.fxml"));
-        borderPane.setCenter(contract);
+    void handleSave(ActionEvent event) {
+        if (!areAllFieldsEntered()) {
+            new Alert(Alert.AlertType.ERROR, "Some fields are not entered.").showAndWait();
+            return;
+        }
+        if (paymentDatePicker.getValue().isBefore(creationDatePicker.getValue())) {
+            new Alert(Alert.AlertType.ERROR, "The date of payment cannot occur before the date of creation").showAndWait();
+            return;
+        }
+        ContractDTO contractDTO = new ContractDTO();
+        contractDTO.setDateOfPayment(paymentDatePicker.getValue());
+        contractDTO.setDateOfCreation(creationDatePicker.getValue());
+        contractDTO.setDuration(Integer.parseInt(tfDuration.getText()));
+        long roomId = Long.parseLong(cmbRoomId.getValue().substring(4));
+        roomService.setRoomOccupied(roomId);
+        contractDTO.setRoomId(roomId);
+        contractDTO.setTenantId(Long.parseLong(cmbPersonId.getValue().substring(4)));
 
+        long id = contractService.save(contractDTO);
+        Alert creationAlert = new Alert(Alert.AlertType.INFORMATION, String.format("ID: CON%d", id));
+        creationAlert.setHeaderText("CONTRACT CREATED");
+        cmbRoomId.getItems().remove(cmbRoomId.getSelectionModel().getSelectedItem());
+        creationAlert.showAndWait();
+    }
+
+    private boolean areAllFieldsEntered() {
+        return creationDatePicker.getValue()!=null && paymentDatePicker.getValue()!=null && tfDuration.getText()!=null && !tfDuration.getText().isEmpty();
     }
 
     @FXML
-    void goBack(ActionEvent event) throws IOException {
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        Pane contracts = FXMLLoader.load(getClass().getResource("/resources/fxml/DisplayContract.fxml"));
-        borderPane.setCenter(contracts);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize() {
+        cmbRoomId.getItems().addAll(roomService.findAllFreeRooms().stream().map(roomDTO -> "ROOM" + roomDTO.getId()).collect(Collectors.toList()));
+        cmbPersonId.getItems().addAll(personService.findAll().stream().map(personDTO -> "PERS" + personDTO.getId()).collect(Collectors.toList()));
+        cmbPersonId.getSelectionModel().selectFirst();
+        cmbRoomId.getSelectionModel().selectFirst();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Tools.changeDateConverter(formatter, creationDatePicker);
+        Tools.changeDateConverter(formatter, paymentDatePicker);
+        Tools.addNaturalNumberValidation(tfDuration);
+        Tools.addValidationToComboBox(cmbRoomId);
+        Tools.addValidationToComboBox(cmbPersonId);
     }
 
 }

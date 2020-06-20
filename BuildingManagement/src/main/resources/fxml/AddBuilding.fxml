@@ -2,131 +2,157 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.*?>
 <?import java.lang.String?>
-<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="659.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171"
-      fx:controller="buildingProject.controllers.AddBuildingController">
+<Pane prefHeight="659.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddBuildingController">
    <children>
-      <Label layoutX="49.0" layoutY="117.0" text="BuildingID:">
-         <font>
-            <Font size="20.0"/>
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#00e5ff"/>
-                  <Stop color="#2979ff" offset="1.0"/>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <JFXTextField layoutX="152.0" layoutY="109.0" prefHeight="31.0" prefWidth="168.0"/>
       <Label layoutX="85.0" layoutY="32.0" text="Add Building" underline="true">
          <font>
-            <Font size="29.0"/>
+            <Font size="29.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff"/>
-                  <Stop color="#2979ff" offset="1.0"/>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXButton fx:id="back" layoutX="5.0" layoutY="23.0" onAction="#goBack" text=" ">
+      <JFXButton layoutX="5.0" layoutY="23.0" onAction="#handleGoBack" text=" ">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_back_arrow_32px.png"/>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <Accordion layoutX="57.0" layoutY="288.0" prefHeight="151.0" prefWidth="331.0">
+      <Label layoutX="145.0" layoutY="129.0" prefHeight="44.0" prefWidth="105.0" text="Number of :   &#10;    levels">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfNumberOfLevel" alignment="CENTER" focusColor="#00e5ff" layoutX="250.0" layoutY="132.0" prefHeight="38.0" prefWidth="80.0">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <HBox layoutX="187.0" layoutY="186.0" spacing="15.0">
+         <children>
+            <Label text="Name:">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfBuildingName" alignment="CENTER" focusColor="#00e5ff" prefHeight="25.0" prefWidth="220.0" promptText="Building Name">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXTextField>
+         </children>
+      </HBox>
+      <HBox layoutX="167.0" layoutY="231.0" spacing="6.0">
+         <children>
+            <Label prefHeight="29.0" prefWidth="78.0" text="Location:">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfBuildingLocation" alignment="CENTER" focusColor="#00e5ff" prefHeight="25.0" prefWidth="223.0" promptText="Building Location">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXTextField>
+         </children>
+      </HBox>
+      <Accordion layoutX="178.0" layoutY="293.0" prefHeight="215.0" prefWidth="331.0">
          <panes>
-            <TitledPane animated="false" prefHeight="151.0" prefWidth="288.0" text="Furnitures">
+            <TitledPane animated="false" prefHeight="175.0" prefWidth="331.0" text="Extras">
+               <font>
+                  <Font size="14.0" />
+               </font>
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="92.0" prefWidth="251.0"/>
+                  <JFXListView fx:id="lvExtras" style="-fx-background-color: white;" />
                </content>
             </TitledPane>
          </panes>
       </Accordion>
-      <HBox layoutX="76.0" layoutY="225.0" spacing="6.0">
-         <children>
-            <Label prefHeight="29.0" prefWidth="78.0" text="Location:">
-               <font>
-                  <Font name="Cambria" size="18.0"/>
-               </font>
-            </Label>
-            <JFXTextField prefHeight="25.0" prefWidth="223.0"/>
-         </children>
-      </HBox>
-      <HBox layoutX="96.0" layoutY="180.0" spacing="15.0">
-         <children>
-            <Label text="Name:">
-               <font>
-                  <Font name="Cambria" size="18.0"/>
-               </font>
-            </Label>
-            <JFXTextField prefHeight="25.0" prefWidth="220.0"/>
-         </children>
-      </HBox>
-      <Label layoutX="431.0" layoutY="110.0" prefHeight="44.0" prefWidth="105.0" text="Number of :   &#10;    levels">
-         <font>
-            <Font name="Cambria" size="18.0"/>
-         </font>
-      </Label>
-      <JFXTextField layoutX="536.0" layoutY="117.0" prefHeight="31.0" prefWidth="80.0"/>
-      <JFXButton layoutX="251.0" layoutY="486.0" onAction="#onAddOrEdit" prefHeight="31.0" prefWidth="71.0"
-                 style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+      <JFXButton layoutX="266.0" layoutY="559.0" onAction="#handleSave" prefHeight="33.0" prefWidth="71.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
          <tooltip>
-            <Tooltip text="click to add a new student"/>
+            <Tooltip text="click to add a new student" />
          </tooltip>
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_checked_32px_1.png"/>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
                </image>
             </ImageView>
          </graphic>
          <styleClass>
-            <String fx:value="background"/>
-            <String fx:value="button2"/>
+            <String fx:value="background" />
+            <String fx:value="button2" />
          </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
       </JFXButton>
-      <JFXButton layoutX="360.0" layoutY="486.0" onAction="#onDelete" style="-fx-background-radius: 50;"
-                 styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
+      <JFXButton layoutX="375.0" layoutY="559.0" onAction="#handleCancel" style="-fx-background-radius: 50;" styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_cancel_24px.png"/>
+                  <Image url="@../images/icons8_cancel_24px.png" />
                </image>
             </ImageView>
          </graphic>
          <tooltip>
-            <Tooltip text="click to delete a student"/>
+            <Tooltip text="click to delete a student" />
          </tooltip>
          <font>
-            <Font size="12.0"/>
+            <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="390.0" layoutY="288.0" onAction="#onAddOrEdit" text="Add">
+      <JFXButton layoutX="528.0" layoutY="330.0" onAction="#onAddExtra" text="Add">
          <graphic>
             <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_add_32px_2.png"/>
+                  <Image url="@../images/icons8_add_32px_2.png" />
                </image>
             </ImageView>
          </graphic>
-         <tooltip>
-            <Tooltip text="click to add a new student"/>
-         </tooltip>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="528.0" layoutY="377.0" onAction="#onDeleteExtras" text="Delete">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </Pane>

@@ -34,7 +34,7 @@ public class StageInitializer implements ApplicationListener<StageReadyEvent> {
         try {
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(fxmlResources.getMainViewResource().getURL());
-            loader.setControllerFactory(aClass -> applicationContext.getBean(aClass));
+            loader.setControllerFactory(applicationContext::getBean);
             Parent root = loader.load();
             Scene scene1 = new Scene(root);
 //            stage.initStyle(StageStyle.UNDECORATED);

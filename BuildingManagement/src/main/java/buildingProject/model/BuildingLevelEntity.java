@@ -42,9 +42,6 @@ public class BuildingLevelEntity implements Serializable {
     @JoinColumn(name = "building_id", referencedColumnName = "id")
     private BuildingEntity building;
 
-    //todo implement this query
-//    @OneToMany(mappedBy = "BuildingLevelEntity")
-//    private List<Room> listOfRooms = new ArrayList<>(); IMPLEMENT IN DAO
 
     public BuildingLevelEntity(Long levelNumber) {
         this.levelNumber = levelNumber;

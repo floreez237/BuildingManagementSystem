@@ -1,7 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
-            fx:controller="buildingProject.controllers.AddAppartmentController">
-
-</AnchorPane>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddAppartmentController">
+   <children>
+      <Label layoutX="85.0" layoutY="32.0" text="Add Appartment" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="24.0" onAction="#handleGoBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="49.0" layoutY="103.0" text="Rent:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </Label>
+      <Label layoutX="428.0" layoutY="103.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutY="171.0" text="Paint Color:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </Label>
+      <JFXButton layoutX="300.0" layoutY="650.0" onAction="#handleSave" prefHeight="33.0" prefWidth="71.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="409.0" layoutY="650.0" onAction="#handleCancel" style="-fx-background-radius: 50;" styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_cancel_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Accordion fx:id="accordionAppartment" layoutX="219.0" layoutY="220.0" prefHeight="390.0" prefWidth="330.0">
+         <panes>
+            <TitledPane fx:id="tpBedroom" animated="false" prefHeight="212.0" prefWidth="278.0" text="BedRoom /Area:">
+               <content>
+                  <TableView fx:id="tblBedRoom" prefHeight="183.0" prefWidth="328.0" style="-fx-background-color: white;">
+                    <columns>
+                      <TableColumn fx:id="bedIdCol" prefWidth="125.0" style="-fx-alignment: CENTER;" text="Bedroom" />
+                      <TableColumn fx:id="BedRoomAreaCol" prefWidth="204.0" style="-fx-alignment: CENTER;" text="Area" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="tpKitchen" animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Kitchen/Area:">
+               <content>
+                  <TableView fx:id="tblKitchen" prefHeight="145.0" prefWidth="330.0" style="-fx-background-color: white;">
+                    <columns>
+                      <TableColumn fx:id="kitchenIdCol" prefWidth="126.0" style="-fx-alignment: CENTER;" text="Kitchen" />
+                      <TableColumn fx:id="kitchenAreaCol" prefWidth="203.0" style="-fx-alignment: CENTER;" text="Area" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="tpParlours" animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Parlours /Area:">
+               <content>
+                  <TableView fx:id="tblParlours" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white;">
+                    <columns>
+                      <TableColumn fx:id="parlourIdCol" prefWidth="113.0" style="-fx-alignment: CENTER;" text="Parlour" />
+                      <TableColumn fx:id="parlourAreaCol" prefWidth="215.0" style="-fx-alignment: CENTER;" text="Area" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="tpToilet" animated="false" layoutX="10.0" layoutY="41.0" text="Toilet /Area:">
+               <content>
+                  <TableView fx:id="tblToilets" prefHeight="152.0" prefWidth="330.0" style="-fx-background-color: white;">
+                    <columns>
+                      <TableColumn fx:id="toiletIdCol" prefWidth="112.0" style="-fx-alignment: CENTER;" text="Toilet" />
+                      <TableColumn fx:id="toiletAreaCol" prefWidth="217.0" style="-fx-alignment: CENTER;" text="Area" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="tpFurnitures" animated="false" text="Furnitures:">
+               <content>
+                  <JFXListView fx:id="lvFurnitures" style="-fx-background-color: white;" />
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="tpAdditionalRooms" animated="false" layoutX="10.0" layoutY="10.0" prefHeight="209.0" prefWidth="183.0" text="Additional Rooms:">
+               <content>
+                  <TableView fx:id="tblAdditionalRooms" prefHeight="143.0" prefWidth="330.0" style="-fx-background-color: white;">
+                    <columns>
+                      <TableColumn fx:id="colAddRoomName" prefWidth="160.0" style="-fx-alignment: CENTER;" text="Additional Room" />
+                      <TableColumn fx:id="colAddRoomArea" prefWidth="169.0" style="-fx-alignment: CENTER;" text="Area" />
+                    </columns>
+                  </TableView>
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <JFXButton layoutX="581.0" layoutY="322.0" onAction="#handleAdd" text="Add">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_add_32px_2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="581.0" layoutY="369.0" onAction="#handleDelete" text="Delete">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="137.0" layoutY="98.0" prefHeight="33.0" prefWidth="166.0" />
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="502.0" layoutY="98.0" prefHeight="33.0" prefWidth="149.0" />
+      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="136.0" layoutY="166.0" prefHeight="33.0" prefWidth="166.0" />
+      <Label fx:id="lblRentCurrency" layoutX="303.0" layoutY="102.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDepositCurrency" layoutX="651.0" layoutY="102.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

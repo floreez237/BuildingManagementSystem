@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
-            fx:controller="buildingProject.controllers.AddFurnitureController">
-
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane id="AnchorPane" prefHeight="188.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddFurnitureController">
+   <children>
+      <Label layoutX="46.0" layoutY="59.0" text="Furniture:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfFurniture" layoutX="138.0" layoutY="54.0" prefHeight="31.0" prefWidth="255.0" style="-fx-background-radius: 50;">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <JFXButton defaultButton="true" layoutX="155.0" layoutY="123.0" onAction="#onSave" prefHeight="33.0" prefWidth="80.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton cancelButton="true" layoutX="271.0" layoutY="123.0" onAction="#onCancel" style="-fx-background-radius: 50;" styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_cancel_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
 </AnchorPane>

@@ -12,9 +12,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author flori
@@ -23,19 +22,13 @@ import java.util.Date;
 @NoArgsConstructor
 @MappedSuperclass
 public class BillEntity implements Serializable {
-
-
     private static final long serialVersionUID = 1L;
 
+    private LocalDate dateOfIssue;
 
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateOfIssue;
+    private LocalDate dateOfDue;
 
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateOfDue;
-
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateOfPayment;
+    private LocalDate dateOfPayment;
     private double amount;
     private boolean isPaid;
     @ManyToOne

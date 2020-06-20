@@ -4,7 +4,6 @@ import buildingProject.map_configs.property_maps.dto_to_entity.DTOtoEntityConfig
 import buildingProject.map_configs.property_maps.entity_to_dto.EntityToDTOConfig;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -13,12 +12,13 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class CustomMapperConfig {
     private final ModelMapper modelMapper = new ModelMapper();
-    @Autowired
-    private DTOtoEntityConfig dtOtoEntityConfig;
-    @Autowired
-    private EntityToDTOConfig entityToDTOConfig;
+    private final DTOtoEntityConfig dtOtoEntityConfig;
+    private final EntityToDTOConfig entityToDTOConfig;
 
-    //initialiszation of inheritance type maps
+    public CustomMapperConfig(DTOtoEntityConfig dtOtoEntityConfig, EntityToDTOConfig entityToDTOConfig) {
+        this.dtOtoEntityConfig = dtOtoEntityConfig;
+        this.entityToDTOConfig = entityToDTOConfig;
+    }
 
     @Bean
     @Scope("singleton")

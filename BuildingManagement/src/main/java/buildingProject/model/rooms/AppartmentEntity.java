@@ -25,12 +25,6 @@ import java.util.List;
 public class AppartmentEntity extends RoomEntity {
     private static final long serialVersionUID = 7L;
 
-    /*todo make queries for these
-     private int numberOfBedrooms;
-     private int numberOfKitchens;
-     private int numberOfParlours;
-     private int numberOfToilets;
- */
     @ElementCollection
     @CollectionTable(name = "bedroom_areas", joinColumns = @JoinColumn(name = "apt_id", referencedColumnName = "id"))
     private List<Double> areasOfBedrooms = new ArrayList<>();
@@ -47,8 +41,6 @@ public class AppartmentEntity extends RoomEntity {
     @CollectionTable(name = "toilet_areas", joinColumns = @JoinColumn(name = "apt_id", referencedColumnName = "id"))
     private List<Double> areasOfToilets = new ArrayList<>();
 
-
-    //TODO write all of these methods in the service layer
     public void addBedroom(double area) {
         areasOfBedrooms.add(area);
     }

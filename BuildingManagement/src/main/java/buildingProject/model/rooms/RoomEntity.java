@@ -67,22 +67,26 @@ public abstract class RoomEntity implements Serializable {
     private BuildingEntity building;
 
     @ElementCollection
-    @CollectionTable(name = "additional_rooms", joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id"))
+    @CollectionTable(name = "additional_rooms"/*, joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id")*/)
+   /* @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "id", referencedColumnName = "id")*/
     private Set<AdditionalRoom> additionalRooms = new HashSet<>();
 
     @OneToMany(mappedBy = "room")
     private Set<PersonEntity> setOfPersons = new HashSet<>();
 
     @ElementCollection
-    @CollectionTable(name = "furniture_table", joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id"))
+    @CollectionTable(name = "furniture_table")
+    /*@OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "id", referencedColumnName = "id")*/
     private Set<Furniture> setOfFurniture = new HashSet<>();
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room",orphanRemoval = true)
     @Cascade(ALL)
     private Set<WaterBillEntity> waterBills = new HashSet<>();
 
-    @OneToMany(mappedBy = "room")
-    @Cascade(ALL)
+    @OneToMany(mappedBy = "room",orphanRemoval = true)
+    @Cascade({ALL})
     private Set<ElectricityBillEntity> electricityBills = new HashSet<>();
 
     protected RoomEntity() {

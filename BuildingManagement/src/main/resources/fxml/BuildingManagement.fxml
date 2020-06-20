@@ -2,71 +2,80 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.141"
-            fx:controller="buildingProject.controllers.BuildingManagementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.BuildingManagementController">
    <children>
       <Label layoutX="28.0" layoutY="29.0" text="Building Management" underline="true">
          <font>
-            <Font size="29.0"/>
+            <Font size="29.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff"/>
-                  <Stop color="#2979ff" offset="1.0"/>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
       <TableView fx:id="tblBuildings" layoutX="22.0" layoutY="137.0" prefHeight="513.0" prefWidth="667.0">
          <columns>
-            <TableColumn fx:id="buildingIdCol" prefWidth="121.0" text="Building ID"/>
-            <TableColumn fx:id="buildingNameCol" prefWidth="156.0" text="Building Name"/>
-            <TableColumn fx:id="locationCol" prefWidth="104.0" text="Location"/>
-            <TableColumn fx:id="numberOfLevelsCol" prefWidth="154.0" text="Number of levels"/>
-            <TableColumn fx:id="availableRoomsCol" prefWidth="132.0" text="Available Rooms"/>
+            <TableColumn fx:id="colBuildingId" prefWidth="121.0" text="Building ID" />
+            <TableColumn fx:id="colBuildingName" prefWidth="156.0" style="-fx-alignment: CENTER;" text="Building Name" />
+            <TableColumn fx:id="colLocation" prefWidth="104.0" text="Location" />
+            <TableColumn fx:id="colNumberOfLevels" prefWidth="154.0" text="Number of levels" />
+            <TableColumn fx:id="colAvailableRooms" prefWidth="132.0" text="Free Rooms" />
          </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
-      <TextField fx:id="search" layoutX="435.0" layoutY="88.0" onAction="#onSearch" prefHeight="31.0" prefWidth="254.0"
-                 promptText="search" style="-fx-background-radius: 50;"/>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="657.0" layoutY="88.0" pickOnBounds="true"
-                 preserveRatio="true">
+      <TextField fx:id="tfSearch" layoutX="435.0" layoutY="88.0" onAction="#onSearch" prefHeight="31.0" prefWidth="254.0" promptText="search building Id or name" style="-fx-background-radius: 50;" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="657.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/icons8_search_30px_2.png"/>
+            <Image url="@../images/icons8_search_30px_2.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="43.0" layoutY="84.0" onAction="#onAdd" text="Add">
+      <JFXButton layoutX="43.0" layoutY="84.0" onAction="#handleAddBuilding" text="Add">
          <graphic>
             <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_add_32px_2.png"/>
+                  <Image url="@../images/icons8_add_32px_2.png" />
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton layoutX="154.0" layoutY="87.0" onAction="#onDisplay" text="Display">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_view_details_26px.png"/>
+                  <Image url="@../images/icons8_view_details_26px.png" />
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton layoutX="267.0" layoutY="88.0" onAction="#onDelete" text="Delete">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/delete.png"/>
+                  <Image url="@../images/delete.png" />
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </AnchorPane>

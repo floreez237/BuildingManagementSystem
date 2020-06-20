@@ -1,32 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buildingProject.controllers;
 
-import javafx.fxml.Initializable;
+import buildingProject.toolkit.Tools;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-/**
- * FXML Controller class
- *
- * @author YASMINE
- */
-
-
 @Component
-public class AddFurnitureController implements Initializable {
+public class AddFurnitureController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    private static ListView<String> lvFurniture;
+
+    @FXML
+    private TextField tfFurniture;
+
+    @FXML
+    void onCancel(ActionEvent event) {
+        Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());
+        stage.close();
     }
 
+    @FXML
+    void onSave(ActionEvent event) {
+        if (!tfFurniture.getText().isEmpty()) {
+            lvFurniture.getItems().add(Tools.formatString(tfFurniture.getText()));
+            onCancel(event);
+        }
+    }
+
+    public static void setLvFurniture(ListView<String> lvFurniture) {
+        AddFurnitureController.lvFurniture = lvFurniture;
+    }
 }

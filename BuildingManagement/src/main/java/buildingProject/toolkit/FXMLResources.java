@@ -8,6 +8,25 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class FXMLResources {
+
+    @Value("classpath:/fxml/DisplayBill.fxml")
+    private Resource displayBillResource;
+
+    @Value("classpath:/fxml/AddBedRoom.fxml")
+    private Resource addBedroomResource;
+
+    @Value("classpath:/fxml/AddBill.fxml")
+    private Resource addBillResource;
+
+    @Value("classpath:/fxml/AddExtra.fxml")
+    private Resource addExtraResource;
+
+    @Value("classpath:/fxml/AddArea.fxml")
+    private Resource addAreaResource;
+
+    @Value("classpath:/fxml/AddAdditionalRoom.fxml")
+    private Resource addAdditionalRoomResource;
+
     @Value("classpath:/fxml/Dashboard.fxml")
     private Resource dashboardResource;
 
@@ -50,8 +69,8 @@ public class FXMLResources {
     @Value("classpath:/fxml/DisplayBedRoom.fxml")
     private Resource displayBedRoomResource;
 
-    @Value("classpath:/fxml/DisplayBills.fxml")
-    private Resource displayBillsResource;
+    @Value("classpath:/fxml/DisplayAllBills.fxml")
+    private Resource displayAllBillsResource;
 
     @Value("classpath:/fxml/DisplayBuilding.fxml")
     private Resource displayBuildingResource;

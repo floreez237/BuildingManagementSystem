@@ -1,47 +1,69 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buildingProject.controllers;
 
+import buildingProject.dto.PersonDTO;
+import buildingProject.services.PersonService;
+import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.Tools;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
-/**
- * FXML Controller class
- *
- * @author YASMINE
- */
+import static javafx.scene.control.Alert.AlertType;
+
 @Component
-public class DisplayPersonController implements Initializable {
+public class DisplayPersonController {
+    private static PersonDTO personDTO;
+    private final ApplicationContext applicationContext;
+    private final FXMLResources fxmlResources;
+    private final PersonService personService;
+
+
+    @FXML
+    private JFXButton btnUpdate;
+
+    @FXML
+    private JFXButton btnBack;
 
     @FXML
     private JFXTextField tfPhoneNumber;
 
     @FXML
-    private JFXTextField tfNtionalIdNumber;
+    private JFXTextField tfNationalIdNumber;
 
     @FXML
-    private JFXDatePicker birthDatePicker;
+    private JFXDatePicker dateOfBirth;
 
     @FXML
     private JFXTextField tfAge;
 
     @FXML
-    private ToggleGroup radGender;
+    private JFXRadioButton radMale;
 
     @FXML
-    private JFXTextField tfPersonId1;
+    private ToggleGroup gender;
+
+    @FXML
+    private JFXRadioButton radFemale;
+
+    @FXML
+    private JFXTextField tfMaritalStatus;
 
     @FXML
     private JFXTextField tfName;
@@ -50,19 +72,86 @@ public class DisplayPersonController implements Initializable {
     private JFXTextField tfPersonId;
 
     @FXML
-    private JFXButton back;
+    private JFXTextField tfRoomId;
+
+    public DisplayPersonController(ApplicationContext applicationContext, FXMLResources fxmlResources, PersonService personService) {
+        this.applicationContext = applicationContext;
+        this.fxmlResources = fxmlResources;
+        this.personService = personService;
+    }
 
     @FXML
-    void goBack(ActionEvent event) {
+    void handleGoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader  = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
+         loader.setControllerFactory(applicationContext::getBean);
+         MainViewController.getGlobalMainPage().setCenter(loader.load());
+    }
 
-        //this go back depends on the previous fxml file 
-        //either in displaycontrcats or display room
+    @FXML
+    void handleUpdate(ActionEvent event) {
+        personDTO.setName(tfName.getText());
+        personDTO.setMaritalStatus(tfMaritalStatus.getText());
+        personDTO.setPhoneNumber(tfPhoneNumber.getText());
+        personDTO.setNationalIdNumber(tfNationalIdNumber.getText());
+        char sex = radFemale.isSelected() ? 'F' : 'M';
+        personDTO.setSex(sex);
+        personDTO.setDateOfBirth(dateOfBirth.getValue());
+
+        personService.savePerson(personDTO);
+        new Alert(AlertType.INFORMATION, "Person Updated").showAndWait();
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void activateDisplayOnlyOption() {
+        TextField[] textFields = {tfPhoneNumber, tfNationalIdNumber, tfNationalIdNumber, tfAge,
+                tfMaritalStatus, tfName, tfPersonId, tfRoomId};
+        Button[] buttons = {btnUpdate, btnBack};
+        for (Button button : buttons) {
+            button.setVisible(false);
+        }
+
+        for (TextField textField : textFields) {
+            textField.setEditable(false);
+        }
+        dateOfBirth.setEditable(false);
+        radFemale.setDisable(true);
+        radFemale.setDisable(true);
     }
 
+    @FXML
+    public void initialize() {
+        tfPersonId.setText("PERS" + personDTO.getId());
+        tfName.setText(personDTO.getName());
+        tfNationalIdNumber.setText(personDTO.getNationalIdNumber());
+        tfPhoneNumber.setText(personDTO.getPhoneNumber());
+        tfRoomId.setText("ROOM" + personDTO.getRoomId());
+        tfMaritalStatus.setText(personDTO.getMaritalStatus());
+        if (personDTO.getSex() == 'M') {
+            radMale.setSelected(true);
+        }else{
+            radFemale.setSelected(true);
+        }
+        String pattern = "dd/MM/yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        Tools.changeDateConverter(formatter,dateOfBirth);
+        if (personDTO.getDateOfBirth() != null) {
+            LocalDate date = personDTO.getDateOfBirth();
+            dateOfBirth.setValue(date);
+            int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+            tfAge.setText("" + (currentYear - date.getYear()));
+        }
+
+        dateOfBirth.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                LocalDate date = dateOfBirth.getValue();
+                int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+                tfAge.setText("" + (currentYear - date.getYear()));
+            }
+        });
+    }
+
+    public static void setPersonDTO(PersonDTO personDTO) {
+        DisplayPersonController.personDTO = personDTO;
+    }
 }
