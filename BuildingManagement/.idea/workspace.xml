@@ -19,7 +19,143 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9fb6a24-dc23-4c9f-a7fc-83427e5bbe07" name="Default Changelist" comment="" />
+    <list default="true" id="a9fb6a24-dc23-4c9f-a7fc-83427e5bbe07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/InstallationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Installation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons8_checked_32px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons8_male_user_32px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons8_ok_24px_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icons8_secure_24px_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/link.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/save.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/PayBillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/PayBillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style/mainview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/mainview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAppartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAppartmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddContractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddContractController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddExtraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddExtraController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddPersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddPersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddStudioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddStudioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAppartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAppartmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBedRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBedRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBuildingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayContractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayContractController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayLevelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayLevelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayStudioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayStudioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/PayBillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/PayBillController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/addBedroomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/controllers/addBedroomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/ContractDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/dto/ContractDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/PersonDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/dto/PersonDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/BillDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/BillDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/ElectricityBillDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/ElectricityBillDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/WaterBillDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/WaterBillDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/CustomMapperConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/CustomMapperConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/ContractDTOtoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/ContractDTOtoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/DTOtoEntityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/DTOtoEntityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingEntityToDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingEntityToDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingLevelEntityToDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingLevelEntityToDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/ContractEntityToDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/ContractEntityToDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/EntityToDTOConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/EntityToDTOConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/PersonEntityToDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/PersonEntityToDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/ElectricityBillEntityToDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/ElectricityBillEntityToDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/WaterBillEntitytoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/WaterBillEntitytoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/BuildingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/model/BuildingEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/ContractEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/model/ContractEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/PersonEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/model/PersonEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/bills/BillEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/model/bills/BillEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/RoomEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/RoomEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingLevelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingLevelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/ContractService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/ContractService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/PersonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/PersonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/ElectricityBillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/ElectricityBillService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/WaterBillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/WaterBillService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/RoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/RoomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddAdditionalRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddAdditionalRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddAppartment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddAppartment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddArea.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddBedRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddBedRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddBill.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddBill.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddBuilding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddBuilding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddContract.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddContract.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddExtra.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddExtra.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddFurniture.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddFurniture.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddStudio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddStudio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/BuildingManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/BuildingManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ContractsManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ContractsManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayAllBills.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayAllBills.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayAllLevels.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayAllLevels.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayAllPersons.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayAllPersons.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayAppartment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayAppartment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayBedRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayBedRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayBill.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayBill.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayBuilding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayBuilding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayContract.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayContract.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayLevel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayLevel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayStudio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayStudio.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ExpiredContracts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ExpiredContracts.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/RenewContract.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/RenewContract.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/UnpaidBills.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/UnpaidBills.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/style/mainview.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/mainview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/BuildingManagement.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/map_configs/CustomMapperDTOtoETest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/map_configs/CustomMapperDTOtoETest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/PersonRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/PersonRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/room_repositories/RoomRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/room_repositories/RoomRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/ContractServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/services/ContractServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/PersonServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/services/PersonServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/bills/ElectricityBillServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/services/bills/ElectricityBillServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/rooms/RoomServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/buildingProject/services/rooms/RoomServiceTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,9 +167,9 @@
         <option value="XML Properties File" />
         <option value="JavaFXApplication" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -70,18 +206,21 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/../BuildingManagementUI/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3091954" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -94,26 +233,27 @@
       <recent name="buildingProject.services.rooms" />
       <recent name="buildingProject.repositories.bill_repositories" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagementUI\src\main\resources" />
-      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\test\resources" />
-      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\main\resources" />
-      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\test\resources\buildingProject\map_configs" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="buildingProject" />
       <recent name="com.pkfproject.buildingui" />
       <recent name="buildingProject.model.rooms" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abdou\Desktop\BuildingManagement\BuildingManagement\src\main\resources\images" />
       <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\main\resources\fxml" />
       <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\main\resources" />
       <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\main\java\buildingProject" />
       <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagementUI\src\main\resources" />
-      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagementUI\src\main\java\com\pkfproject\buildingui" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abdou\Desktop\BuildingManagement\BuildingManagement\src\main\resources\images" />
+      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagementUI\src\main\resources" />
+      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\test\resources" />
+      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\main\resources" />
+      <recent name="C:\Users\flori\Documents\school\Sophomore I\Programming and Problem Solving II\Project\BuildingManagement\BuildingManagement\src\test\resources\buildingProject\map_configs" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -130,24 +270,46 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PersonRepositoryTest.findTenantByRoomId">
-    <configuration name="import.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/src/test/resources/import.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="581ee2b9-5803-41b6-bcca-1341c6bbe0dc" namespace="database/&quot;BuildingManagement&quot;/schema/&quot;public&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ContractRepositoryTest.findByRoomId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.BootStrap">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="buildingProject.MainApp" />
       <module name="BuildingManagement" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="buildingProject.repositories.*" />
+          <option name="PATTERN" value="buildingProject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="buildingProject.repositories" />
-      <option name="MAIN_CLASS_NAME" value="buildingProject.repositories.ContractRepositoryTest" />
-      <option name="METHOD_NAME" value="findByRoomId" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomMapperConfigEtoDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BuildingManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buildingProject.map_configs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="buildingProject.map_configs" />
+      <option name="MAIN_CLASS_NAME" value="buildingProject.map_configs.CustomMapperConfigEtoDTOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomMapperConfigEtoDTOTest.buildingEntityToDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BuildingManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buildingProject.map_configs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="buildingProject.map_configs" />
+      <option name="MAIN_CLASS_NAME" value="buildingProject.map_configs.CustomMapperConfigEtoDTOTest" />
+      <option name="METHOD_NAME" value="buildingEntityToDTO" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,22 +326,6 @@
       <option name="PACKAGE_NAME" value="buildingProject.repositories" />
       <option name="MAIN_CLASS_NAME" value="buildingProject.repositories.PersonRepositoryTest" />
       <option name="METHOD_NAME" value="findTenantByRoomId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonRepositoryTest.findTenantByRoomIdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BuildingManagement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="buildingProject.repositories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="buildingProject.repositories" />
-      <option name="MAIN_CLASS_NAME" value="buildingProject.repositories.PersonRepositoryTest" />
-      <option name="METHOD_NAME" value="findTenantByRoomIdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,19 +360,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Database Script.import.sql" />
+      <item itemvalue="Application.MainApp" />
       <item itemvalue="JUnit.PersonRepositoryTest.findTenantByRoomId" />
-      <item itemvalue="JUnit.PersonRepositoryTest.findTenantByRoomIdd" />
-      <item itemvalue="JUnit.ContractRepositoryTest.findByRoomId" />
       <item itemvalue="JUnit.PersonServiceTest.findTenantByRoomId" />
+      <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest.buildingEntityToDTO" />
+      <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest" />
+      <item itemvalue="Multirun.Unnamed" />
       <item itemvalue="Spring Boot.BootStrap" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest" />
+        <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest.buildingEntityToDTO" />
+        <item itemvalue="Application.MainApp" />
         <item itemvalue="JUnit.PersonRepositoryTest.findTenantByRoomId" />
         <item itemvalue="JUnit.PersonServiceTest.findTenantByRoomId" />
-        <item itemvalue="JUnit.ContractRepositoryTest.findByRoomId" />
-        <item itemvalue="JUnit.PersonRepositoryTest.findTenantByRoomIdd" />
       </list>
     </recent_temporary>
   </component>
@@ -303,6 +451,13 @@
       <workItem from="1592652934528" duration="742000" />
       <workItem from="1592653770463" duration="91000" />
       <workItem from="1592653885079" duration="321000" />
+      <workItem from="1592686687111" duration="284000" />
+      <workItem from="1592686999605" duration="2194000" />
+      <workItem from="1592907241055" duration="3203000" />
+      <workItem from="1593024151053" duration="3755000" />
+      <workItem from="1593195538141" duration="4443000" />
+      <workItem from="1593254178971" duration="2825000" />
+      <workItem from="1593320423202" duration="17388000" />
     </task>
     <task id="LOCAL-00001" summary="Completion of the model layer and addition of the maven framework">
       <created>1585487912607</created>
@@ -386,10 +541,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="42" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1589710134997" />
-    <state x="275" y="42" key="#Project_Structure" timestamp="1588558129928">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="309" y="0" key="#Project_Structure" timestamp="1592686718913">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="275" y="42" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1588558129928" />
+    <state x="309" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1592686718913" />
     <state x="286" y="3" key="#RoomRepositoryTest" timestamp="1589769253778">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -451,42 +607,55 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="438" y="87" key="#xdebugger.evaluate/0.0.1366.768@0.0.1366.768" timestamp="1592572479093" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1592648518800">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="515" y="0" key="Diagram.Print.Preview.Dialog" timestamp="1593253282597">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="515" y="0" key="Diagram.Print.Preview.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1593253282597" />
+    <state x="521" y="149" key="FileChooserDialogImpl" timestamp="1593257377753">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1592648518800" />
-    <state width="1294" height="260" key="GridCell.Tab.0.bottom" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="521" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593257377753" />
+    <state width="1024" height="2" key="GridCell.Tab.0.bottom" timestamp="1593518054130">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
-    <state width="1294" height="260" key="GridCell.Tab.0.center" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
+    <state width="1024" height="2" key="GridCell.Tab.0.center" timestamp="1593518054130">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
-    <state width="1294" height="260" key="GridCell.Tab.0.left" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
+    <state width="1024" height="2" key="GridCell.Tab.0.left" timestamp="1593518054130">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1592650216083" />
-    <state width="1294" height="260" key="GridCell.Tab.0.right" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
+    <state width="1024" height="2" key="GridCell.Tab.0.right" timestamp="1593518054130">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
-    <state width="1294" height="260" key="GridCell.Tab.1.bottom" timestamp="1592650216086">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
+    <state width="1024" height="2" key="GridCell.Tab.1.bottom" timestamp="1593518054131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1592650216086" />
-    <state width="1294" height="260" key="GridCell.Tab.1.center" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
+    <state width="1024" height="2" key="GridCell.Tab.1.center" timestamp="1593518054131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
-    <state width="1294" height="260" key="GridCell.Tab.1.left" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
+    <state width="1024" height="2" key="GridCell.Tab.1.left" timestamp="1593518054131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
-    <state width="1294" height="260" key="GridCell.Tab.1.right" timestamp="1592650216084">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1024" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
+    <state width="1024" height="2" key="GridCell.Tab.1.right" timestamp="1593518054131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1294" height="260" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
+    <state width="1024" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
     <state width="1294" height="260" key="GridCell.Tab.2.bottom" timestamp="1592650216086">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -507,15 +676,20 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="265" height="457" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1588702090569" />
-    <state x="399" y="78" key="Maven.ArtifactSearchDialog" timestamp="1589593267210">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="449" y="84" key="Maven.ArtifactSearchDialog" timestamp="1592687427670">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="399" y="78" key="Maven.ArtifactSearchDialog/0.0.1366.768@0.0.1366.768" timestamp="1589593267210" />
-    <state x="183" y="0" key="SettingsEditor" timestamp="1592653862937">
+    <state x="449" y="84" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1592687427670" />
+    <state x="183" y="0" key="SettingsEditor" timestamp="1593255845544">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1592571825509" />
-    <state x="183" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592653862937" />
+    <state x="183" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593255845544" />
+    <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog" timestamp="1592654511855">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1592654511855" />
     <state x="141" y="82" key="SpringBootCustomization" timestamp="1589675125919">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -556,18 +730,20 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1366.768@0.0.1366.768" timestamp="1590198161140" />
-    <state x="131" y="9" key="new project wizard" timestamp="1591636954593">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="147" y="10" key="new project wizard" timestamp="1592656691873">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="131" y="9" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1591636954593" />
+    <state x="147" y="10" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1592656691873" />
     <state x="389" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1590198018908">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="389" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1590198018908" />
-    <state x="339" y="172" width="672" height="677" key="run.anything.popup" timestamp="1590581631793">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="381" y="185" width="756" height="727" key="run.anything.popup" timestamp="1593253850132">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1590581631793" />
+    <state x="381" y="185" width="756" height="727" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593253850132" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592580353051">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

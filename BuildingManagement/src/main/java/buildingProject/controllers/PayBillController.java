@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
  * @author YASMINE
  */
 @Component
+
 public class PayBillController implements Initializable {
 
     /**
