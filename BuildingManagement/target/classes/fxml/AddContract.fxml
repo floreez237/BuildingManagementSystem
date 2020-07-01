@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<Pane prefHeight="722.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddContractController">
+   <children>
+      <Label layoutX="61.0" layoutY="117.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTRACT INFORMATION" textAlignment="CENTER" underline="true">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="0.6702898550724637" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="254.0" text="Date of Payment:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="254.0" text="Date of Creation:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" layoutX="547.0" layoutY="245.0" prefHeight="31.0" prefWidth="179.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <JFXDatePicker fx:id="creationDatePicker" defaultColor="#00e5ff" layoutX="183.0" layoutY="250.0" prefHeight="31.0" prefWidth="177.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <Label layoutX="107.0" layoutY="189.0" prefHeight="29.0" prefWidth="78.0" text="Room Id:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="345.0" layoutY="422.0" onAction="#handleSave" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="113.0" layoutY="43.0" text="New Contract" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="46.0" layoutY="306.0" prefHeight="29.0" prefWidth="175.0" text="Duration (in months):">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="34.0" onAction="#handleGoBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbRoomId" editable="true" focusColor="#00e5ff" layoutX="201.0" layoutY="185.0" prefHeight="31.0" prefWidth="132.0" />
+      <Label layoutX="454.0" layoutY="188.0" prefHeight="29.0" prefWidth="88.0" text="Person Id:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbPersonId" editable="true" focusColor="#00e5ff" layoutX="548.0" layoutY="184.0" prefHeight="31.0" prefWidth="141.0" />
+      <JFXTextField fx:id="tfDuration" alignment="CENTER" focusColor="#00e5ff" layoutX="221.0" layoutY="304.0" prefHeight="33.0" prefWidth="135.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</Pane>
