@@ -42,7 +42,7 @@ public class DashboardController{
     private final RoomService roomService;
 
     @FXML
-    private LineChart<String, Number> lineChart;
+    private final LineChart<String, Number> lineChart = new LineChart<>(MonthAxis, revenue);
 
     @FXML
     private PieChart piechart;
@@ -98,7 +98,7 @@ public class DashboardController{
         lblExpiredContracts.setText("" + contractService.countExpiredContracts());
         lblExpireInFiveDays.setText("" + contractService.countExpireIn(5));
 
-        lineChart = new LineChart<>(MonthAxis, revenue);
+        //lineChart = new LineChart<>(MonthAxis, revenue);
         //initialise the line chart with the revenue of the different months
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Revenue");
