@@ -1,54 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.*?>
-<?import java.lang.String?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.SettingsController">
    <children>
-      <GridPane layoutX="10.0" layoutY="205.0" prefHeight="108.0" prefWidth="532.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="181.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="351.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="92.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Label prefHeight="29.0" prefWidth="160.0" text="Current Password:">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-               <font>
-                  <Font name="Cambria" size="18.0" />
-               </font>
-            </Label>
-            <Label prefHeight="22.0" prefWidth="136.0" text="New Password:" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="35.0" />
-               </GridPane.margin>
-               <font>
-                  <Font name="Cambria" size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="tfCurrentPassword" promptText="Current Password" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
-            <TextField fx:id="tfNewPassword" promptText="New password" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
-      <Label layoutX="87.0" layoutY="134.0" prefHeight="50.0" prefWidth="455.0" text="To be sure of your identity please enter the following information.">
+      <Label layoutX="140.0" layoutY="127.0" prefHeight="50.0" prefWidth="455.0" text="To be sure of your identity please enter the following information.">
          <font>
             <Font name="Cambria" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="202.0" layoutY="46.0" prefHeight="61.0" prefWidth="351.0" text="Authentification Update" underline="true">
+      <Label layoutX="192.0" layoutY="49.0" prefHeight="61.0" prefWidth="351.0" text="Authentification Update" underline="true">
          <font>
             <Font size="29.0" />
          </font>
@@ -61,47 +28,84 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label fx:id="label" layoutX="165.0" layoutY="521.0" prefHeight="35.0" prefWidth="448.0" />
       <Label layoutX="87.0" layoutY="390.0" prefHeight="21.0" prefWidth="515.0" />
-      <JFXButton layoutX="241.0" layoutY="341.0" onAction="#onSave" prefHeight="31.0" prefWidth="78.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
-         <tooltip>
-            <Tooltip text="click to add a new student" />
-         </tooltip>
-         <graphic>
-            <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icons8_checked_32px_1.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <styleClass>
-            <String fx:value="background" />
-            <String fx:value="button2" />
-         </styleClass>
-         <font>
-            <Font size="14.0" />
-         </font>
+      <JFXTextField fx:id="tfCurrentPassword" labelFloat="true" layoutX="139.0" layoutY="206.0" prefHeight="31.0" prefWidth="432.0" promptText="Current Password">
+         <unFocusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </unFocusColor>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="tfNewPassword" labelFloat="true" layoutX="139.0" layoutY="283.0" prefHeight="31.0" prefWidth="432.0" promptText="New Password">
+         <unFocusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </unFocusColor>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXButton layoutX="243.0" layoutY="422.0" onAction="#handleOnSaveAction" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../AppData/Local/Temp/icons8_ok_26px.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
-      <JFXButton layoutX="350.0" layoutY="341.0" onAction="#onCancel" style="-fx-background-radius: 50;" styleClass="background" stylesheets="@../style/mainview.css" text="Cancel">
+      <JFXButton layoutX="368.0" layoutY="421.0" onAction="#handleOnCancelAction" text="Cancel">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_cancel_24px.png" />
+                  <Image url="@../../../../../../../AppData/Local/Temp/icons8_cancel_48px_1.png" />
                </image>
             </ImageView>
          </graphic>
-         <tooltip>
-            <Tooltip text="click to delete a student" />
-         </tooltip>
-         <font>
-            <Font size="14.0" />
-         </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <JFXTextField fx:id="tfPasswordConfirmation" labelFloat="true" layoutX="139.0" layoutY="359.0" prefHeight="31.0" prefWidth="432.0" promptText="Password Confirmation">
+         <unFocusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </unFocusColor>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
    </children>
 </AnchorPane>
