@@ -58,9 +58,6 @@ public class UnpaidBillsController {
     private TableColumn<BillDTO, String> colRoomId;
 
     @FXML
-    private TableColumn<BillDTO, String> colTenantName;
-
-    @FXML
     private TextField tfSearch;
 
     @FXML
@@ -83,20 +80,17 @@ public class UnpaidBillsController {
             if(!selectedBillDTO.isPaid()){
                 Alert confirmPayment = new Alert(Alert.AlertType.CONFIRMATION, "Confirming that bill has been paid today.Continue?", ButtonType.YES, ButtonType.NO);
                 confirmPayment.setHeaderText("CONFIRM BILL PAYMENT");
-                confirmPayment.resultProperty().addListener(new InvalidationListener() {
-                    @Override
-                    public void invalidated(Observable observable) {
-                        if (confirmPayment.getResult() == ButtonType.YES) {
-                            selectedBillDTO.setPaid(true);
-                            selectedBillDTO.setDateOfPayment(LocalDate.now());
-                            tblBills.getItems().remove(selectedBillDTO);
-                            if (selectedBillDTO instanceof ElectricityBillDTO) {
-                                electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
-                            }else{
-                                waterBillService.save(((WaterBillDTO) selectedBillDTO));
-                            }
-                            tblBills.refresh();
+                confirmPayment.resultProperty().addListener(observable -> {
+                    if (confirmPayment.getResult() == ButtonType.YES) {
+                        selectedBillDTO.setPaid(true);
+                        selectedBillDTO.setDateOfPayment(LocalDate.now());
+                        tblBills.getItems().remove(selectedBillDTO);
+                        if (selectedBillDTO instanceof ElectricityBillDTO) {
+                            electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
+                        }else{
+                            waterBillService.save(((WaterBillDTO) selectedBillDTO));
                         }
+                        tblBills.refresh();
                     }
                 });
                 confirmPayment.showAndWait();
@@ -136,14 +130,6 @@ public class UnpaidBillsController {
         });
         colRoomId.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>("ROOM" + param.getValue().getRoomId()));
 
-        colTenantName.setCellValueFactory(param -> {
-            if (param.getValue().getRoomId() == null) {
-                return new ReadOnlyObjectWrapper<>("");
-            }
-            PersonDTO personDTO = personService.findTenantByRoomId(param.getValue().getRoomId());
-            return new ReadOnlyObjectWrapper<>(Tools.getFirstTwoNames(personDTO.getName()));
-        });
-
         colDueDate.setCellValueFactory(param ->{
             LocalDate dueDate = param.getValue().getDateOfDue();
             if (dueDate == null) {
@@ -159,21 +145,15 @@ public class UnpaidBillsController {
 
         cmbBillType.getItems().addAll("ALL","ELECTRICITY","WATER");
         cmbBillType.getSelectionModel().select(0);
-        cmbBillType.getSelectionModel().selectedItemProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        cmbBillType.getSelectionModel().selectedItemProperty().addListener(observable -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
+            tblBills.getItems().addAll(newList);
         });
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
+            tblBills.getItems().addAll(newList);
         });
     }
 

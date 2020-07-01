@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<?import java.lang.String?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.UnpaidBillsController">
    <children>
       <Label layoutX="87.0" layoutY="47.0" text="Unpaid Bills" underline="true">
@@ -58,7 +67,6 @@
             <TableColumn fx:id="colDueDate" prefWidth="96.88140869140625" style="-fx-alignment: CENTER;" text="Due Date" />
             <TableColumn fx:id="colAmount" prefWidth="131.0" style="-fx-alignment: CENTER;" text="Amount" />
             <TableColumn fx:id="colRoomId" minWidth="0.0" prefWidth="79.0" style="-fx-alignment: CENTER;" text="Room ID" />
-            <TableColumn fx:id="colTenantName" prefWidth="160.0" style="-fx-alignment: CENTER;" text="Tenant Name" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
