@@ -48,6 +48,7 @@ public class ContractEntity implements Serializable {
     private LocalDate dateOfPayment;
     private LocalDate dateOfCreation;
     private int duration;
+    private boolean isObsolete;
 
     public ContractEntity(RoomEntity room, int duration, LocalDate dateOfPayment, PersonEntity tenant) {
 

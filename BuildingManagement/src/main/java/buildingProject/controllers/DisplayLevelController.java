@@ -10,6 +10,7 @@ import buildingProject.services.rooms.BedroomService;
 import buildingProject.services.rooms.RoomService;
 import buildingProject.services.rooms.StudioService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.InvalidationListener;
@@ -46,6 +47,7 @@ public class DisplayLevelController {
     private final AppartmentService appartmentService;
     private final StudioService studioService;
     private final BedroomService bedroomService;
+    private final ViewFlow viewFlow;
 
     @Value("classpath:/images/icons8-building-with-top-view-24.png")
     private Resource logo;
@@ -78,7 +80,7 @@ public class DisplayLevelController {
 
 
     public DisplayLevelController(FXMLResources fxmlResources, ApplicationContext applicationContext, RoomService roomService, PersonService personService,
-                                  AppartmentService appartmentService, StudioService studioService, BedroomService bedroomService) {
+                                  AppartmentService appartmentService, StudioService studioService, BedroomService bedroomService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.roomService = roomService;
@@ -86,6 +88,7 @@ public class DisplayLevelController {
         this.appartmentService = appartmentService;
         this.studioService = studioService;
         this.bedroomService = bedroomService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -106,6 +109,8 @@ public class DisplayLevelController {
         if (selectedRoomDTO != null) {
             DisplayAllPersonsController.initializeCompleteList(personService.findAllByRoomId(selectedRoomDTO.getId()));
             DisplayAllPersonsController.setRoomId(selectedRoomDTO.getId());
+
+            viewFlow.getResourceStack().add(fxmlResources.getDisplayLevelResource());
             FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
             loader.setControllerFactory(applicationContext::getBean);
             MainViewController.getGlobalMainPage().setCenter(loader.load());
@@ -116,9 +121,7 @@ public class DisplayLevelController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllLevels().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
 
@@ -128,14 +131,11 @@ public class DisplayLevelController {
         if (selectedRoomDTO != null) {
             Alert deleteAlert = new Alert(AlertType.WARNING, "This will delete all associated bills,persons and contracts.\n" +
                     "Do you want to continue?", ButtonType.YES, ButtonType.NO);
-            deleteAlert.resultProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    if (deleteAlert.getResult() == ButtonType.YES) {
-                        roomService.deleteRoom(selectedRoomDTO.getId());
-                        tblRooms.getItems().remove(selectedRoomDTO);
-                        tblRooms.refresh();
-                    }
+            deleteAlert.resultProperty().addListener(observable -> {
+                if (deleteAlert.getResult() == ButtonType.YES) {
+                    roomService.deleteRoom(selectedRoomDTO.getId());
+                    tblRooms.getItems().remove(selectedRoomDTO);
+                    tblRooms.refresh();
                 }
             });
             deleteAlert.showAndWait();
@@ -165,14 +165,12 @@ public class DisplayLevelController {
     }
 
     private void loadResource(Resource resource) throws IOException {
-        FXMLLoader loader = new FXMLLoader(resource.getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDisplayLevelResource(), resource);
     }
 
     @FXML
     void handleRoomTypeFilter(ActionEvent event) {
-        Set<RoomDTO> setToSearch = performStatusFilter(performSearch(completeList, tfSearch.getText()),cmbStatus.getSelectionModel().getSelectedItem());
+        Set<RoomDTO> setToSearch = performStatusFilter(performSearch(completeList, tfSearch.getText()), cmbStatus.getSelectionModel().getSelectedItem());
         String choice = cmbRoomType.getSelectionModel().getSelectedItem();
         Set<RoomDTO> result = performRoomTypeFilter(setToSearch, choice);
         tblRooms.getItems().clear();
@@ -181,7 +179,7 @@ public class DisplayLevelController {
 
     @FXML
     void handleStatusFilter(ActionEvent event) {
-        Set<RoomDTO> setToSearch = performRoomTypeFilter(performSearch(completeList, tfSearch.getText()),cmbRoomType.getSelectionModel().getSelectedItem());
+        Set<RoomDTO> setToSearch = performRoomTypeFilter(performSearch(completeList, tfSearch.getText()), cmbRoomType.getSelectionModel().getSelectedItem());
         String choice = cmbStatus.getSelectionModel().getSelectedItem();
         Set<RoomDTO> result = performStatusFilter(setToSearch, choice);
         tblRooms.getItems().clear();
@@ -193,9 +191,7 @@ public class DisplayLevelController {
         RoomDTO selectedRoomDTO = tblRooms.getSelectionModel().getSelectedItem();
         if (selectedRoomDTO != null) {
             DisplayAllBillsController.setRoomDTO(selectedRoomDTO.getId());
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllBillsResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            MainViewController.getGlobalMainPage().setCenter(loader.load());
+            viewFlow.loadResource(fxmlResources.getDisplayLevelResource(), fxmlResources.getDisplayAllBillsResource());
         }
 
     }
@@ -223,7 +219,6 @@ public class DisplayLevelController {
         tblRooms.getSortOrder().add(colRoomId);
 
 
-
         tfLevelNumber.setText("" + levelDTO.getLevelNumber());
 
         cmbRoomType.getItems().addAll("ALL", "Appartment", "Studio", "Bedroom");
@@ -232,18 +227,13 @@ public class DisplayLevelController {
         cmbStatus.getItems().addAll("ALL", "Available", "Occupied");
         cmbStatus.getSelectionModel().select(0);
 
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            //Filter before searching
-
-
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                 final Set<RoomDTO> setToSearch = performStatusFilter(performRoomTypeFilter(completeList, cmbRoomType.getSelectionModel().getSelectedItem()),
-                        cmbStatus.getSelectionModel().getSelectedItem());
-                Set<RoomDTO> result = performSearch(setToSearch, newValue);
-                tblRooms.getItems().clear();
-                tblRooms.getItems().addAll(result);
-            }
+        //Filter before searching
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            final Set<RoomDTO> setToSearch = performStatusFilter(performRoomTypeFilter(completeList, cmbRoomType.getSelectionModel().getSelectedItem()),
+                    cmbStatus.getSelectionModel().getSelectedItem());
+            Set<RoomDTO> result = performSearch(setToSearch, newValue);
+            tblRooms.getItems().clear();
+            tblRooms.getItems().addAll(result);
         });
 
     }

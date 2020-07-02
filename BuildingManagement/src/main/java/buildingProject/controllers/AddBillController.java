@@ -8,12 +8,12 @@ import buildingProject.services.bills.WaterBillService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.GlobalConstants;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import org.springframework.context.ApplicationContext;
@@ -23,12 +23,14 @@ import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 @Component
-public class addBillController {
+public class AddBillController {
 
     private final ApplicationContext applicationContext;
     private final FXMLResources fxmlResources;
     private final WaterBillService waterBillService;
     private final ElectricityBillService electricityBillService;
+    private final ViewFlow viewFlow;
+
     private static Long roomId;
 
     @FXML
@@ -46,18 +48,17 @@ public class addBillController {
     @FXML
     private Label lblCurrency;
 
-    public addBillController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService) {
+    public AddBillController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.waterBillService = waterBillService;
         this.electricityBillService = electricityBillService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllBillsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+         viewFlow.goBack();
     }
 
     @FXML
@@ -117,6 +118,6 @@ public class addBillController {
     }
 
     public static void setRoomId(Long roomId) {
-        addBillController.roomId = roomId;
+        AddBillController.roomId = roomId;
     }
 }

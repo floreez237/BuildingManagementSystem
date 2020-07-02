@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
@@ -15,9 +14,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.ContractsManagementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.ObsoleteContractController">
    <children>
-      <Label layoutX="28.0" layoutY="29.0" prefHeight="43.0" prefWidth="293.0" text="Contract Management" underline="true">
+      <Label layoutX="81.0" layoutY="31.0" prefHeight="43.0" prefWidth="257.0" text="Obsolete Contracts" underline="true">
          <font>
             <Font size="29.0" />
          </font>
@@ -42,28 +41,14 @@
       <TextField fx:id="tfSearch" layoutX="517.0" layoutY="104.0" prefHeight="31.0" prefWidth="172.0" promptText="search contract Id" style="-fx-background-radius: 50;">
          <font>
             <Font size="14.0" />
-         </font></TextField>
+         </font>
+      </TextField>
       <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="657.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_search_30px_2.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="36.0" layoutY="100.0" onAction="#handleAdd" text="Add">
-         <graphic>
-            <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icons8_add_32px_2.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="147.0" layoutY="103.0" onAction="#handleDisplay" text="Display">
+      <JFXButton layoutX="47.0" layoutY="103.0" onAction="#handleDisplay" text="Display">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -78,7 +63,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="266.0" layoutY="103.0" onAction="#handleDelete" text="Delete">
+      <JFXButton layoutX="166.0" layoutY="103.0" onAction="#handleDelete" text="Delete">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -93,14 +78,11 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="514.0" layoutY="54.0" onAction="#handleDisplayObsoleteContracts" prefHeight="37.0" prefWidth="179.0" text="Obsolete Contracts">
-         <font>
-            <Font size="14.0" />
-         </font>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="23.0" onAction="#handleGoBack" prefHeight="43.0" prefWidth="55.0" text=" ">
          <graphic>
-            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/documents_folder_24px.png" />
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
                </image>
             </ImageView>
          </graphic>
@@ -108,6 +90,5 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXComboBox fx:id="cmbType" focusColor="#2979ff" labelFloat="true" layoutX="368.0" layoutY="107.0" prefHeight="25.0" prefWidth="125.0" promptText="Contract Status" />
    </children>
 </AnchorPane>

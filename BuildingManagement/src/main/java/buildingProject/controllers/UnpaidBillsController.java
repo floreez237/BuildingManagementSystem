@@ -1,6 +1,5 @@
 package buildingProject.controllers;
 
-import buildingProject.dto.PersonDTO;
 import buildingProject.dto.bills.BillDTO;
 import buildingProject.dto.bills.ElectricityBillDTO;
 import buildingProject.dto.bills.WaterBillDTO;
@@ -8,13 +7,9 @@ import buildingProject.services.PersonService;
 import buildingProject.services.bills.ElectricityBillService;
 import buildingProject.services.bills.WaterBillService;
 import buildingProject.toolkit.FXMLResources;
-import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +33,7 @@ public class UnpaidBillsController {
     private final WaterBillService waterBillService;
     private final ElectricityBillService electricityBillService;
     private final PersonService personService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private TableView<BillDTO> tblBills;
@@ -65,12 +61,13 @@ public class UnpaidBillsController {
 
     private final List<BillDTO> completeList = new ArrayList<>();
 
-    public UnpaidBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, PersonService personService) {
+    public UnpaidBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, PersonService personService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.waterBillService = waterBillService;
         this.electricityBillService = electricityBillService;
         this.personService = personService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -100,9 +97,7 @@ public class UnpaidBillsController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDashboardResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
     }
 
 

@@ -8,6 +8,7 @@ import buildingProject.services.bills.ElectricityBillService;
 import buildingProject.services.bills.WaterBillService;
 import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -41,6 +42,7 @@ public class DisplayAllBillsController {
     private final WaterBillService waterBillService;
     private final ElectricityBillService electricityBillService;
     private final RoomService roomService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private TextField tfSearch;
@@ -71,27 +73,24 @@ public class DisplayAllBillsController {
 
     private final List<BillDTO> completeList = new ArrayList<>();
 
-    public DisplayAllBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, RoomService roomService) {
+    public DisplayAllBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, RoomService roomService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.waterBillService = waterBillService;
         this.electricityBillService = electricityBillService;
         this.roomService = roomService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack (ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+      viewFlow.goBack();
     }
 
     @FXML
     void handleAddBill(ActionEvent event) throws IOException {
-        addBillController.setRoomId(roomId);
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getAddBillResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        AddBillController.setRoomId(roomId);
+        viewFlow.loadResource(fxmlResources.getDisplayAllBillsResource(),fxmlResources.getAddBillResource());
     }
 
     @FXML
@@ -101,19 +100,16 @@ public class DisplayAllBillsController {
             if(!selectedBillDTO.isPaid()){
                 Alert confirmPayment = new Alert(AlertType.CONFIRMATION, "Confirming that bill has been today.Continue?", ButtonType.YES, ButtonType.NO);
                 confirmPayment.setHeaderText("CONFIRM BILL PAYMENT");
-                confirmPayment.resultProperty().addListener(new InvalidationListener() {
-                    @Override
-                    public void invalidated(Observable observable) {
-                        if (confirmPayment.getResult() == ButtonType.YES) {
-                            selectedBillDTO.setPaid(true);
-                            selectedBillDTO.setDateOfPayment(LocalDate.now());
-                            if (selectedBillDTO instanceof ElectricityBillDTO) {
-                                electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
-                            }else{
-                                waterBillService.save(((WaterBillDTO) selectedBillDTO));
-                            }
-                            tblBills.refresh();
+                confirmPayment.resultProperty().addListener(observable -> {
+                    if (confirmPayment.getResult() == ButtonType.YES) {
+                        selectedBillDTO.setPaid(true);
+                        selectedBillDTO.setDateOfPayment(LocalDate.now());
+                        if (selectedBillDTO instanceof ElectricityBillDTO) {
+                            electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
+                        }else{
+                            waterBillService.save(((WaterBillDTO) selectedBillDTO));
                         }
+                        tblBills.refresh();
                     }
                 });
                 confirmPayment.showAndWait();
@@ -128,17 +124,14 @@ public class DisplayAllBillsController {
         if (selectedDto != null) {
             Alert deleteAlert = new Alert(AlertType.WARNING, "Are you sure?", ButtonType.YES, ButtonType.NO);
             deleteAlert.setHeaderText("DELETE BILL");
-            deleteAlert.resultProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    if (deleteAlert.getResult() == ButtonType.YES) {
-                        if (selectedDto instanceof ElectricityBillDTO) {
-                            electricityBillService.deleteAllByRoomId(selectedDto.getId());
-                        }else {
-                            waterBillService.delete(selectedDto.getId());
-                        }
-                        tblBills.getItems().remove(selectedDto);
+            deleteAlert.resultProperty().addListener(observable -> {
+                if (deleteAlert.getResult() == ButtonType.YES) {
+                    if (selectedDto instanceof ElectricityBillDTO) {
+                        electricityBillService.deleteAllByRoomId(selectedDto.getId());
+                    }else {
+                        waterBillService.delete(selectedDto.getId());
                     }
+                    tblBills.getItems().remove(selectedDto);
                 }
             });
             deleteAlert.showAndWait();
@@ -150,9 +143,7 @@ public class DisplayAllBillsController {
         BillDTO selectedDto = tblBills.getSelectionModel().getSelectedItem();
         if (selectedDto != null) {
             DisplayBillController.setBillDTO(selectedDto);
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayBillResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            MainViewController.getGlobalMainPage().setCenter(loader.load());
+            viewFlow.loadResource(fxmlResources.getDisplayAllBillsResource(),fxmlResources.getDisplayBillResource());
         }
 
     }
@@ -211,21 +202,15 @@ public class DisplayAllBillsController {
 
         cmbBillType.getItems().addAll("ALL","ELECTRICITY","WATER");
         cmbBillType.getSelectionModel().select(0);
-        cmbBillType.getSelectionModel().selectedItemProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        cmbBillType.getSelectionModel().selectedItemProperty().addListener(observable -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
+            tblBills.getItems().addAll(newList);
         });
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
+            tblBills.getItems().addAll(newList);
         });
     }
 

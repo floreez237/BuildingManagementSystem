@@ -9,6 +9,7 @@ import buildingProject.dto.BuildingDTO;
 import buildingProject.dto.BuildingLevelDTO;
 import buildingProject.services.BuildingLevelService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -41,6 +42,7 @@ public class DisplayAllLevelsController implements Initializable {
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
     private final BuildingLevelService buildingLevelService;
+    private final ViewFlow viewFlow;
     private static BuildingDTO buildingDTO;
 
     @FXML
@@ -64,21 +66,16 @@ public class DisplayAllLevelsController implements Initializable {
     private final ObservableList<BuildingLevelDTO> completeList = FXCollections.observableArrayList();
 
 
-    public DisplayAllLevelsController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingLevelService buildingLevelService) {
+    public DisplayAllLevelsController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingLevelService buildingLevelService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.buildingLevelService = buildingLevelService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-
-        //Initialise the table with the appropriate levels of the building
-        //Or just keep track of the previous page all the times
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayBuildingResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
-
+      viewFlow.goBack();
     }
 
     @FXML
@@ -87,18 +84,14 @@ public class DisplayAllLevelsController implements Initializable {
         BuildingLevelDTO selectedDto = tblLevels.getSelectionModel().getSelectedItem();
         if (selectedDto != null) {
             DisplayLevelController.setLevelDTO(selectedDto);
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            MainViewController.getGlobalMainPage().setCenter(loader.load());
+            viewFlow.loadResource(fxmlResources.getDisplayAllLevels(),fxmlResources.getDisplayLevelResource());
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         completeList.clear();
-        buildingDTO.getListOfLevelId().forEach(levelId -> {
-            completeList.add(buildingLevelService.getLevelDto(levelId));
-        });
+        buildingDTO.getListOfLevelId().forEach(levelId -> completeList.add(buildingLevelService.getLevelDto(levelId)));
         tblLevels.getSortOrder().add(colLevelNumber);
         tblLevels.getItems().clear();
         tblLevels.getItems().addAll(completeList);
@@ -118,19 +111,16 @@ public class DisplayAllLevelsController implements Initializable {
             return new ReadOnlyObjectWrapper<>(totalRooms);
         });
 
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    tfSearch.setText(oldValue);
-                    return;
-                }
-                long levelNumber = Long.parseLong(newValue);
-                List<BuildingLevelDTO> result = completeList.stream().filter(levelDTO -> levelDTO.getLevelNumber() == levelNumber).
-                        collect(Collectors.toList());
-                tblLevels.getItems().clear();
-                tblLevels.getItems().addAll(result);
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                tfSearch.setText(oldValue);
+                return;
             }
+            long levelNumber = Long.parseLong(newValue);
+            List<BuildingLevelDTO> result = completeList.stream().filter(levelDTO -> levelDTO.getLevelNumber() == levelNumber).
+                    collect(Collectors.toList());
+            tblLevels.getItems().clear();
+            tblLevels.getItems().addAll(result);
         });
 
     }

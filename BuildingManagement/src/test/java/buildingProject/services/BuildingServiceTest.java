@@ -107,13 +107,13 @@ class BuildingServiceTest {
     @Test
     void getNumberOfAvailableRooms() {
         BuildingDTO buildingDTO = mapper.map(buildingRepo.getOne(1L),BuildingDTO.class);
-        assertEquals(3L,buildingService.getNumberOfAvailableRooms(buildingDTO));
+        assertEquals(0,buildingService.getNumberOfAvailableRooms(buildingDTO));
     }
 
     @Test
     void getNumberOccupiedRooms() {
         BuildingDTO buildingDTO = mapper.map(buildingRepo.getOne(1L),BuildingDTO.class);
-        assertEquals(0,buildingService.getNumberOfOccupiedRooms(buildingDTO));
+        assertEquals(3,buildingService.getNumberOfOccupiedRooms(buildingDTO));
     }
 
     @Test

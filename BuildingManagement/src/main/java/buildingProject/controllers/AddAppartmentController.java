@@ -5,10 +5,7 @@ import buildingProject.model.embeddables.AdditionalRoom;
 import buildingProject.model.embeddables.Furniture;
 import buildingProject.services.BuildingLevelService;
 import buildingProject.services.rooms.AppartmentService;
-import buildingProject.toolkit.FXMLResources;
-import buildingProject.toolkit.GlobalConstants;
-import buildingProject.toolkit.MyDoubleArea;
-import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.*;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -22,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -39,6 +37,7 @@ public class AddAppartmentController {
     private final ApplicationContext applicationContext;
     private final AppartmentService appartmentService;
     private final BuildingLevelService levelService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private Accordion accordionAppartment;
@@ -82,11 +81,12 @@ public class AddAppartmentController {
     @FXML
     private Label lblDepositCurrency;
 
-    public AddAppartmentController(FXMLResources fxmlResources, ApplicationContext applicationContext, AppartmentService appartmentService, BuildingLevelService levelService) {
+    public AddAppartmentController(FXMLResources fxmlResources, ApplicationContext applicationContext, AppartmentService appartmentService, BuildingLevelService levelService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.appartmentService = appartmentService;
         this.levelService = levelService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -101,7 +101,7 @@ public class AddAppartmentController {
             } else if (expanded.equals(tblAdditionalRooms)) {
                 AddAdditionalRoomController.setTblAdditionalRoom(tblAdditionalRooms);
                 loader = new FXMLLoader(fxmlResources.getAddAdditionalRoomResource().getURL());
-            }else{
+            } else {
                 //this is for the areas
                 AddAreaController.setTblArea(((TableView<MyDoubleArea>) expanded));
                 loader = new FXMLLoader(fxmlResources.getAddAreaResource().getURL());
@@ -124,7 +124,7 @@ public class AddAppartmentController {
                 lvFurnitures.getItems().removeAll(lvFurnitures.getSelectionModel().getSelectedItems());
             } else if (expanded.equals(tblAdditionalRooms)) {
                 tblAdditionalRooms.getItems().removeAll(tblAdditionalRooms.getSelectionModel().getSelectedItems());
-            }else{
+            } else {
                 //this is for the areas
                 TableView<MyDoubleArea> tblArea = ((TableView<MyDoubleArea>) expanded);
                 tblArea.getItems().removeAll(tblArea.getSelectionModel().getSelectedItems());
@@ -134,9 +134,7 @@ public class AddAppartmentController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML
@@ -163,7 +161,7 @@ public class AddAppartmentController {
         addAdditionalRooms(appartmentDTO);
         Long id = appartmentService.save(appartmentDTO);
 
-        Alert createAlert = new Alert(Alert.AlertType.INFORMATION, String.format("ID: ROOM%d",id));
+        Alert createAlert = new Alert(Alert.AlertType.INFORMATION, String.format("ID: ROOM%d", id));
         createAlert.setHeaderText("Appartment Created");
         createAlert.showAndWait();
     }
@@ -181,7 +179,7 @@ public class AddAppartmentController {
 
     private void addFurniture(AppartmentDTO appartmentDTO) {
         appartmentDTO.getSetOfFurniture().clear();
-        appartmentDTO.getSetOfFurniture().addAll(lvFurnitures.getItems().stream().map(furnitureName ->{
+        appartmentDTO.getSetOfFurniture().addAll(lvFurnitures.getItems().stream().map(furnitureName -> {
             Furniture furniture = new Furniture();
             furniture.setName(furnitureName);
             return furniture;

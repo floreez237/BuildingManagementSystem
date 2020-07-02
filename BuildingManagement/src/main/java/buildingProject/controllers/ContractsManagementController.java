@@ -4,6 +4,8 @@ import buildingProject.dto.ContractDTO;
 import buildingProject.services.ContractService;
 import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -20,6 +22,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,8 +34,13 @@ public class ContractsManagementController {
     private final FXMLResources fxmlResources;
     private final ContractService contractService;
     private final RoomService roomService;
+    private final ViewFlow viewFlow;
 
     private static final String idPrefix = "CON";
+
+    @FXML
+    private JFXComboBox<String> cmbType;
+
     @FXML
     private TableView<ContractDTO> tblContracts;
 
@@ -53,11 +61,12 @@ public class ContractsManagementController {
 
     private List<ContractDTO> completeList;
 
-    public ContractsManagementController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, RoomService roomService) {
+    public ContractsManagementController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, RoomService roomService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.contractService = contractService;
         this.roomService = roomService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -79,15 +88,12 @@ public class ContractsManagementController {
         if (selectedDto != null) {
             Alert deleteAlert = new Alert(Alert.AlertType.WARNING, "Continue?", ButtonType.YES, ButtonType.NO);
             deleteAlert.setHeaderText("DELETING CONTRACT");
-            deleteAlert.resultProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    if (deleteAlert.getResult() == ButtonType.YES) {
-                        contractService.delete(selectedDto.getId());
-                        tblContracts.getItems().remove(selectedDto);
-                        new Alert(Alert.AlertType.INFORMATION,"CONTRACT DELETED.").showAndWait();
-                        tblContracts.refresh();
-                    }
+            deleteAlert.resultProperty().addListener(observable -> {
+                if (deleteAlert.getResult() == ButtonType.YES) {
+                    contractService.delete(selectedDto);
+                    tblContracts.getItems().remove(selectedDto);
+                    new Alert(Alert.AlertType.INFORMATION,"CONTRACT DELETED.").showAndWait();
+                    tblContracts.refresh();
                 }
             });
             deleteAlert.showAndWait();
@@ -106,8 +112,32 @@ public class ContractsManagementController {
     }
 
     @FXML
+    void handleDisplayObsoleteContracts(ActionEvent event) {
+
+    }
+
+    @FXML
     public void initialize() {
-        completeList = contractService.findAll();
+        //initialize the stack
+        viewFlow.clear();
+        viewFlow.add(fxmlResources.getContractsManagementResource());
+
+        completeList = contractService.findAllNonObsolete();
+        cmbType.getItems().addAll("ALL", "RUNNING", "EXPIRED");
+        cmbType.getSelectionModel().select(0);
+
+        cmbType.getSelectionModel().selectedIndexProperty().addListener((observable) -> {
+            String selected = cmbType.getValue();
+            List<ContractDTO> newList = new ArrayList<>(completeList);
+            if (selected.equals("RUNNING")) {
+                newList = newList.stream().filter(contractDTO -> !contractService.isContractExpired(contractDTO)).collect(Collectors.toList());
+            } else if (selected.equals("EXPIRED")) {
+                newList = newList.stream().filter(contractService::isContractExpired).collect(Collectors.toList());
+            }
+            tblContracts.getItems().clear();
+            tblContracts.getItems().addAll(newList);
+        });
+
         colId.setComparator((contractId1, contractId2) -> {
             long id1 = Long.parseLong(contractId1.substring(idPrefix.length()));
             long id2 = Long.parseLong(contractId2.substring(idPrefix.length()));
@@ -139,16 +169,13 @@ public class ContractsManagementController {
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         tblContracts.getItems().addAll(completeList);
         tblContracts.getSortOrder().add(colId);
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                List<ContractDTO> result = completeList.stream().filter(contractDTO -> {
-                    String conId = idPrefix + contractDTO.getId();
-                    return conId.toLowerCase().contains(newValue.toLowerCase());
-                }).collect(Collectors.toList());
-                tblContracts.getItems().clear();
-                tblContracts.getItems().addAll(result);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            List<ContractDTO> result = completeList.stream().filter(contractDTO -> {
+                String conId = idPrefix + contractDTO.getId();
+                return conId.toLowerCase().contains(newValue.toLowerCase());
+            }).collect(Collectors.toList());
+            tblContracts.getItems().clear();
+            tblContracts.getItems().addAll(result);
         });
     }
 

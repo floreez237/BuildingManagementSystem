@@ -8,6 +8,7 @@ package buildingProject.controllers;
 import buildingProject.dto.BuildingDTO;
 import buildingProject.services.BuildingService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -44,6 +45,7 @@ public class BuildingManagementController implements Initializable {
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
     private final BuildingService buildingService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private TableView<BuildingDTO> tblBuildings;
@@ -68,10 +70,11 @@ public class BuildingManagementController implements Initializable {
 
     private ObservableList<BuildingDTO> completeList;
 
-    public BuildingManagementController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingService buildingService) {
+    public BuildingManagementController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingService buildingService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.buildingService = buildingService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -89,15 +92,12 @@ public class BuildingManagementController implements Initializable {
             Alert delete = new Alert(AlertType.WARNING, "This will delete all items related to this building(Contracts,Persons etc.)\n" +
                     "Do you want to remove it?", ButtonType.YES, ButtonType.NO);
             delete.setHeaderText("Remove Building");
-            delete.resultProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    if (delete.getResult() == ButtonType.YES) {
-                        buildingService.delete(selectedDto);
-                        tblBuildings.getItems().remove(selectedDto);
-                        completeList.remove(selectedDto);
-                        tblBuildings.refresh();
-                    }
+            delete.resultProperty().addListener(observable -> {
+                if (delete.getResult() == ButtonType.YES) {
+                    buildingService.delete(selectedDto);
+                    tblBuildings.getItems().remove(selectedDto);
+                    completeList.remove(selectedDto);
+                    tblBuildings.refresh();
                 }
             });
             delete.showAndWait();
@@ -124,6 +124,10 @@ public class BuildingManagementController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //initialize the view stack
+        viewFlow.clear();
+        viewFlow.add(fxmlResources.getBuildingManagementResource());
+
         colBuildingId.setCellValueFactory(param -> {
             String id = "BUILD" + param.getValue().getId();
             return new ReadOnlyObjectWrapper<>(id);
@@ -149,16 +153,13 @@ public class BuildingManagementController implements Initializable {
         completeList = FXCollections.observableArrayList(buildingService.getListOfBuildings());
         tblBuildings.getItems().addAll(completeList);
         tblBuildings.getSortOrder().addAll(colBuildingId);
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                ObservableList<BuildingDTO> list = completeList.stream().filter(buildingDTO -> {
-                    TableColumn idColumn = tblBuildings.getColumns().get(0);
-                    String buildingId = (String) idColumn.getCellObservableValue(buildingDTO).getValue();
-                    return buildingId.toLowerCase().contains(newValue.toLowerCase()) || buildingDTO.getBuildingName().toLowerCase().contains(newValue.toLowerCase());
-                }).collect(Collectors.toCollection(FXCollections::observableArrayList));
-                tblBuildings.setItems(list);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            ObservableList<BuildingDTO> list = completeList.stream().filter(buildingDTO -> {
+                TableColumn idColumn = tblBuildings.getColumns().get(0);
+                String buildingId = (String) idColumn.getCellObservableValue(buildingDTO).getValue();
+                return buildingId.toLowerCase().contains(newValue.toLowerCase()) || buildingDTO.getBuildingName().toLowerCase().contains(newValue.toLowerCase());
+            }).collect(Collectors.toCollection(FXCollections::observableArrayList));
+            tblBuildings.setItems(list);
         });
 
     }

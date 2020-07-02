@@ -6,6 +6,7 @@ import buildingProject.services.PersonService;
 import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
@@ -28,6 +29,7 @@ public class AddContractController {
     private final ContractService contractService;
     private final RoomService roomService;
     private final PersonService personService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private JFXDatePicker paymentDatePicker;
@@ -44,19 +46,18 @@ public class AddContractController {
     @FXML
     private JFXTextField tfDuration;
 
-    public AddContractController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, RoomService roomService, PersonService personService) {
+    public AddContractController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, RoomService roomService, PersonService personService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.contractService = contractService;
         this.roomService = roomService;
         this.personService = personService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getContractsManagementResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
     }
 
     @FXML
@@ -74,9 +75,9 @@ public class AddContractController {
         contractDTO.setDateOfCreation(creationDatePicker.getValue());
         contractDTO.setDuration(Integer.parseInt(tfDuration.getText()));
         long roomId = Long.parseLong(cmbRoomId.getValue().substring(4));
-        roomService.setRoomOccupied(roomId);
         contractDTO.setRoomId(roomId);
         contractDTO.setTenantId(Long.parseLong(cmbPersonId.getValue().substring(4)));
+        contractDTO.setObsolete(false);
 
         long id = contractService.save(contractDTO);
         Alert creationAlert = new Alert(Alert.AlertType.INFORMATION, String.format("ID: CON%d", id));
