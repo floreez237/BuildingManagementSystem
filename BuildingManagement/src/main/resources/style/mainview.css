@@ -17,7 +17,7 @@
 }
 
 .button1:focused {
-    -fx-focus-color: #ffffff;
+    -fx-focus-color: #000000;
     -fx-background-insets: -1.4, 0, 1, 2;
 }
 
@@ -55,4 +55,13 @@
 
 .button3 {
     -fx-background-color: linear-gradient(to bottom right, #a70707, #FB0000, #990a0a);
+}
+
+.jfxTextField {
+
+    -fx-background-position: right center;
+}
+
+.anchorPane {
+    -fx-background-color: linear-gradient(to top right, #00e5ff, #2979ff, #ffffff 80%);
 }

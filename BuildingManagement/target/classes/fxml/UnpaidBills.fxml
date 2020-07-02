@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.UnpaidBillsController">
+   <children>
+      <Label layoutX="87.0" layoutY="47.0" text="Unpaid Bills" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="40.0" onAction="#handleGoBack" prefHeight="51.0" prefWidth="46.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXRadioButton layoutX="421.0" layoutY="55.0" text="Most Recent">
+         <toggleGroup>
+            <ToggleGroup fx:id="selection" />
+         </toggleGroup>
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="539.0" layoutY="57.0" text="All" toggleGroup="$selection" />
+      <TextField fx:id="tfSearch" layoutX="550.0" layoutY="118.0" prefHeight="31.0" prefWidth="144.0" promptText="Search Bill ID" style="-fx-background-radius: 50;" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblBills" layoutX="43.0" layoutY="169.0" prefHeight="450.0" prefWidth="664.0">
+         <columns>
+            <TableColumn fx:id="colBillId" prefWidth="101.03005981445312" style="-fx-alignment: CENTER;" text="Bill ID" />
+            <TableColumn fx:id="colIssueDate" prefWidth="97.4129638671875" style="-fx-alignment: CENTER;" text="Issue Date" />
+            <TableColumn fx:id="colDueDate" prefWidth="96.88140869140625" style="-fx-alignment: CENTER;" text="Due Date" />
+            <TableColumn fx:id="colAmount" prefWidth="131.0" style="-fx-alignment: CENTER;" text="Amount" />
+            <TableColumn fx:id="colRoomId" minWidth="0.0" prefWidth="79.0" style="-fx-alignment: CENTER;" text="Room ID" />
+            <TableColumn fx:id="colTenantName" prefWidth="160.0" style="-fx-alignment: CENTER;" text="Tenant Name" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXButton layoutX="274.0" layoutY="631.0" onAction="#handleConfirmPayment" prefHeight="44.0" prefWidth="203.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Confirm Bill Payment">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="click to add a new student" />
+         </tooltip>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbBillType" focusColor="#00e5ff" layoutX="378.0" layoutY="121.0" prefHeight="25.0" prefWidth="144.0" />
+      <Label layoutX="333.0" layoutY="121.0" text="Type:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

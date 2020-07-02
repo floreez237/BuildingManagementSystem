@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.RenewContractController">
+   <children>
+      <Label layoutX="22.0" layoutY="99.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTRACT INFORMATION" textAlignment="CENTER" underline="true">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="0.6702898550724637" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="421.0" layoutY="261.0" text="Date of Payment:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="260.0" text="Date of Creation:">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" layoutX="576.0" layoutY="256.0" prefHeight="31.0" prefWidth="141.0" />
+      <JFXDatePicker fx:id="creationDatePicker" defaultColor="#00e5ff" layoutX="197.0" layoutY="256.0" prefHeight="31.0" prefWidth="168.0" />
+      <JFXButton layoutX="334.0" layoutY="426.0" onAction="#handleSave" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_checked_32px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="button2" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="73.0" layoutY="37.0" text="Renew Contract" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutY="28.0" onAction="#handleGoBack" text=" ">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="24.0" layoutY="299.0" prefHeight="29.0" prefWidth="168.0" text="Duration (In months):">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="172.0" layoutY="148.0" prefHeight="37.0" prefWidth="168.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="tfDuration" alignment="CENTER" focusColor="#00e5ff" layoutX="192.0" layoutY="299.0" prefHeight="30.0" prefWidth="110.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="52.0" layoutY="206.0" text="Tenant Name:">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfTenantName" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="168.0" layoutY="198.0" prefHeight="37.0" prefWidth="483.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="88.0" layoutY="155.0" prefHeight="29.0" prefWidth="69.0" text="Room Id:">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
