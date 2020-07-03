@@ -19,182 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="add unversioned files">
-      <change afterPath="$PROJECT_DIR$/.idea/BuildingManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="change log files">
+      <change beforePath="$PROJECT_DIR$/.idea/BuildingManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BuildingManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/BootStrap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/ExceptionHandling.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/MainApp$StageReadyEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/MainApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/StageInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/TestClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAdditionalRoomController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAdditionalRoomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAppartmentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddAreaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddBuildingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddContractController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddExtraController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddFurnitureController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddPersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddRoomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/AddStudioController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/BuildingManagementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ContractsManagementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DashboardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllBillsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllLevelsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAllPersonsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayAppartmentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBedRoomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBillController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayBuildingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayContractController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayLevelController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayLevelController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayLevelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayPersonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/DisplayStudioController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/ExpiredContractsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/HelpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/MainViewController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/MainViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/PayBillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/RenewContractController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/SettingsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/UnpaidBillsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/addBedroomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/controllers/addBillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/BuildingDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/BuildingLevelDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/ContractDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/PersonDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/BillDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/ElectricityBillDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/bills/WaterBillDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/rooms/AppartmentDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/rooms/BedroomDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/rooms/RoomDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/dto/rooms/StudioDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/CustomMapperConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/ContractDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/ContractDTOtoEntity$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/ContractDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/DTOtoEntityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/PersonDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/PersonDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/bills/ElectricityBillDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/bills/ElectricityBillDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/bills/WaterBillDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/bills/WaterBillDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/AppartmentDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/BedroomDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/RoomDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/dto_to_entity/rooms/StudioDTOtoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/BuildingLevelEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/ContractEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/EntityToDTOConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/PersonEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/ElectricityBillEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/bills/WaterBillEntitytoDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/rooms/AppartmentEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/rooms/BedroomEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/rooms/RoomEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/map_configs/property_maps/entity_to_dto/rooms/StudioEntityToDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/BuildingEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/BuildingLevelEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/ContractEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/PersonEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/bills/BillEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/bills/ElectricityBillEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/bills/WaterBillEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/embeddables/AdditionalRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/embeddables/BuildingExtra.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/embeddables/Furniture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/AppartmentEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/BedroomEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/RoomEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/model/rooms/StudioEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/BuildingLevelRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/BuildingRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/ContractRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/PersonRepository$IdOnly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/PersonRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/bill_repositories/ElectricityBillRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/bill_repositories/WaterBillRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/room_repositories/AppartmentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/room_repositories/BedroomRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/room_repositories/RoomRepository$IdOnly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/room_repositories/RoomRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/repositories/room_repositories/StudioRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/security/PasswordUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingLevelService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/BuildingService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/ContractService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/PersonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/ElectricityBillService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/bills/WaterBillService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/AppartmentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/BedroomService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/RoomService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/services/rooms/StudioService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/FXMLResources.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/GlobalConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/MyDoubleArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/buildingProject/toolkit/Tools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/map_configs/CustomMapperConfigEtoDTOTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/map_configs/CustomMapperDTOtoETest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/ContractRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/PersonRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/bill_repositories/ElectricityBillRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/bill_repositories/WaterBillRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/repositories/room_repositories/RoomRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/security/PasswordUtilsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/BuildingLevelServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/BuildingServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/ContractServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/PersonServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/bills/ElectricityBillServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/bills/WaterBillServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/buildingProject/services/rooms/RoomServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/ExceptionHandling.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/documents_folder_24px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/documents_folder_24px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddBedRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddBedRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/AddBill.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/AddBill.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/ContractsManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/ContractsManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayContract.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayContract.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/DisplayPerson.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/DisplayPerson.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/UnpaidBills.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/UnpaidBills.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/style/mainview.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/mainview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/import.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,7 +275,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a9fb6a24-dc23-4c9f-a7fc-83427e5bbe07" name="Default Changelist" comment="" />
+      <changelist id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="change log files" />
       <created>1585463987905</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -499,6 +344,7 @@
       <workItem from="1593195538141" duration="4443000" />
       <workItem from="1593254178971" duration="2825000" />
       <workItem from="1593320423202" duration="18434000" />
+      <workItem from="1593777497073" duration="2051000" />
     </task>
     <task id="LOCAL-00001" summary="Completion of the model layer and addition of the maven framework">
       <created>1585487912607</created>
@@ -672,45 +518,45 @@
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1592648518800" />
     <state x="521" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593587441764" />
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1593591150154">
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1593780659762">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593591150154" />
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593780659762" />
     <state width="1024" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1593591150154">
+    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1593780659761">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593591150154" />
+    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593780659761" />
     <state width="1024" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1593591150154">
+    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1593780659761">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593591150154" />
+    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593780659761" />
     <state width="1024" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1593591150154">
+    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1593780659761">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593591150154" />
+    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593780659761" />
     <state width="1024" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1024" height="2" key="GridCell.Tab.1.bottom" timestamp="1593518054131">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1593780659763">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1294" height="260" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1592650216086" />
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593780659763" />
     <state width="1024" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1024" height="2" key="GridCell.Tab.1.center" timestamp="1593518054131">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1076" height="166" key="GridCell.Tab.1.center" timestamp="1593780659762">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1294" height="260" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
+    <state width="1076" height="166" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1593780659762" />
     <state width="1024" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1024" height="2" key="GridCell.Tab.1.left" timestamp="1593518054131">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1076" height="166" key="GridCell.Tab.1.left" timestamp="1593780659762">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1294" height="260" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
+    <state width="1076" height="166" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1593780659762" />
     <state width="1024" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1024" height="2" key="GridCell.Tab.1.right" timestamp="1593518054131">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1076" height="166" key="GridCell.Tab.1.right" timestamp="1593780659763">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1294" height="260" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1592650216084" />
+    <state width="1076" height="166" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1593780659763" />
     <state width="1024" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
     <state width="1294" height="260" key="GridCell.Tab.2.bottom" timestamp="1592650216086">
       <screen x="0" y="0" width="1366" height="768" />
@@ -737,10 +583,10 @@
     </state>
     <state x="399" y="78" key="Maven.ArtifactSearchDialog/0.0.1366.768@0.0.1366.768" timestamp="1589593267210" />
     <state x="449" y="84" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1592687427670" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1593590963676">
+    <state x="163" y="0" key="SettingsEditor" timestamp="1593725913711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1593590963676" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1593725913711" />
     <state x="183" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593255845544" />
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog" timestamp="1592654511855">
       <screen x="0" y="0" width="1536" height="824" />
@@ -771,6 +617,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1588668382299" />
+    <state x="492" y="298" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593718515676">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="492" y="298" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1593718515676" />
     <state x="454" y="170" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592570992265">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -801,10 +651,10 @@
     </state>
     <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1590581631793" />
     <state x="381" y="185" width="756" height="727" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593253850132" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592580353051">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593780675056">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1592580353051" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1593780675056" />
     <state x="62" y="67" key="spring file set editor" timestamp="1589625766237">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

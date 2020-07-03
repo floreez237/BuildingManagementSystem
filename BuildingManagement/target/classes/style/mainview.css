@@ -57,11 +57,11 @@
     -fx-background-color: linear-gradient(to bottom right, #a70707, #FB0000, #990a0a);
 }
 
-.jfxTextField{
+.jfxTextField {
 
-    -fx-background-position:right center;
+    -fx-background-position: right center;
 }
 
 .anchorPane {
-    -fx-background-color: linear-gradient(to top right, #00e5ff, #2979ff,#ffffff 80%);
+    -fx-background-color: linear-gradient(to top right, #00e5ff, #2979ff, #ffffff 80%);
 }

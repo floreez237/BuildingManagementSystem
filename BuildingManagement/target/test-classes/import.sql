@@ -6,7 +6,7 @@ insert into buildinglevel_table (id,building_id,level_number)values (nextval('bu
 --end building anf level population
 
 --rooms population
-insert into room_table (id,building_id,level_id,rent,deposit,occupied)values (nextval('room_sequence'),'1','1','20000',2000,false),(nextval('room_sequence'),'1','2','25000',2000,false),(nextval('room_sequence'),'1','2','35000',2000,false),(nextval('room_sequence'),'2','3','10000',2000,false);
+insert into room_table (id,building_id,level_id,rent,deposit,occupied)values (nextval('room_sequence'),'1','1','20000',2000,true),(nextval('room_sequence'),'1','2','25000',2000,true),(nextval('room_sequence'),'1','2','35000',2000,true),(nextval('room_sequence'),'2','3','10000',2000,false);
 
 insert into additional_rooms (area,name,room_entity_id)values (20,'ceiling room',1);
 
@@ -34,7 +34,7 @@ insert into water_bill_table (id,amount,is_paid,room_id)values (nextval('water_b
 --person and contract population
 insert into person_table (id,name,room_id,sex)values (nextval('person_sequence'),'florian lowe',1,'M'),(nextval('person_sequence'),'bouloulna yasmine',2,'F'),(nextval('person_sequence'),'alliance lowe',3,'F'),(nextval('person_sequence'),'kouekam nathan',4,'M'),(nextval('person_sequence'),'lowe gabriel',1,'M');
 
-insert into contract_table (id,duration,person_id,room_id)values (nextval('contract_sequence'),10,1,1),(nextval('contract_sequence'),15,2,2),(nextval('contract_sequence'),12,3,3);
+insert into contract_table (id,duration,person_id,room_id,is_obsolete,date_of_payment,date_of_creation)values (nextval('contract_sequence'),10,1,1,false,to_date('12/12/2017','dd/MM/YYYY'),to_date('10/12/2017','dd/MM/YYYY')),(nextval('contract_sequence'),15,2,2,false,to_date('12/12/2019','dd/MM/YYYY'),to_date('11/12/2019','dd/MM/YYYY')),(nextval('contract_sequence'),12,3,3,false,to_date('12/02/2020','dd/MM/YYYY'),to_date('10/02/2020','dd/MM/YYYY'));
 
 
 
