@@ -24,26 +24,7 @@
                   <Font name="Cambria Bold" size="27.0"/>
                </font>
             </Label>
-            <JFXTextField labelFloat="true" layoutX="71.0" layoutY="262.0" prefHeight="31.0" prefWidth="247.0"
-                          promptText="Postgres UserName">
-               <unFocusColor>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00e5ff"/>
-                        <Stop color="#2979ff" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </unFocusColor>
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00e5ff"/>
-                        <Stop color="#2979ff" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXTextField>
-            <JFXButton layoutX="89.0" layoutY="461.0" text="Save">
+            <JFXButton layoutX="89.0" layoutY="461.0" onAction="#handleSave" text="Save">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -55,7 +36,7 @@
                   <Cursor fx:constant="HAND"/>
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="191.0" layoutY="461.0" text="Cancel">
+            <JFXButton layoutX="191.0" layoutY="461.0" onAction="#handleCancel" text="Cancel">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -74,8 +55,8 @@
                   <Image url="@../images/logo.png"/>
                </image>
             </ImageView>
-            <JFXPasswordField labelFloat="true" layoutX="67.0" layoutY="126.0" prefHeight="31.0" prefWidth="247.0"
-                              promptText="Login Password">
+            <JFXPasswordField fx:id="tfPassword" labelFloat="true" layoutX="67.0" layoutY="126.0" prefHeight="31.0"
+                              prefWidth="247.0" promptText="Login Password">
                <focusColor>
                   <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
                      <stops>
@@ -93,8 +74,8 @@
                   </LinearGradient>
                </unFocusColor>
             </JFXPasswordField>
-            <JFXPasswordField labelFloat="true" layoutX="67.0" layoutY="193.0" prefHeight="31.0" prefWidth="247.0"
-                              promptText="Login Confirmation">
+            <JFXPasswordField fx:id="tfConfirmation" labelFloat="true" layoutX="67.0" layoutY="193.0" prefHeight="31.0"
+                              prefWidth="247.0" promptText="Login Confirmation">
                <focusColor>
                   <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
                      <stops>
@@ -112,8 +93,46 @@
                   </LinearGradient>
                </unFocusColor>
             </JFXPasswordField>
-            <JFXPasswordField labelFloat="true" layoutX="71.0" layoutY="334.0" prefHeight="31.0" prefWidth="247.0"
-                              promptText="Postgres Password">
+            <JFXTextField fx:id="tfDBUsername" labelFloat="true" layoutX="71.0" layoutY="262.0" prefHeight="31.0"
+                          prefWidth="247.0" promptText="Postgres UserName">
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+            </JFXTextField>
+            <JFXPasswordField fx:id="tfDBPassword" labelFloat="true" layoutX="71.0" layoutY="334.0" prefHeight="31.0"
+                              prefWidth="247.0" promptText="Postgres Password">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
+                     <stops>
+                        <Stop color="#00e5ffa1"/>
+                        <Stop color="#1c31cd" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="tfDBUrl" labelFloat="true" layoutX="71.0" layoutY="402.0" prefHeight="31.0"
+                              prefWidth="247.0" promptText="Database URL">
                <focusColor>
                   <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
                      <stops>
@@ -141,7 +160,7 @@
                   <Image url="@../images/icons8_secure_24px_1.png"/>
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="290.0" layoutY="193.0">
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="290.0" layoutY="197.0">
                <image>
                   <Image url="@../images/icons8_checked_32px.png"/>
                </image>
@@ -151,25 +170,6 @@
                   <Image url="@../images/icons8_male_user_32px.png"/>
                </image>
             </ImageView>
-            <JFXPasswordField labelFloat="true" layoutX="71.0" layoutY="402.0" prefHeight="31.0" prefWidth="247.0"
-                              promptText="Database URL">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
-                     <stops>
-                        <Stop color="#00e5ffa1"/>
-                        <Stop color="#1c31cd" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-               <unFocusColor>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00e5ff"/>
-                        <Stop color="#2979ff" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </unFocusColor>
-            </JFXPasswordField>
             <ImageView layoutX="290.0" layoutY="406.0">
                <image>
                   <Image url="@../images/link.png"/>
@@ -177,14 +177,14 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="209.0" layoutY="608.0" text="By siging up, you agree to BGESTIO's&#10;"/>
-      <Label layoutX="189.0" layoutY="630.0" text="Terms and Conditions" textFill="#005eab">
+      <Label layoutX="236.0" layoutY="608.0" text="By siging up, you agree to BGESTIO's&#10;"/>
+      <Label layoutX="202.0" layoutY="630.0" text="Terms and Conditions" textFill="#005eab">
          <font>
             <Font name="Cambria" size="15.0"/>
          </font>
       </Label>
-      <Label layoutX="340.0" layoutY="629.0" prefHeight="21.0" prefWidth="17.0" text="&amp;"/>
-      <Label layoutX="363.0" layoutY="630.0" text="Privacy Policy" textFill="#005eab">
+      <Label layoutX="353.0" layoutY="629.0" prefHeight="21.0" prefWidth="17.0" text="&amp;"/>
+      <Label layoutX="376.0" layoutY="630.0" text="Privacy Policy" textFill="#005eab">
          <font>
             <Font name="Cambria" size="15.0"/>
          </font>
