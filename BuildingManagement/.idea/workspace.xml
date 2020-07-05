@@ -19,9 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="added InstallationApp">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="modified config files">
+      <change beforePath="$PROJECT_DIR$/.idea/BuildingManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BuildingManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BuildingManagement.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +102,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3091954" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -447,6 +453,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1591599362339" />
+    <state x="313" y="73" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1593913169276">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="313" y="73" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.768@0.0.1366.768" timestamp="1593913169276" />
     <state x="597" y="293" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1592652291068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -506,25 +516,25 @@
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1592648518800" />
     <state x="521" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593587441764" />
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1593897843600">
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1593913204509">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593897843600" />
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593913204509" />
     <state width="1024" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1593897843600">
+    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1593913204509">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593897843600" />
+    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593913204509" />
     <state width="1024" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1593897843600">
+    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1593913204508">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593897843600" />
+    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593913204508" />
     <state width="1024" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1593897843600">
+    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1593913204509">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593897843600" />
+    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593913204509" />
     <state width="1024" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
     <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1593897843601">
       <screen x="0" y="0" width="1366" height="768" />
@@ -571,10 +581,10 @@
     </state>
     <state x="399" y="78" key="Maven.ArtifactSearchDialog/0.0.1366.768@0.0.1366.768" timestamp="1589593267210" />
     <state x="449" y="84" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1592687427670" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1593725913711">
+    <state x="163" y="0" key="SettingsEditor" timestamp="1593913113716">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1593725913711" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1593913113716" />
     <state x="183" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593255845544" />
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog" timestamp="1592654511855">
       <screen x="0" y="0" width="1536" height="824" />
@@ -588,10 +598,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="468" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1590518108963" />
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1593894718705">
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1593913050794">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1593894718705" />
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1593913050794" />
     <state x="309" y="112" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1593587053229" />
     <state x="499" y="162" key="chooseDestDirectoryDialog" timestamp="1590135479453">
       <screen x="0" y="0" width="1366" height="768" />
