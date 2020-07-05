@@ -9,12 +9,15 @@ import java.util.prefs.Preferences;
 @SpringBootApplication
 public class BootStrap {
     public static void main(String[] args) {
-        Preferences userPreferences = Preferences.userNodeForPackage(InstallationController.class);
-        if (!userPreferences.getBoolean("isInstalled", false)) {
+        Preferences preferences = Preferences.userNodeForPackage(InstallationController.class);
+        if (!preferences.getBoolean("isInstalled", false)) {
             Application.launch(InstallationApp.class);
-
+        } else {
+            System.setProperty("spring.datasource.url", preferences.get("db_url", ""));
+            System.setProperty("spring.datasource.username", preferences.get("db_user", ""));
+            System.setProperty("spring.datasource.password", preferences.get("db_password", ""));
+            Application.launch(MainApp.class);
         }
-//        Application.launch(MainApp.class);
 
     }
 }

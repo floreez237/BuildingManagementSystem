@@ -7,12 +7,15 @@ package buildingProject;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import org.hibernate.exception.GenericJDBCException;
-import org.postgresql.util.PSQLException;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 /**
  * @author YASMINE
@@ -31,7 +34,13 @@ public class MainApp extends Application {
         try {
             applicationContext = new SpringApplicationBuilder(BootStrap.class).run();
         } catch (Exception e) {
-            System.out.println("\n\n\n\n\n" + getRootException(e).getMessage());
+            Alert alert = new Alert(Alert.AlertType.ERROR, "AN UNEXPECTED ERROR HAS OCCURRED");
+            alert.showAndWait();
+            File log = new File("log.txt");
+            try (PrintWriter writer = new PrintWriter(log)) {
+                e.printStackTrace(writer);
+            } catch (FileNotFoundException ignored) {
+            }
             stop();
         }
     }

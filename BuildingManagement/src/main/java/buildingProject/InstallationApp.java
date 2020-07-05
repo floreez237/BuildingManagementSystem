@@ -17,8 +17,7 @@ public class InstallationApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-        FXMLLoader loader = new FXMLLoader(BootStrap.class.getResource("/fxml/Installation.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Installation.fxml"));
         try {
             Parent root = loader.load();
             Scene scene1 = new Scene(root);

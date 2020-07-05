@@ -131,25 +131,6 @@
                   </LinearGradient>
                </unFocusColor>
             </JFXPasswordField>
-            <JFXPasswordField fx:id="tfDBUrl" labelFloat="true" layoutX="71.0" layoutY="402.0" prefHeight="31.0"
-                              prefWidth="247.0" promptText="Database URL">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
-                     <stops>
-                        <Stop color="#00e5ffa1"/>
-                        <Stop color="#1c31cd" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-               <unFocusColor>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00e5ff"/>
-                        <Stop color="#2979ff" offset="1.0"/>
-                     </stops>
-                  </LinearGradient>
-               </unFocusColor>
-            </JFXPasswordField>
             <ImageView layoutX="290.0" layoutY="338.0">
                <image>
                   <Image url="@../images/icons8_secure_24px_1.png"/>
@@ -175,6 +156,25 @@
                   <Image url="@../images/link.png"/>
                </image>
             </ImageView>
+            <JFXTextField fx:id="tfDBUrl" labelFloat="true" layoutX="67.0" layoutY="403.0" prefHeight="31.0"
+                          prefWidth="247.0" promptText="Postgres URL">
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+            </JFXTextField>
          </children>
       </AnchorPane>
       <Label layoutX="236.0" layoutY="608.0" text="By siging up, you agree to BGESTIO's&#10;"/>

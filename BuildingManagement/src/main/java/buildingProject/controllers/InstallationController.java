@@ -1,13 +1,16 @@
 package buildingProject.controllers;
 
 import buildingProject.BootStrap;
+import buildingProject.security.PasswordUtils;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
 import org.postgresql.util.PSQLException;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationEvent;
@@ -30,7 +33,7 @@ public class InstallationController {
     private JFXPasswordField tfDBPassword;
 
     @FXML
-    private JFXPasswordField tfDBUrl;
+    private JFXTextField tfDBUrl;
 
     private ConfigurableApplicationContext applicationContext;
 
@@ -42,12 +45,12 @@ public class InstallationController {
     @FXML
     void handleSave(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.ERROR, "", ButtonType.OK);
-        if (tfConfirmation.getText().isEmpty()) {
-            alert.setContentText("Login Password Confirmation not entered");
+        if (tfPassword.getText().isEmpty()) {
+            alert.setContentText("Login Password not entered");
             alert.showAndWait();
             return;
-        } else if (tfPassword.getText().isEmpty()) {
-            alert.setContentText("Login Password not entered");
+        } else if (tfConfirmation.getText().isEmpty()) {
+            alert.setContentText("Login Password Confirmation not entered");
             alert.showAndWait();
             return;
         } else if (tfDBUsername.getText().isEmpty()) {
@@ -69,14 +72,22 @@ public class InstallationController {
         }
 
         try {
-            System.setProperty("spring.datasource.url", tfDBUrl.getText());
+            System.setProperty("spring.datasource.url", "jdbc:postgresql://" + tfDBUrl.getText());
             System.setProperty("spring.datasource.username", tfDBUsername.getText());
             System.setProperty("spring.datasource.password", tfDBPassword.getText());
+
+            Preferences preferences = Preferences.userNodeForPackage(InstallationController.class);
+
+            Platform.runLater(() -> tfConfirmation.getScene().setCursor(Cursor.WAIT));
             applicationContext = new SpringApplicationBuilder(BootStrap.class).run();
             applicationContext.publishEvent(new InitializationSuccessFulEvent(this));
 
-            Preferences userPreferences = Preferences.userNodeForPackage(InstallationController.class);
-            userPreferences.putBoolean("isInstalled", true);
+            preferences.put("db_url", "jdbc:postgresql://" + tfDBUrl.getText());
+            preferences.put("db_user", tfDBUsername.getText());
+            preferences.put("db_password", tfDBPassword.getText());
+            PasswordUtils.storePassword(tfPassword.getText());
+            preferences.putBoolean("isInstalled", true);
+            ((Stage) tfConfirmation.getScene().getWindow()).close();
         } catch (Exception e) {
             Exception rootException = getRootException(e);
             if (rootException.getClass() == PSQLException.class) {
@@ -91,7 +102,7 @@ public class InstallationController {
             }
             alert.showAndWait();
         }
-
+        tfConfirmation.getScene().setCursor(Cursor.DEFAULT);
 
     }
 
