@@ -4,6 +4,7 @@ import buildingProject.dto.ContractDTO;
 import buildingProject.services.ContractService;
 import buildingProject.services.PersonService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -11,7 +12,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.context.ApplicationContext;
@@ -31,6 +31,7 @@ public class ExpiredContractsController {
     private final FXMLResources fxmlResources;
     private final ContractService contractService;
     private final PersonService personService;
+    private final ViewFlow viewFlow;
 
     private static final String idPrefix = ContractsManagementController.getIdPrefix();
 
@@ -61,18 +62,17 @@ public class ExpiredContractsController {
 
     private List<ContractDTO> completeList;
 
-    public ExpiredContractsController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, PersonService personService) {
+    public ExpiredContractsController(ApplicationContext applicationContext, FXMLResources fxmlResources, ContractService contractService, PersonService personService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.contractService = contractService;
         this.personService = personService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void goBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDashboardResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML
@@ -81,15 +81,12 @@ public class ExpiredContractsController {
         if (selectedDto != null) {
             Alert deleteAlert = new Alert(Alert.AlertType.WARNING, "Continue?", ButtonType.YES, ButtonType.NO);
             deleteAlert.setHeaderText("DELETING CONTRACT");
-            deleteAlert.resultProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    if (deleteAlert.getResult() == ButtonType.YES) {
-                        contractService.delete(selectedDto.getId());
-                        tblExpiredContracts.getItems().remove(selectedDto);
-                        new Alert(Alert.AlertType.INFORMATION,"CONTRACT DELETED.").showAndWait();
-                        tblExpiredContracts.refresh();
-                    }
+            deleteAlert.resultProperty().addListener(observable -> {
+                if (deleteAlert.getResult() == ButtonType.YES) {
+                    contractService.delete(selectedDto);
+                    tblExpiredContracts.getItems().remove(selectedDto);
+                    new Alert(Alert.AlertType.INFORMATION,"CONTRACT DELETED.").showAndWait();
+                    tblExpiredContracts.refresh();
                 }
             });
             deleteAlert.showAndWait();
@@ -147,16 +144,13 @@ public class ExpiredContractsController {
         tblExpiredContracts.getItems().addAll(completeList);
         tblExpiredContracts.getSortOrder().add(colId);
 
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                List<ContractDTO> result = completeList.stream().filter(contractDTO -> {
-                    String conId = idPrefix + contractDTO.getId();
-                    return conId.toLowerCase().contains(newValue.toLowerCase());
-                }).collect(Collectors.toList());
-                tblExpiredContracts.getItems().clear();
-                tblExpiredContracts.getItems().addAll(result);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            List<ContractDTO> result = completeList.stream().filter(contractDTO -> {
+                String conId = idPrefix + contractDTO.getId();
+                return conId.toLowerCase().contains(newValue.toLowerCase());
+            }).collect(Collectors.toList());
+            tblExpiredContracts.getItems().clear();
+            tblExpiredContracts.getItems().addAll(result);
         });
     }
 

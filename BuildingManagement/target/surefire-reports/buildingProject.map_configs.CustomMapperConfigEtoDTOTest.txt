@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: buildingProject.map_configs.CustomMapperConfigEtoDTOTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.561 s - in buildingProject.map_configs.CustomMapperConfigEtoDTOTest

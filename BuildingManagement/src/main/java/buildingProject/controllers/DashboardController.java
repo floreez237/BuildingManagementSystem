@@ -10,6 +10,7 @@ import buildingProject.services.bills.ElectricityBillService;
 import buildingProject.services.bills.WaterBillService;
 import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -40,9 +41,10 @@ public class DashboardController{
     private final WaterBillService waterBillService;
     private final ContractService contractService;
     private final RoomService roomService;
+    private final ViewFlow viewFlow;
 
     @FXML
-    private LineChart<String, Number> lineChart;
+    private final LineChart<String, Number> lineChart = new LineChart<>(MonthAxis, revenue);
 
     @FXML
     private PieChart piechart;
@@ -58,13 +60,14 @@ public class DashboardController{
     @FXML
     private Label lblExpiredContracts;
 
-    public DashboardController(FXMLResources fxmlResources, ApplicationContext applicationContext, ElectricityBillService electricityBillService, WaterBillService waterBillService, ContractService contractService, RoomService roomService) {
+    public DashboardController(FXMLResources fxmlResources, ApplicationContext applicationContext, ElectricityBillService electricityBillService, WaterBillService waterBillService, ContractService contractService, RoomService roomService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.electricityBillService = electricityBillService;
         this.waterBillService = waterBillService;
         this.contractService = contractService;
         this.roomService = roomService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -84,6 +87,9 @@ public class DashboardController{
 
     @FXML
     public void initialize() {
+        //add the dashboard resource to the stack
+        viewFlow.clear();
+        viewFlow.add(fxmlResources.getDashboardResource());
         //initialise the pie chart with the values of free and occupied rooms
         //for all the buildings registered
 
@@ -98,7 +104,7 @@ public class DashboardController{
         lblExpiredContracts.setText("" + contractService.countExpiredContracts());
         lblExpireInFiveDays.setText("" + contractService.countExpireIn(5));
 
-        lineChart = new LineChart<>(MonthAxis, revenue);
+        //lineChart = new LineChart<>(MonthAxis, revenue);
         //initialise the line chart with the revenue of the different months
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Revenue");

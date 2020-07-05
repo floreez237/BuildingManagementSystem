@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="680.0" prefWidth="662.0" styleClass="anchorPane"
+            stylesheets="@../style/mainview.css" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="buildingProject.controllers.InstallationController">
+   <children>
+      <AnchorPane layoutX="151.0" layoutY="73.0" prefHeight="514.0" prefWidth="378.0"
+                  style="-fx-background-color: white; -fx-background-radius: 20 20 20 20;">
+         <effect>
+            <DropShadow color="#2979ff" spread="0.1"/>
+         </effect>
+         <children>
+            <Label layoutX="139.0" layoutY="27.0" prefHeight="57.0" prefWidth="110.0" text="SIGN UP" underline="true">
+               <font>
+                  <Font name="Cambria Bold" size="27.0"/>
+               </font>
+            </Label>
+            <JFXTextField labelFloat="true" layoutX="71.0" layoutY="262.0" prefHeight="31.0" prefWidth="247.0"
+                          promptText="Postgres UserName">
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+            </JFXTextField>
+            <JFXButton layoutX="89.0" layoutY="461.0" text="Save">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/save.png"/>
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="191.0" layoutY="461.0" text="Cancel">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_cancel_48px.png"/>
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="42.0" layoutY="27.0" pickOnBounds="true"
+                       preserveRatio="true"/>
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="77.0" layoutY="39.0">
+               <image>
+                  <Image url="@../images/logo.png"/>
+               </image>
+            </ImageView>
+            <JFXPasswordField labelFloat="true" layoutX="67.0" layoutY="126.0" prefHeight="31.0" prefWidth="247.0"
+                              promptText="Login Password">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
+                     <stops>
+                        <Stop color="#00e5ffa1"/>
+                        <Stop color="#1c31cd" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXPasswordField>
+            <JFXPasswordField labelFloat="true" layoutX="67.0" layoutY="193.0" prefHeight="31.0" prefWidth="247.0"
+                              promptText="Login Confirmation">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
+                     <stops>
+                        <Stop color="#00e5ffa1"/>
+                        <Stop color="#1c31cd" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXPasswordField>
+            <JFXPasswordField labelFloat="true" layoutX="71.0" layoutY="334.0" prefHeight="31.0" prefWidth="247.0"
+                              promptText="Postgres Password">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
+                     <stops>
+                        <Stop color="#00e5ffa1"/>
+                        <Stop color="#1c31cd" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXPasswordField>
+            <ImageView layoutX="290.0" layoutY="338.0">
+               <image>
+                  <Image url="@../images/icons8_secure_24px_1.png"/>
+               </image>
+            </ImageView>
+            <ImageView layoutX="290.0" layoutY="130.0">
+               <image>
+                  <Image url="@../images/icons8_secure_24px_1.png"/>
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="290.0" layoutY="193.0">
+               <image>
+                  <Image url="@../images/icons8_checked_32px.png"/>
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="290.0" layoutY="266.0">
+               <image>
+                  <Image url="@../images/icons8_male_user_32px.png"/>
+               </image>
+            </ImageView>
+            <JFXPasswordField labelFloat="true" layoutX="71.0" layoutY="402.0" prefHeight="31.0" prefWidth="247.0"
+                              promptText="Database URL">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="0.5145631067961165" startX="0.48543689320388345" startY="1.0">
+                     <stops>
+                        <Stop color="#00e5ffa1"/>
+                        <Stop color="#1c31cd" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00e5ff"/>
+                        <Stop color="#2979ff" offset="1.0"/>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXPasswordField>
+            <ImageView layoutX="290.0" layoutY="406.0">
+               <image>
+                  <Image url="@../images/link.png"/>
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="209.0" layoutY="608.0" text="By siging up, you agree to BGESTIO's&#10;"/>
+      <Label layoutX="189.0" layoutY="630.0" text="Terms and Conditions" textFill="#005eab">
+         <font>
+            <Font name="Cambria" size="15.0"/>
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="629.0" prefHeight="21.0" prefWidth="17.0" text="&amp;"/>
+      <Label layoutX="363.0" layoutY="630.0" text="Privacy Policy" textFill="#005eab">
+         <font>
+            <Font name="Cambria" size="15.0"/>
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

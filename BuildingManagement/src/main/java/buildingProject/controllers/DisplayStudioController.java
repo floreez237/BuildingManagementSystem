@@ -7,6 +7,7 @@ import buildingProject.services.rooms.StudioService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.GlobalConstants;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -33,6 +34,7 @@ public class DisplayStudioController {
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
     private final StudioService studioService;
+    private final ViewFlow viewFlow;
     @FXML
     private JFXTextField tfRoomId;
 
@@ -81,17 +83,16 @@ public class DisplayStudioController {
     @FXML
     private Label lblDepositCurrency;
 
-    public DisplayStudioController(FXMLResources fxmlResources, ApplicationContext applicationContext, StudioService studioService) {
+    public DisplayStudioController(FXMLResources fxmlResources, ApplicationContext applicationContext, StudioService studioService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.studioService = studioService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
     }
 
     @FXML

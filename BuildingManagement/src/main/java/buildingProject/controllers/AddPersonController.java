@@ -4,12 +4,12 @@ import buildingProject.dto.PersonDTO;
 import buildingProject.services.PersonService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -30,6 +30,7 @@ public class AddPersonController {
     private final PersonService personService;
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
+    private final ViewFlow viewFlow;
     @FXML
     private JFXTextField tfPhone;
 
@@ -51,18 +52,18 @@ public class AddPersonController {
     @FXML
     private JFXTextField tfMaritalStatus;
 
-    public AddPersonController(PersonService personService, FXMLResources fxmlResources, ApplicationContext applicationContext) {
+    public AddPersonController(PersonService personService, FXMLResources fxmlResources, ApplicationContext applicationContext, ViewFlow viewFlow) {
         this.personService = personService;
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
         DisplayAllPersonsController.initializeCompleteList(personService.findAllByRoomId(roomId));
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
+
     }
 
     @FXML

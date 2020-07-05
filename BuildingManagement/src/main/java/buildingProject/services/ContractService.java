@@ -3,6 +3,8 @@ package buildingProject.services;
 import buildingProject.dto.ContractDTO;
 import buildingProject.model.ContractEntity;
 import buildingProject.repositories.ContractRepository;
+import buildingProject.repositories.room_repositories.RoomRepository;
+import buildingProject.services.rooms.RoomService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,27 +18,36 @@ import java.util.stream.Collectors;
 public class ContractService {
     private final ContractRepository contractRepo;
     private final ModelMapper mapper;
+    private final RoomRepository roomRepository;
 
-    public ContractService(ContractRepository contractRepo, ModelMapper mapper) {
+    public ContractService(ContractRepository contractRepo, ModelMapper mapper, RoomRepository roomRepository) {
         this.contractRepo = contractRepo;
         this.mapper = mapper;
+        this.roomRepository = roomRepository;
+    }
+
+    public  boolean isContractExpired(ContractDTO contractDTO) {
+        return LocalDate.now().isAfter(contractDTO.getDateOfPayment().plusMonths(contractDTO.getDuration()));
     }
 
     public void deleteByRoomId(Long roomId) {
         contractRepo.deleteAllByRoomId(roomId);
     }
 
-    public void delete(Long conId) {
-        contractRepo.deleteById(conId);
+    public void delete(ContractDTO contractDTO) {
+        contractRepo.deleteById(contractDTO.getId());
+        roomRepository.getOne(contractDTO.getRoomId()).setOccupied(false);
     }
 
+    @Transactional
     public Long save(ContractDTO contractDTO) {
+        roomRepository.getOne(contractDTO.getRoomId()).setOccupied(true);
         return contractRepo.save(mapper.map(contractDTO, ContractEntity.class)).getId();
     }
 
     @Transactional
-    public List<ContractDTO> findAll() {
-        return contractRepo.findAll().stream().map(contractEntity -> mapper.map(contractEntity,ContractDTO.class))
+    public List<ContractDTO> findAllNonObsolete() {
+        return contractRepo.findAllByIsObsoleteIsFalse().stream().map(contractEntity -> mapper.map(contractEntity,ContractDTO.class))
                 .collect(Collectors.toList());
     }
 

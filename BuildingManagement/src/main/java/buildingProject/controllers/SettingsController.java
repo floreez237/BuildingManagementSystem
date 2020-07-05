@@ -5,11 +5,10 @@
  */
 package buildingProject.controllers;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
@@ -24,21 +23,21 @@ import java.util.ResourceBundle;
 public class SettingsController implements Initializable {
 
     @FXML
-    private TextField tfCurrentPassword;
+    private JFXTextField tfCurrentPassword;
 
     @FXML
-    private TextField tfNewPassword;
+    private JFXTextField tfNewPassword;
 
     @FXML
-    private Label label;
+    private JFXTextField tfPasswordConfirmation;
 
     @FXML
-    void onCancel(ActionEvent event) {
+    void handleOnCancelAction(ActionEvent event) {
 
     }
 
     @FXML
-    void onSave(ActionEvent event) {
+    void handleOnSaveAction(ActionEvent event) {
 
     }
 

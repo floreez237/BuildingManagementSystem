@@ -7,6 +7,7 @@ import buildingProject.services.rooms.BedroomService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.GlobalConstants;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -33,6 +34,7 @@ public class DisplayBedRoomController {
     private final ApplicationContext applicationContext;
     private final FXMLResources fxmlResources;
     private final BedroomService bedroomService;
+    private final ViewFlow viewFlow;
     
     @FXML
     private JFXTextField tfRoomId;
@@ -80,17 +82,16 @@ public class DisplayBedRoomController {
     private Label lblDepositCurrency;
 
 
-    public DisplayBedRoomController(ApplicationContext applicationContext, FXMLResources fxmlResources, BedroomService bedroomService) {
+    public DisplayBedRoomController(ApplicationContext applicationContext, FXMLResources fxmlResources, BedroomService bedroomService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.bedroomService = bedroomService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
     }
 
     @FXML

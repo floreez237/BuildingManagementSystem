@@ -8,6 +8,7 @@ import buildingProject.services.bills.WaterBillService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.GlobalConstants;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
@@ -32,6 +33,7 @@ public class DisplayBillController {
     private final FXMLResources fxmlResources;
     private final ElectricityBillService electricityBillService;
     private final WaterBillService waterBillService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private JFXTextField tfBillId;
@@ -63,18 +65,17 @@ public class DisplayBillController {
     @FXML
     private JFXDatePicker paymentDatePicker;
 
-    public DisplayBillController(ApplicationContext applicationContext, FXMLResources fxmlResources, ElectricityBillService electricityBillService, WaterBillService waterBillService) {
+    public DisplayBillController(ApplicationContext applicationContext, FXMLResources fxmlResources, ElectricityBillService electricityBillService, WaterBillService waterBillService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.electricityBillService = electricityBillService;
         this.waterBillService = waterBillService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllBillsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML
@@ -133,12 +134,7 @@ public class DisplayBillController {
 
         tfAmount.setText(String.format("%.1f",billDTO.getAmount()));
 
-        radYes.selectedProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                setPaymentDateVisible(radYes.isSelected());
-            }
-        });
+        radYes.selectedProperty().addListener(observable -> setPaymentDateVisible(radYes.isSelected()));
         radYes.setSelected(billDTO.isPaid());
         setPaymentDateVisible(billDTO.isPaid());
 

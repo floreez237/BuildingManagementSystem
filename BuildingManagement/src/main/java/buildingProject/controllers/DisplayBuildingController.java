@@ -9,6 +9,7 @@ import buildingProject.dto.BuildingDTO;
 import buildingProject.model.embeddables.BuildingExtra;
 import buildingProject.services.BuildingService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -48,6 +49,7 @@ public class DisplayBuildingController implements Initializable {
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
     private final BuildingService buildingService;
+    private final ViewFlow viewFlow;
 
     @Value("classpath:/images/icons8-building-with-top-view-24.png")
     private Resource logo;
@@ -74,10 +76,11 @@ public class DisplayBuildingController implements Initializable {
     private JFXListView<String> lvExtra;
 
 
-    public DisplayBuildingController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingService buildingService) {
+    public DisplayBuildingController(FXMLResources fxmlResources, ApplicationContext applicationContext, BuildingService buildingService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.buildingService = buildingService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -102,18 +105,14 @@ public class DisplayBuildingController implements Initializable {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getBuildingManagementResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML
     void onDisplayLevels(ActionEvent event) throws IOException {
         //Assign the all levels information to the table
         DisplayAllLevelsController.setBuildingDTO(currentBuildingDTO);
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllLevels().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDisplayBuildingResource(),fxmlResources.getDisplayAllLevels());
 
     }
 
@@ -122,9 +121,7 @@ public class DisplayBuildingController implements Initializable {
         //Assign the persons in the building information to the table
         DisplayAllPersonsController.initializeCompleteList(buildingService.findAllPersons(currentBuildingDTO));
         DisplayAllPersonsController.setRoomId(null);
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDisplayBuildingResource(),fxmlResources.getDisplayAllPersonsResource());
 //        controller.setAddButtonVisible(false);
     }
 

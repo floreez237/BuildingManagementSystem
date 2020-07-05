@@ -68,7 +68,7 @@ class RoomRepositoryTest {
 
     @Test
     void countAllByLevelIdAndOccupiedFalse() {
-        assertEquals(2L,roomRepository.countAllByLevelIdAndOccupiedFalse(2L));
+        assertEquals(0,roomRepository.countAllByLevelIdAndOccupiedFalse(2L));
     }
 
     @Test

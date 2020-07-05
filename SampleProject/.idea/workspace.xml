@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec662f8b-3510-4100-b58a-9d2cd9c34b0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/BuildingLevelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/BuildingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/PersonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/bills/ElectricityBillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/bills/WaterBillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/services/rooms/RoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/MainAppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/repositories/ContractRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/repositories/PersonRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/repositories/bill_repositories/ElectricityBillRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/repositories/bill_repositories/WaterBillRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/repositories/room_repositories/RoomRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/services/BuildingServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/services/PersonServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/services/rooms/RoomServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/StageInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/StageInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/AddBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/AddBuildingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/BuildingManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/BuildingManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/controllers/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/dto/BuildingLevelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/dto/BuildingLevelDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/dto_to_entity/BuildingDTOtoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/dto_to_entity/BuildingLevelDTOtoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/entity_to_dto/BuildingLevelEntityToDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/map_configs/property_maps/entity_to_dto/BuildingLevelEntityToDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/BuildingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/BuildingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/embeddables/BuildingExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/embeddables/BuildingExtra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/rooms/RoomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/model/rooms/RoomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/BuildingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/BuildingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/bill_repositories/ElectricityBillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/bill_repositories/ElectricityBillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/bill_repositories/WaterBillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/bill_repositories/WaterBillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/room_repositories/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/java/buildingProject/repositories/room_repositories/RoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/AddBuilding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/AddBuilding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/BuildingManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/BuildingManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/DisplayBuilding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/main/resources/fxml/DisplayBuilding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/map_configs/CustomMapperDTOtoETest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/java/buildingProject/map_configs/CustomMapperDTOtoETest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BuildingManagement/src/test/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../BuildingManagement/src/test/resources/import.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bw8CXCvwcj8ewKqxxe349xwbUk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controllers.MainApp" />
+      <module name="SampleProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec662f8b-3510-4100-b58a-9d2cd9c34b0c" name="Default Changelist" comment="" />
+      <created>1589531668501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589531668501</updated>
+      <workItem from="1589531670215" duration="3287000" />
+      <workItem from="1589583308616" duration="2045000" />
+      <workItem from="1589855808900" duration="630000" />
+      <workItem from="1589875906631" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1589855872308">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589855872308" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1589855872307">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1589855872307" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1589855872307">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1589855872307" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1589855872307">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1589855872307" />
+    <state x="403" y="189" width="540" height="438" key="extract.method.dialog" timestamp="1589532454046">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="403" y="189" width="540" height="438" key="extract.method.dialog/0.0.1366.768@0.0.1366.768" timestamp="1589532454046" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1589585021670">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1589585021670" />
+  </component>
+</project>

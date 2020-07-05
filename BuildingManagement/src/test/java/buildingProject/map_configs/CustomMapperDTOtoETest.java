@@ -176,7 +176,7 @@ class CustomMapperDTOtoETest {
         ContractEntity entity = modelMapper.map(dto, ContractEntity.class);
         assertEquals(dto.getId(), entity.getId());
         assertEquals(dto.getDateOfPayment(), entity.getDateOfPayment());
-        assertFalse(entity.getRoom().isOccupied());
+        assertTrue(entity.getRoom().isOccupied());
         assertEquals("bouloulna yasmine", entity.getTenant().getName());
     }
 

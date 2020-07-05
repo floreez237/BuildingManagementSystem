@@ -100,7 +100,7 @@ class CustomMapperConfigEtoDTOTest {
         assertEquals(1, dto.getAreasOfKitchens().size());
         assertEquals(1, dto.getAreasOfParlours().size());
         assertEquals(25000, dto.getRent(), 1E-14);
-        assertFalse(dto.isOccupied());
+        assertTrue(dto.isOccupied());
         assertEquals(1, dto.getSetOfFurniture().size());
         assertTrue(dto.getSetOfFurniture().stream().
                 anyMatch(furniture -> furniture.getName().equals("table")));
@@ -134,7 +134,7 @@ class CustomMapperConfigEtoDTOTest {
         assertEquals(35000, dto.getRent(), 1E-14);
         assertEquals(10, dto.getAreaOfToilet(), 1E-14);
         assertEquals(10, dto.getAreaOfKitchen(), 1E-14);
-        assertFalse(dto.isOccupied());
+        assertTrue(dto.isOccupied());
     }
 
     @Test

@@ -73,9 +73,9 @@ public class RoomService {
         return roomRepo.countAllByOccupiedFalse();
     }
 
-    public void setRoomOccupied(long roomId) {
+    public void setRoomOccupied(long roomId,boolean isOccupied) {
         RoomEntity roomEntity = roomRepo.getOne(roomId);
-        roomEntity.setOccupied(true);
+        roomEntity.setOccupied(isOccupied);
         roomRepo.save(roomEntity);
     }
 }

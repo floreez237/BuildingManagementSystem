@@ -13,5 +13,6 @@ public class ContractDTO {
     private LocalDate dateOfPayment;
     private LocalDate dateOfCreation;
     private int duration;
+    private boolean isObsolete;
 
 }

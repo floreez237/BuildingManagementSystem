@@ -1,9 +1,8 @@
 package buildingProject.controllers;
 
 import buildingProject.dto.PersonDTO;
-import buildingProject.services.BuildingService;
-import buildingProject.services.PersonService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
@@ -29,9 +28,8 @@ import java.util.stream.Collectors;
 public class DisplayAllPersonsController {
 
     private final ApplicationContext applicationContext;
-    private final PersonService personService;
     private final FXMLResources fxmlResources;
-    private final BuildingService buildingService;
+    private final ViewFlow viewFlow;
 
     private static Long RoomId;
 
@@ -61,32 +59,23 @@ public class DisplayAllPersonsController {
 
     private static Set<PersonDTO> completeList = new HashSet<>();
 
-    public DisplayAllPersonsController(ApplicationContext applicationContext, PersonService personService, FXMLResources fxmlResources, BuildingService buildingService) {
+    public DisplayAllPersonsController(ApplicationContext applicationContext, FXMLResources fxmlResources, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
-        this.personService = personService;
         this.fxmlResources = fxmlResources;
-        this.buildingService = buildingService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleAddPerson(ActionEvent event) throws IOException {
         AddPersonController.setRoomId(RoomId);
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getAddPersonResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDisplayAllPersonsResource(),fxmlResources.getAddPersonResource());
+
     }
 
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader;
-        if(RoomId == null){
-            loader = new FXMLLoader(fxmlResources.getDisplayBuildingResource().getURL());
-        }else{
-            loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        }
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML
@@ -94,9 +83,7 @@ public class DisplayAllPersonsController {
         PersonDTO selectedDto = tblPersons.getSelectionModel().getSelectedItem();
         if (selectedDto != null) {
             DisplayPersonController.setPersonDTO(selectedDto);
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayPersonResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            MainViewController.getGlobalMainPage().setCenter(loader.load());
+            viewFlow.loadResource(fxmlResources.getDisplayAllPersonsResource(),fxmlResources.getDisplayPersonResource());
         }
 
     }
@@ -129,16 +116,13 @@ public class DisplayAllPersonsController {
         tblPersons.getItems().addAll(completeList);
         tblPersons.getSortOrder().add(colPersonId);
 
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                Set<PersonDTO> result = completeList.stream().filter(personDTO -> {
-                    String stringId = "pers" + personDTO.getId();
-                    return stringId.contains(newValue.toLowerCase()) || personDTO.getName().toLowerCase().contains(newValue.toLowerCase());
-                }).collect(Collectors.toSet());
-                tblPersons.getItems().clear();
-                tblPersons.getItems().addAll(result);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            Set<PersonDTO> result = completeList.stream().filter(personDTO -> {
+                String stringId = "pers" + personDTO.getId();
+                return stringId.contains(newValue.toLowerCase()) || personDTO.getName().toLowerCase().contains(newValue.toLowerCase());
+            }).collect(Collectors.toSet());
+            tblPersons.getItems().clear();
+            tblPersons.getItems().addAll(result);
         });
     }
 

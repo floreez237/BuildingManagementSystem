@@ -4,6 +4,7 @@ import buildingProject.dto.BuildingDTO;
 import buildingProject.model.embeddables.BuildingExtra;
 import buildingProject.services.BuildingService;
 import buildingProject.toolkit.FXMLResources;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
@@ -33,7 +34,7 @@ public class AddBuildingController {
     private final BuildingService buildingService;
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
-
+    private final ViewFlow viewFlow;
 
     @FXML
     private JFXListView<String> lvExtras;
@@ -47,10 +48,11 @@ public class AddBuildingController {
     @FXML
     private JFXTextField tfNumberOfLevel;
 
-    public AddBuildingController(BuildingService buildingService, FXMLResources fxmlResources, ApplicationContext applicationContext) {
+    public AddBuildingController(BuildingService buildingService, FXMLResources fxmlResources, ApplicationContext applicationContext, ViewFlow viewFlow) {
         this.buildingService = buildingService;
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -72,11 +74,7 @@ public class AddBuildingController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getBuildingManagementResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        Parent root = loader.load();
-        BorderPane borderPane = MainViewController.getGlobalMainPage();
-        borderPane.setCenter(root);
+        viewFlow.goBack();
     }
 
     @FXML
@@ -108,17 +106,14 @@ public class AddBuildingController {
     void handleCancel(ActionEvent event) {
         Alert cancel = new Alert(AlertType.WARNING, "Are you sure?", ButtonType.YES, ButtonType.NO);
         cancel.showAndWait();
-        cancel.resultProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                if (cancel.getResult() == ButtonType.YES) {
-                    try {
-                        handleGoBack(new ActionEvent());
-                    } catch (IOException e) {
-                        Alert error = new Alert(AlertType.ERROR, "AN ERROR HAS OCCURRED");
-                        error.showAndWait();
-                        Platform.exit();
-                    }
+        cancel.resultProperty().addListener(observable -> {
+            if (cancel.getResult() == ButtonType.YES) {
+                try {
+                    handleGoBack(new ActionEvent());
+                } catch (IOException e) {
+                    Alert error = new Alert(AlertType.ERROR, "AN ERROR HAS OCCURRED");
+                    error.showAndWait();
+                    Platform.exit();
                 }
             }
         });
@@ -126,12 +121,9 @@ public class AddBuildingController {
 
     @FXML
     public void initialize() {
-        tfNumberOfLevel.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    tfNumberOfLevel.setText(oldValue);
-                }
+        tfNumberOfLevel.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                tfNumberOfLevel.setText(oldValue);
             }
         });
     }

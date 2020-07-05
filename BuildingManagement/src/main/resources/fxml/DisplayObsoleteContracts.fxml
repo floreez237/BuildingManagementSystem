@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.ObsoleteContractController">
+   <children>
+      <Label layoutX="81.0" layoutY="31.0" prefHeight="43.0" prefWidth="257.0" text="Obsolete Contracts" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Group layoutX="10.0" layoutY="10.0" />
+      <TableView fx:id="tblContracts" layoutX="22.0" layoutY="150.0" prefHeight="513.0" prefWidth="671.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="135.0" style="-fx-alignment: CENTER;" text="ContractID" />
+            <TableColumn fx:id="colDateOfPayment" prefWidth="201.0" style="-fx-alignment: CENTER;" text="Date of Payment" />
+            <TableColumn fx:id="colDuration" prefWidth="137.0" style="-fx-alignment: CENTER;" text="Duration (In Months)" />
+            <TableColumn fx:id="colExpirationDate" prefWidth="197.0" style="-fx-alignment: CENTER;" text="Expiration Date" />
+         </columns>
+      </TableView>
+      <TextField fx:id="tfSearch" layoutX="517.0" layoutY="104.0" prefHeight="31.0" prefWidth="172.0" promptText="search contract Id" style="-fx-background-radius: 50;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="657.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_search_30px_2.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="47.0" layoutY="103.0" onAction="#handleDisplay" text="Display">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_view_details_26px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="166.0" layoutY="103.0" onAction="#handleDelete" text="Delete">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="23.0" onAction="#handleGoBack" prefHeight="43.0" prefWidth="55.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_back_arrow_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

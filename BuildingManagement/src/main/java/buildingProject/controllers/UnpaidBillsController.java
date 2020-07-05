@@ -1,6 +1,5 @@
 package buildingProject.controllers;
 
-import buildingProject.dto.PersonDTO;
 import buildingProject.dto.bills.BillDTO;
 import buildingProject.dto.bills.ElectricityBillDTO;
 import buildingProject.dto.bills.WaterBillDTO;
@@ -8,13 +7,9 @@ import buildingProject.services.PersonService;
 import buildingProject.services.bills.ElectricityBillService;
 import buildingProject.services.bills.WaterBillService;
 import buildingProject.toolkit.FXMLResources;
-import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +33,7 @@ public class UnpaidBillsController {
     private final WaterBillService waterBillService;
     private final ElectricityBillService electricityBillService;
     private final PersonService personService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private TableView<BillDTO> tblBills;
@@ -58,9 +54,6 @@ public class UnpaidBillsController {
     private TableColumn<BillDTO, String> colRoomId;
 
     @FXML
-    private TableColumn<BillDTO, String> colTenantName;
-
-    @FXML
     private TextField tfSearch;
 
     @FXML
@@ -68,12 +61,13 @@ public class UnpaidBillsController {
 
     private final List<BillDTO> completeList = new ArrayList<>();
 
-    public UnpaidBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, PersonService personService) {
+    public UnpaidBillsController(ApplicationContext applicationContext, FXMLResources fxmlResources, WaterBillService waterBillService, ElectricityBillService electricityBillService, PersonService personService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.waterBillService = waterBillService;
         this.electricityBillService = electricityBillService;
         this.personService = personService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -83,20 +77,17 @@ public class UnpaidBillsController {
             if(!selectedBillDTO.isPaid()){
                 Alert confirmPayment = new Alert(Alert.AlertType.CONFIRMATION, "Confirming that bill has been paid today.Continue?", ButtonType.YES, ButtonType.NO);
                 confirmPayment.setHeaderText("CONFIRM BILL PAYMENT");
-                confirmPayment.resultProperty().addListener(new InvalidationListener() {
-                    @Override
-                    public void invalidated(Observable observable) {
-                        if (confirmPayment.getResult() == ButtonType.YES) {
-                            selectedBillDTO.setPaid(true);
-                            selectedBillDTO.setDateOfPayment(LocalDate.now());
-                            tblBills.getItems().remove(selectedBillDTO);
-                            if (selectedBillDTO instanceof ElectricityBillDTO) {
-                                electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
-                            }else{
-                                waterBillService.save(((WaterBillDTO) selectedBillDTO));
-                            }
-                            tblBills.refresh();
+                confirmPayment.resultProperty().addListener(observable -> {
+                    if (confirmPayment.getResult() == ButtonType.YES) {
+                        selectedBillDTO.setPaid(true);
+                        selectedBillDTO.setDateOfPayment(LocalDate.now());
+                        tblBills.getItems().remove(selectedBillDTO);
+                        if (selectedBillDTO instanceof ElectricityBillDTO) {
+                            electricityBillService.save(((ElectricityBillDTO) selectedBillDTO));
+                        }else{
+                            waterBillService.save(((WaterBillDTO) selectedBillDTO));
                         }
+                        tblBills.refresh();
                     }
                 });
                 confirmPayment.showAndWait();
@@ -106,9 +97,7 @@ public class UnpaidBillsController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDashboardResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+       viewFlow.goBack();
     }
 
 
@@ -136,14 +125,6 @@ public class UnpaidBillsController {
         });
         colRoomId.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>("ROOM" + param.getValue().getRoomId()));
 
-        colTenantName.setCellValueFactory(param -> {
-            if (param.getValue().getRoomId() == null) {
-                return new ReadOnlyObjectWrapper<>("");
-            }
-            PersonDTO personDTO = personService.findTenantByRoomId(param.getValue().getRoomId());
-            return new ReadOnlyObjectWrapper<>(Tools.getFirstTwoNames(personDTO.getName()));
-        });
-
         colDueDate.setCellValueFactory(param ->{
             LocalDate dueDate = param.getValue().getDateOfDue();
             if (dueDate == null) {
@@ -159,21 +140,15 @@ public class UnpaidBillsController {
 
         cmbBillType.getItems().addAll("ALL","ELECTRICITY","WATER");
         cmbBillType.getSelectionModel().select(0);
-        cmbBillType.getSelectionModel().selectedItemProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        cmbBillType.getSelectionModel().selectedItemProperty().addListener(observable -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performTypeFilter(performSearch(tfSearch.getText(), completeList));
+            tblBills.getItems().addAll(newList);
         });
-        tfSearch.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                tblBills.getItems().clear();
-                List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
-                tblBills.getItems().addAll(newList);
-            }
+        tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            tblBills.getItems().clear();
+            List<BillDTO> newList = performSearch(newValue, performTypeFilter(completeList));
+            tblBills.getItems().addAll(newList);
         });
     }
 

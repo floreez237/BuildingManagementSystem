@@ -4,10 +4,7 @@ import buildingProject.dto.rooms.AppartmentDTO;
 import buildingProject.model.embeddables.AdditionalRoom;
 import buildingProject.model.embeddables.Furniture;
 import buildingProject.services.rooms.AppartmentService;
-import buildingProject.toolkit.FXMLResources;
-import buildingProject.toolkit.GlobalConstants;
-import buildingProject.toolkit.MyDoubleArea;
-import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.*;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -41,6 +38,7 @@ public class DisplayAppartmentController {
     private final ApplicationContext applicationContext;
     private final FXMLResources fxmlResources;
     private final AppartmentService appartmentService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private JFXTextField tfRoomId;
@@ -91,17 +89,16 @@ public class DisplayAppartmentController {
     @FXML
     private TableColumn<AdditionalRoom, String> colAddRoomArea;
 
-    public DisplayAppartmentController(ApplicationContext applicationContext, FXMLResources fxmlResources, AppartmentService appartmentService) {
+    public DisplayAppartmentController(ApplicationContext applicationContext, FXMLResources fxmlResources, AppartmentService appartmentService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.appartmentService = appartmentService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.goBack();
     }
 
     @FXML

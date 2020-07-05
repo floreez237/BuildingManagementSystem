@@ -8,6 +8,7 @@ import buildingProject.services.rooms.BedroomService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.GlobalConstants;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -28,13 +29,14 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings("DuplicatedCode")
 @Component
-public class addBedroomController {
+public class AddBedroomController {
 
     private static Long levelId;
     private final FXMLResources fxmlResources;
     private final ApplicationContext applicationContext;
     private final BedroomService bedroomService;
     private final BuildingLevelService buildingLevelService;
+    private final ViewFlow viewFlow;
 
     @FXML
     private Accordion accordion;
@@ -43,8 +45,6 @@ public class addBedroomController {
     @FXML
     private ListView<String> lvFurnitures;
 
-    @FXML
-    private TitledPane tpAdditionalRooms;
 
     @FXML
     private TableView<AdditionalRoom> tblAdditionalRooms;
@@ -54,12 +54,6 @@ public class addBedroomController {
 
     @FXML
     private TableColumn<AdditionalRoom,String> colAddRoomArea;
-
-    @FXML
-    private JFXRadioButton radNo;
-
-    @FXML
-    private ToggleGroup isToiletInternal;
 
     @FXML
     private JFXRadioButton radYes;
@@ -82,11 +76,12 @@ public class addBedroomController {
     @FXML
     private JFXTextField tfArea;
 
-    public addBedroomController(FXMLResources fxmlResources, ApplicationContext applicationContext, BedroomService bedroomService, BuildingLevelService buildingLevelService) {
+    public AddBedroomController(FXMLResources fxmlResources, ApplicationContext applicationContext, BedroomService bedroomService, BuildingLevelService buildingLevelService, ViewFlow viewFlow) {
         this.fxmlResources = fxmlResources;
         this.applicationContext = applicationContext;
         this.bedroomService = bedroomService;
         this.buildingLevelService = buildingLevelService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
@@ -132,9 +127,7 @@ public class addBedroomController {
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayLevelResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+      viewFlow.goBack();
     }
 
     @FXML
@@ -199,6 +192,6 @@ public class addBedroomController {
     }
 
     public static void setLevelId(Long levelId) {
-        addBedroomController.levelId = levelId;
+        AddBedroomController.levelId = levelId;
     }
 }

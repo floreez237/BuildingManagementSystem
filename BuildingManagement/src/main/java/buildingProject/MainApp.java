@@ -8,6 +8,8 @@ package buildingProject;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
+import org.hibernate.exception.GenericJDBCException;
+import org.postgresql.util.PSQLException;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -20,19 +22,34 @@ public class MainApp extends Application {
     private ConfigurableApplicationContext applicationContext;
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         applicationContext.publishEvent(new StageReadyEvent(stage));
     }
 
     @Override
     public void init() {
-        applicationContext = new SpringApplicationBuilder(BootStrap.class).run();
+        try {
+            applicationContext = new SpringApplicationBuilder(BootStrap.class).run();
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n" + getRootException(e).getMessage());
+            stop();
+        }
     }
 
     @Override
     public void stop() {
-        applicationContext.close();
+        if (applicationContext != null) {
+            applicationContext.close();
+        }
         Platform.exit();
+    }
+
+    public Exception getRootException(Exception e) {
+        Exception originalCause = e;
+        while (originalCause.getCause() != null) {
+            originalCause = ((Exception) originalCause.getCause());
+        }
+        return originalCause;
     }
 
     public static class StageReadyEvent extends ApplicationEvent {

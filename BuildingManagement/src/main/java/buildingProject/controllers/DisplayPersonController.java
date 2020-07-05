@@ -4,6 +4,7 @@ import buildingProject.dto.PersonDTO;
 import buildingProject.services.PersonService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.Tools;
+import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
@@ -33,6 +34,7 @@ public class DisplayPersonController {
     private final ApplicationContext applicationContext;
     private final FXMLResources fxmlResources;
     private final PersonService personService;
+    private final ViewFlow viewFlow;
 
 
     @FXML
@@ -74,17 +76,16 @@ public class DisplayPersonController {
     @FXML
     private JFXTextField tfRoomId;
 
-    public DisplayPersonController(ApplicationContext applicationContext, FXMLResources fxmlResources, PersonService personService) {
+    public DisplayPersonController(ApplicationContext applicationContext, FXMLResources fxmlResources, PersonService personService, ViewFlow viewFlow) {
         this.applicationContext = applicationContext;
         this.fxmlResources = fxmlResources;
         this.personService = personService;
+        this.viewFlow = viewFlow;
     }
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
-        FXMLLoader loader  = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
-         loader.setControllerFactory(applicationContext::getBean);
-         MainViewController.getGlobalMainPage().setCenter(loader.load());
+      viewFlow.goBack();
     }
 
     @FXML
@@ -105,7 +106,7 @@ public class DisplayPersonController {
     public void activateDisplayOnlyOption() {
         TextField[] textFields = {tfPhoneNumber, tfNationalIdNumber, tfNationalIdNumber, tfAge,
                 tfMaritalStatus, tfName, tfPersonId, tfRoomId};
-        Button[] buttons = {btnUpdate, btnBack};
+        Button[] buttons = {btnUpdate};
         for (Button button : buttons) {
             button.setVisible(false);
         }
@@ -141,13 +142,10 @@ public class DisplayPersonController {
             tfAge.setText("" + (currentYear - date.getYear()));
         }
 
-        dateOfBirth.valueProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                LocalDate date = dateOfBirth.getValue();
-                int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-                tfAge.setText("" + (currentYear - date.getYear()));
-            }
+        dateOfBirth.valueProperty().addListener(observable -> {
+            LocalDate date = dateOfBirth.getValue();
+            int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+            tfAge.setText("" + (currentYear - date.getYear()));
         });
     }
 
