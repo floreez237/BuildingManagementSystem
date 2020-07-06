@@ -9,11 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -116,7 +113,7 @@ public class DisplayPersonController {
         }
         dateOfBirth.setEditable(false);
         radFemale.setDisable(true);
-        radFemale.setDisable(true);
+        radMale.setDisable(true);
     }
 
     @FXML

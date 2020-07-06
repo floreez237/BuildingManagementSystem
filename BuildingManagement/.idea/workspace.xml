@@ -25,20 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="completed the Login.fxml and Settings.fxml">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="modified BuildingManagement.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/BuildingManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/BuildingManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/ContractsManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/ContractsManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DisplayLevelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/DisplayLevelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/ObsoleteContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/ObsoleteContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/repositories/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/repositories/ContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/services/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/services/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/toolkit/FXMLResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/toolkit/FXMLResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/BuildingManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/BuildingManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594052684060</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="completed the ObsoleteContractController">
+      <created>1594055446545</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594055446545</updated>
+    </task>
+    <task id="LOCAL-00009" summary="modified BuildingManagement.fxml">
+      <created>1594055644513</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594055644513</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +435,9 @@
     <MESSAGE value="Addition of the view to the project" />
     <MESSAGE value="modified config files" />
     <MESSAGE value="completed the Login.fxml and Settings.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed the Login.fxml and Settings.fxml" />
+    <MESSAGE value="completed the ObsoleteContractController" />
+    <MESSAGE value="modified BuildingManagement.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified BuildingManagement.fxml" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -536,9 +541,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="0" key="Diagram.Print.Preview.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1593253282597" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1593587350422">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="83" y="87" width="1201" height="595" key="DiffContextDialog" timestamp="1594056012648">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="83" y="87" width="1201" height="595" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1594056012648" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1593587350422" />
     <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1593793656192">
       <screen x="0" y="0" width="1366" height="768" />
@@ -549,45 +555,45 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="507" y="286" key="Github.CreateGistDialog/0.0.1366.768@0.0.1366.768" timestamp="1594051966389" />
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1594055229031">
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1594056125876">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594055229031" />
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594056125876" />
     <state width="1024" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1594055229031">
+    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1594056125875">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1594055229031" />
+    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1594056125875" />
     <state width="1024" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1594055229031">
+    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1594056125875">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1594055229031" />
+    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1594056125875" />
     <state width="1024" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1594055229031">
+    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1594056125876">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1594055229031" />
+    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1594056125876" />
     <state width="1024" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1594055229032">
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1594056125877">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594055229032" />
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594056125877" />
     <state width="1024" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.center" timestamp="1594055229032">
+    <state width="1076" height="166" key="GridCell.Tab.1.center" timestamp="1594056125876">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1594055229032" />
+    <state width="1076" height="166" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1594056125876" />
     <state width="1024" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.left" timestamp="1594055229032">
+    <state width="1076" height="166" key="GridCell.Tab.1.left" timestamp="1594056125876">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1594055229032" />
+    <state width="1076" height="166" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1594056125876" />
     <state width="1024" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.right" timestamp="1594055229032">
+    <state width="1076" height="166" key="GridCell.Tab.1.right" timestamp="1594056125877">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1594055229032" />
+    <state width="1076" height="166" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1594056125877" />
     <state width="1024" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
     <state width="1294" height="260" key="GridCell.Tab.2.bottom" timestamp="1592650216086">
       <screen x="0" y="0" width="1366" height="768" />
@@ -639,10 +645,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="468" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1590518108963" />
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1594052690228">
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1594055658334">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1594052690228" />
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1594055658334" />
     <state x="309" y="112" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1593587053229" />
     <state x="499" y="162" key="chooseDestDirectoryDialog" timestamp="1590135479453">
       <screen x="0" y="0" width="1366" height="768" />
