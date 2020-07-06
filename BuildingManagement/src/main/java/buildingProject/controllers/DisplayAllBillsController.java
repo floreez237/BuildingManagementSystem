@@ -10,14 +10,9 @@ import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -98,7 +93,7 @@ public class DisplayAllBillsController {
         BillDTO selectedBillDTO = tblBills.getSelectionModel().getSelectedItem();
         if (selectedBillDTO != null) {
             if(!selectedBillDTO.isPaid()){
-                Alert confirmPayment = new Alert(AlertType.CONFIRMATION, "Confirming that bill has been today.Continue?", ButtonType.YES, ButtonType.NO);
+                Alert confirmPayment = new Alert(AlertType.CONFIRMATION, "Confirming that bill has been paid today.Continue?", ButtonType.YES, ButtonType.NO);
                 confirmPayment.setHeaderText("CONFIRM BILL PAYMENT");
                 confirmPayment.resultProperty().addListener(observable -> {
                     if (confirmPayment.getResult() == ButtonType.YES) {
