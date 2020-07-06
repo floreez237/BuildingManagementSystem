@@ -5,10 +5,13 @@
  */
 package buildingProject.controllers;
 
+import buildingProject.security.PasswordUtils;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
@@ -32,12 +35,38 @@ public class SettingsController implements Initializable {
     private JFXTextField tfPasswordConfirmation;
 
     @FXML
-    void handleOnCancelAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void handleOnSaveAction(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        if (tfCurrentPassword.getText().isEmpty()) {
+            alert.setContentText("Current Password not entered");
+            alert.showAndWait();
+            return;
+        }
+        if (tfNewPassword.getText().isEmpty()) {
+            alert.setContentText("New Password not entered");
+            alert.showAndWait();
+            return;
+        }
+        if (tfPasswordConfirmation.getText().isEmpty()) {
+            alert.setContentText("Password Confirmation not entered");
+            alert.showAndWait();
+            return;
+        }
+        if (!tfNewPassword.getText().equals(tfPasswordConfirmation.getText())) {
+            alert.setContentText("Confirmation does not match New Password");
+            alert.showAndWait();
+            return;
+        }
+
+        PasswordUtils.storePassword(tfNewPassword.getText());
+        alert.setAlertType(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("Successful Password Update");
+        alert.showAndWait();
+        TextField[] textFields = {tfPasswordConfirmation, tfNewPassword, tfCurrentPassword};
+        for (TextField textField : textFields) {
+            textField.clear();
+        }
+
 
     }
 

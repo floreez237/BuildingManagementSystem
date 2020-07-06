@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
@@ -69,30 +70,6 @@
             </LinearGradient>
          </focusColor>
       </JFXTextField>
-      <JFXButton layoutX="243.0" layoutY="422.0" onAction="#handleOnSaveAction" text="Save">
-         <cursor>
-            <Cursor fx:constant="HAND"/>
-         </cursor>
-         <graphic>
-            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../AppData/Local/Temp/icons8_ok_26px.png"/>
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton layoutX="368.0" layoutY="421.0" onAction="#handleOnCancelAction" text="Cancel">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../AppData/Local/Temp/icons8_cancel_48px_1.png"/>
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND"/>
-         </cursor>
-      </JFXButton>
       <JFXTextField fx:id="tfPasswordConfirmation" labelFloat="true" layoutX="139.0" layoutY="359.0" prefHeight="31.0"
                     prefWidth="432.0" promptText="Password Confirmation">
          <unFocusColor>
@@ -112,5 +89,20 @@
             </LinearGradient>
          </focusColor>
       </JFXTextField>
+      <JFXButton layoutX="311.0" layoutY="433.0" onAction="#handleOnSaveAction" text="Save">
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/save.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

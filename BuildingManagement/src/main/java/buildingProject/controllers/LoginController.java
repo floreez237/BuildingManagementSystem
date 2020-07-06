@@ -1,6 +1,7 @@
 package buildingProject.controllers;
 
-import buildingProject.MainApp;
+import buildingProject.security.PasswordUtils;
+import buildingProject.toolkit.FXMLResources;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -15,11 +16,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -32,6 +34,11 @@ import java.util.ResourceBundle;
 @Component
 public class LoginController implements Initializable {
     // Do not delete this anchor  i use it for css
+    private final ApplicationContext applicationContext;
+    private final FXMLResources fxmlResources;
+    @Value("classpath:/images/icons8-building-with-top-view-24.png")
+    private Resource logo;
+
     @FXML
     private AnchorPane anchorPane;
 
@@ -46,8 +53,12 @@ public class LoginController implements Initializable {
 
     @FXML
     private PasswordField pfPassword;
-    //retrieve the password
-    private String password = "yasmina";
+
+    public LoginController(ApplicationContext applicationContext, FXMLResources fxmlResources) {
+        this.applicationContext = applicationContext;
+        this.fxmlResources = fxmlResources;
+    }
+
 
     @FXML
     void handleExit(ActionEvent event) {
@@ -62,7 +73,7 @@ public class LoginController implements Initializable {
     }
 
     private void handlePassword(Event event) throws IOException {
-        if (pfPassword.getText().equals(getPw())) {
+        if (PasswordUtils.checkPassword(pfPassword.getText())) {
             lbl.setText("Successful login");
             lbl.setTextFill(Color.GREEN);
 
@@ -70,14 +81,16 @@ public class LoginController implements Initializable {
             Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
 
-            Parent root1 = FXMLLoader.load(getClass().getResource("/resources/fxml/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(fxmlResources.getMainViewResource().getURL());
+            loader.setControllerFactory(applicationContext::getBean);
             Stage stage1 = new Stage();
+            Parent root1 = loader.load();
             Scene scene = new Scene(root1);
-            stage1.getIcons().add(new Image(MainApp.class.getResourceAsStream("/resources/images/icons8-building-with-top-view-24.png")));
+            stage1.getIcons().add(new Image(logo.getURL().toString()));
             stage1.setTitle("BGESTIO");
             stage1.setScene(scene);
             stage1.show();
-        } else if (pfPassword.getText().equals("")) {
+        } else if (pfPassword.getText().isEmpty()) {
             lbl.setText("Please enter your password");
             lbl.setTextFill(Color.RED);
         } else {
@@ -86,37 +99,20 @@ public class LoginController implements Initializable {
         }
     }
 
-    @FXML
-    void handleLogin2(KeyEvent event) throws IOException {
-        if (event.getCode() == KeyCode.ENTER) {
-            handlePassword(event);
-        }
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tfPassword.setVisible(false);
+        tfPassword.textProperty().bindBidirectional(pfPassword.textProperty());
         chkPassword.selectedProperty().addListener((ObservableValue<? extends Boolean> Observable, Boolean oldValue, Boolean newValue) -> {
             if (chkPassword.isSelected()) {
-                tfPassword.setText(pfPassword.getText());
                 tfPassword.setVisible(true);
                 pfPassword.setVisible(false);
 
             } else {
-                pfPassword.setText(tfPassword.getText());
                 pfPassword.setVisible(true);
                 tfPassword.setVisible(false);
             }
         });
-    }
-
-    public String getPw() {
-        return password;
-    }
-
-    public void setPw(String pw) {
-        this.password = pw;
     }
 
 }

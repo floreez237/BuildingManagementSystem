@@ -16,26 +16,31 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:installation" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="modified config files">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BuildingManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BuildingManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_2_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c818563-75b7-4788-af49-76057e56c82b" name="Default Changelist" comment="completed the Initialization classes">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_31__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01-Jul-20_08_58__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-Jul-20_09_05__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/BootStrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/BootStrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/InitializationComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/InitializationComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/InstallationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/InstallationApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/InstallationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/InstallationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Installation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Installation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BuildingManagement.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/StageInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/StageInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/buildingProject/controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-buildingProject.map_configs.CustomMapperConfigEtoDTOTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-buildingProject.map_configs.CustomMapperConfigEtoDTOTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/buildingProject.services.BuildingServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/buildingProject.services.BuildingServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/buildingProject.services.rooms.RoomServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/buildingProject.services.rooms.RoomServiceTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +162,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestClass">
+  <component name="RunManager" selected="Spring Boot.BootStrap">
     <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="buildingProject.TestClass" />
       <module name="BuildingManagement" />
@@ -247,13 +252,13 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestClass" />
       <item itemvalue="JUnit.PersonRepositoryTest.findTenantByRoomId" />
       <item itemvalue="JUnit.PersonServiceTest.findTenantByRoomId" />
       <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest.buildingEntityToDTO" />
       <item itemvalue="JUnit.CustomMapperConfigEtoDTOTest" />
       <item itemvalue="Multirun.Unnamed" />
       <item itemvalue="Spring Boot.BootStrap" />
-      <item itemvalue="Application.TestClass" />
     </list>
     <recent_temporary>
       <list>
@@ -414,7 +419,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="installation" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -480,10 +497,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="92" y="92" width="1182" height="584" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1366.768@0.0.1366.768" timestamp="1589890658810" />
-    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1593785676129">
+    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1594051588812">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1593785676129" />
+    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1594051588812" />
     <state x="597" y="293" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1592652291068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -505,10 +522,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1590199831378" />
-    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589584279857">
+    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594050721965">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1589584279857" />
+    <state x="413" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1594050721965" />
     <state x="392" y="33" key="#deleteAll.sql" timestamp="1592571834151">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -542,45 +559,49 @@
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1593793656192" />
     <state x="521" y="149" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593587441764" />
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1593918989536">
+    <state x="507" y="286" key="Github.CreateGistDialog" timestamp="1594051966389">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593918989536" />
+    <state x="507" y="286" key="Github.CreateGistDialog/0.0.1366.768@0.0.1366.768" timestamp="1594051966389" />
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom" timestamp="1594052159286">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1076" height="166" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594052159286" />
     <state width="1024" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1593918989536">
+    <state width="1076" height="166" key="GridCell.Tab.0.center" timestamp="1594052159286">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593918989536" />
+    <state width="1076" height="166" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1594052159286" />
     <state width="1024" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1593918989536">
+    <state width="1076" height="166" key="GridCell.Tab.0.left" timestamp="1594052159286">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593918989536" />
+    <state width="1076" height="166" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1594052159286" />
     <state width="1024" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1593918989536">
+    <state width="1076" height="166" key="GridCell.Tab.0.right" timestamp="1594052159286">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593918989536" />
+    <state width="1076" height="166" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1594052159286" />
     <state width="1024" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054130" />
-    <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1593918989537">
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom" timestamp="1594052159287">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593918989537" />
+    <state width="1076" height="166" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594052159287" />
     <state width="1024" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.center" timestamp="1593918989537">
+    <state width="1076" height="166" key="GridCell.Tab.1.center" timestamp="1594052159287">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1593918989537" />
+    <state width="1076" height="166" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1594052159287" />
     <state width="1024" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.left" timestamp="1593918989537">
+    <state width="1076" height="166" key="GridCell.Tab.1.left" timestamp="1594052159286">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1593918989537" />
+    <state width="1076" height="166" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1594052159286" />
     <state width="1024" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
-    <state width="1076" height="166" key="GridCell.Tab.1.right" timestamp="1593918989537">
+    <state width="1076" height="166" key="GridCell.Tab.1.right" timestamp="1594052159287">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1076" height="166" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1593918989537" />
+    <state width="1076" height="166" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1594052159287" />
     <state width="1024" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593518054131" />
     <state width="1294" height="260" key="GridCell.Tab.2.bottom" timestamp="1592650216086">
       <screen x="0" y="0" width="1366" height="768" />
@@ -611,6 +632,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="348" y="88" key="NewModule_or_Project.wizard/0.0.1366.768@0.0.1366.768" timestamp="1593793681900" />
+    <state x="178" y="104" key="RollbackChangesDialog" timestamp="1594037554713">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="178" y="104" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1594037554713" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1593725913711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -674,15 +699,15 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="389" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1590198018908" />
-    <state x="381" y="185" width="756" height="727" key="run.anything.popup" timestamp="1593253850132">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1590581631793" />
-    <state x="381" y="185" width="756" height="727" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593253850132" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593918810449">
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup" timestamp="1594051628364">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1593918810449" />
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1594051628364" />
+    <state x="381" y="185" width="756" height="727" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593253850132" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1594051961398">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1594051961398" />
     <state x="62" y="67" key="spring file set editor" timestamp="1589625766237">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
