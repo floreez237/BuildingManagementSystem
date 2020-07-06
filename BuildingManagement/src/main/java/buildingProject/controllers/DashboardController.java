@@ -14,7 +14,6 @@ import buildingProject.toolkit.ViewFlow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -72,24 +71,19 @@ public class DashboardController{
 
     @FXML
     void displayExpiredContracts(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getExpiredContractsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDashboardResource(), fxmlResources.getExpiredContractsResource());
 
     }
 
     @FXML
     void displayBills(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getUnpaidBillsResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getDashboardResource(), fxmlResources.getDisplayAllBillsResource());
     }
 
     @FXML
     public void initialize() {
         //add the dashboard resource to the stack
         viewFlow.clear();
-        viewFlow.add(fxmlResources.getDashboardResource());
         //initialise the pie chart with the values of free and occupied rooms
         //for all the buildings registered
 

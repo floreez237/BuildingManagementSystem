@@ -2,103 +2,106 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.SettingsController">
    <children>
-      <Label layoutX="140.0" layoutY="127.0" prefHeight="50.0" prefWidth="455.0" text="To be sure of your identity please enter the following information.">
+      <Label layoutX="140.0" layoutY="127.0" prefHeight="50.0" prefWidth="455.0"
+             text="To be sure of your identity please enter the following information.">
          <font>
-            <Font name="Cambria" size="16.0" />
+            <Font name="Cambria" size="16.0"/>
          </font>
       </Label>
-      <Label layoutX="192.0" layoutY="49.0" prefHeight="61.0" prefWidth="351.0" text="Authentification Update" underline="true">
+      <Label layoutX="192.0" layoutY="49.0" prefHeight="61.0" prefWidth="351.0" text="Authentification Update"
+             underline="true">
          <font>
-            <Font size="29.0" />
+            <Font size="29.0"/>
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="87.0" layoutY="390.0" prefHeight="21.0" prefWidth="515.0" />
-      <JFXTextField fx:id="tfCurrentPassword" labelFloat="true" layoutX="139.0" layoutY="206.0" prefHeight="31.0" prefWidth="432.0" promptText="Current Password">
+      <Label layoutX="87.0" layoutY="390.0" prefHeight="21.0" prefWidth="515.0"/>
+      <JFXTextField fx:id="tfCurrentPassword" labelFloat="true" layoutX="139.0" layoutY="206.0" prefHeight="31.0"
+                    prefWidth="432.0" promptText="Current Password">
          <unFocusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </unFocusColor>
          <focusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </focusColor>
       </JFXTextField>
-      <JFXTextField fx:id="tfNewPassword" labelFloat="true" layoutX="139.0" layoutY="283.0" prefHeight="31.0" prefWidth="432.0" promptText="New Password">
+      <JFXTextField fx:id="tfNewPassword" labelFloat="true" layoutX="139.0" layoutY="283.0" prefHeight="31.0"
+                    prefWidth="432.0" promptText="New Password">
          <unFocusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </unFocusColor>
          <focusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </focusColor>
       </JFXTextField>
-      <JFXTextField fx:id="tfPasswordConfirmation" labelFloat="true" layoutX="139.0" layoutY="359.0" prefHeight="31.0" prefWidth="432.0" promptText="Password Confirmation">
+      <JFXTextField fx:id="tfPasswordConfirmation" labelFloat="true" layoutX="139.0" layoutY="359.0" prefHeight="31.0"
+                    prefWidth="432.0" promptText="Password Confirmation">
          <unFocusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </unFocusColor>
          <focusColor>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </focusColor>
       </JFXTextField>
       <JFXButton layoutX="311.0" layoutY="433.0" onAction="#handleOnSaveAction" text="Save">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="HAND"/>
          </cursor>
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/save.png" />
+                  <Image url="@../images/save.png"/>
                </image>
             </ImageView>
          </graphic>
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
       </JFXButton>
    </children>

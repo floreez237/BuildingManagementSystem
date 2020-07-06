@@ -114,4 +114,8 @@ public class FXMLResources {
     @Value("classpath:/fxml/UpdateBuilding.fxml")
     private Resource updateBuildingResource;
 
+
+    @Value("classpath:/fxml/DisplayObsoleteContracts.fxml")
+    private Resource obsoleteContractsResource;
+
 }

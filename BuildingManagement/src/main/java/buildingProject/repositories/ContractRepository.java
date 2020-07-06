@@ -16,4 +16,6 @@ public interface ContractRepository extends JpaRepository<ContractEntity, Long> 
     ContractEntity findByRoomId(Long roomId);
 
     List<ContractEntity> findAllByIsObsoleteIsFalse();
+
+    List<ContractEntity> findAllByIsObsoleteIsTrue();
 }

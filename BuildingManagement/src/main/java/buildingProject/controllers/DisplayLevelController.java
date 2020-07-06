@@ -13,11 +13,7 @@ import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -110,7 +106,7 @@ public class DisplayLevelController {
             DisplayAllPersonsController.initializeCompleteList(personService.findAllByRoomId(selectedRoomDTO.getId()));
             DisplayAllPersonsController.setRoomId(selectedRoomDTO.getId());
 
-            viewFlow.getResourceStack().add(fxmlResources.getDisplayLevelResource());
+            viewFlow.add(fxmlResources.getDisplayLevelResource());
             FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayAllPersonsResource().getURL());
             loader.setControllerFactory(applicationContext::getBean);
             MainViewController.getGlobalMainPage().setCenter(loader.load());

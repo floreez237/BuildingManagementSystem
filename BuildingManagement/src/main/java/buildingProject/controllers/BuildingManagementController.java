@@ -9,22 +9,15 @@ import buildingProject.dto.BuildingDTO;
 import buildingProject.services.BuildingService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -79,10 +72,7 @@ public class BuildingManagementController implements Initializable {
 
     @FXML
     void handleAddBuilding(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getAddBuildingResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
-
+        viewFlow.loadResource(fxmlResources.getBuildingManagementResource(), fxmlResources.getAddBuildingResource());
     }
 
     @FXML
@@ -109,24 +99,14 @@ public class BuildingManagementController implements Initializable {
         BuildingDTO selectedDto = tblBuildings.getSelectionModel().getSelectedItem();
         if (selectedDto != null) {
             DisplayBuildingController.setCurrentBuildingDTO(selectedDto);
-            BorderPane borderPane = MainViewController.getGlobalMainPage();
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayBuildingResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            Pane building = loader.load();
-            borderPane.setCenter(building);
+            viewFlow.loadResource(fxmlResources.getBuildingManagementResource(), fxmlResources.getDisplayBuildingResource());
         }
-    }
-
-    @FXML
-    void onSearch(ActionEvent event) {
-        //Search a given building in table
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //initialize the view stack
         viewFlow.clear();
-        viewFlow.add(fxmlResources.getBuildingManagementResource());
 
         colBuildingId.setCellValueFactory(param -> {
             String id = "BUILD" + param.getValue().getId();

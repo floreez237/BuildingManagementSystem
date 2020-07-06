@@ -6,14 +6,9 @@ import buildingProject.services.rooms.RoomService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXComboBox;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.context.ApplicationContext;
@@ -36,7 +31,7 @@ public class ContractsManagementController {
     private final RoomService roomService;
     private final ViewFlow viewFlow;
 
-    private static final String idPrefix = "CON";
+    public static final String idPrefix = "CON";
 
     @FXML
     private JFXComboBox<String> cmbType;
@@ -77,9 +72,7 @@ public class ContractsManagementController {
             new Alert(Alert.AlertType.ERROR, "NO NEW FREE ROOM AVAILABLE").showAndWait();
             return;
         }
-        FXMLLoader loader = new FXMLLoader(fxmlResources.getAddContractResource().getURL());
-        loader.setControllerFactory(applicationContext::getBean);
-        MainViewController.getGlobalMainPage().setCenter(loader.load());
+        viewFlow.loadResource(fxmlResources.getContractsManagementResource(), fxmlResources.getAddContractResource());
     }
 
     @FXML
@@ -105,22 +98,19 @@ public class ContractsManagementController {
         ContractDTO selectedDto = tblContracts.getSelectionModel().getSelectedItem();
         if (selectedDto != null) {
             DisplayContractController.setContractDTO(selectedDto);
-            FXMLLoader loader = new FXMLLoader(fxmlResources.getDisplayContractResource().getURL());
-            loader.setControllerFactory(applicationContext::getBean);
-            MainViewController.getGlobalMainPage().setCenter(loader.load());
+            viewFlow.loadResource(fxmlResources.getContractsManagementResource(), fxmlResources.getDisplayContractResource());
         }
     }
 
     @FXML
-    void handleDisplayObsoleteContracts(ActionEvent event) {
-
+    void handleDisplayObsoleteContracts(ActionEvent event) throws IOException {
+        viewFlow.loadResource(fxmlResources.getContractsManagementResource(), fxmlResources.getObsoleteContractsResource());
     }
 
     @FXML
     public void initialize() {
         //initialize the stack
         viewFlow.clear();
-        viewFlow.add(fxmlResources.getContractsManagementResource());
 
         completeList = contractService.findAllNonObsolete();
         cmbType.getItems().addAll("ALL", "RUNNING", "EXPIRED");

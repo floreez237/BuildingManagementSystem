@@ -4,7 +4,6 @@ import buildingProject.dto.ContractDTO;
 import buildingProject.model.ContractEntity;
 import buildingProject.repositories.ContractRepository;
 import buildingProject.repositories.room_repositories.RoomRepository;
-import buildingProject.services.rooms.RoomService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,9 +33,12 @@ public class ContractService {
         contractRepo.deleteAllByRoomId(roomId);
     }
 
+    @Transactional
     public void delete(ContractDTO contractDTO) {
         contractRepo.deleteById(contractDTO.getId());
-        roomRepository.getOne(contractDTO.getRoomId()).setOccupied(false);
+        if (!contractDTO.isObsolete()) {
+            roomRepository.getOne(contractDTO.getRoomId()).setOccupied(false);
+        }
     }
 
     @Transactional
@@ -47,7 +49,13 @@ public class ContractService {
 
     @Transactional
     public List<ContractDTO> findAllNonObsolete() {
-        return contractRepo.findAllByIsObsoleteIsFalse().stream().map(contractEntity -> mapper.map(contractEntity,ContractDTO.class))
+        return contractRepo.findAllByIsObsoleteIsFalse().stream().map(contractEntity -> mapper.map(contractEntity, ContractDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<ContractDTO> findAllObsolete() {
+        return contractRepo.findAllByIsObsoleteIsTrue().stream().map(contractEntity -> mapper.map(contractEntity, ContractDTO.class))
                 .collect(Collectors.toList());
     }
 
