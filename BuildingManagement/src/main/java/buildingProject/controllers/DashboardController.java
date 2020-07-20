@@ -77,7 +77,7 @@ public class DashboardController{
 
     @FXML
     void displayBills(MouseEvent event) throws IOException {
-        viewFlow.loadResource(fxmlResources.getDashboardResource(), fxmlResources.getDisplayAllBillsResource());
+        viewFlow.loadResource(fxmlResources.getDashboardResource(), fxmlResources.getUnpaidBillsResource());
     }
 
     @FXML
