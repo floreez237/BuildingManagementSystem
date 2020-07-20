@@ -43,7 +43,7 @@ public class DashboardController{
     private final ViewFlow viewFlow;
 
     @FXML
-    private final LineChart<String, Number> lineChart = new LineChart<>(MonthAxis, revenue);
+    private LineChart<String, Number> lineChart = new LineChart<>(MonthAxis, revenue);
 
     @FXML
     private PieChart piechart;
