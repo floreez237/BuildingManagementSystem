@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.ContractsManagementController">
    <children>
       <Label layoutX="28.0" layoutY="29.0" prefHeight="43.0" prefWidth="293.0" text="Contract Management" underline="true">
@@ -93,7 +85,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="514.0" layoutY="54.0" onAction="#handleDisplayObsoleteContracts" prefHeight="37.0" prefWidth="179.0" text="Obsolete Contracts">
+      <JFXButton layoutX="514.0" layoutY="32.0" onAction="#handleDisplayObsoleteContracts" prefHeight="37.0" prefWidth="179.0" text="Obsolete Contracts">
          <font>
             <Font size="14.0" />
          </font>
@@ -108,6 +100,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXComboBox fx:id="cmbType" focusColor="#2979ff" labelFloat="true" layoutX="368.0" layoutY="107.0" prefHeight="25.0" prefWidth="125.0" promptText="Contract Status" />
+      <JFXComboBox fx:id="cmbType" labelFloat="true" layoutX="368.0" layoutY="107.0" prefHeight="25.0" prefWidth="125.0" promptText="Contract Status">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#2979ff" />
+                  <Stop color="#00e5ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXComboBox>
    </children>
 </AnchorPane>

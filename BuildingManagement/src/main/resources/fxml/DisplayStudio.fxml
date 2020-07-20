@@ -84,11 +84,11 @@
             </TitledPane>
          </panes>
       </Accordion>
-      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="170.0" layoutY="173.0" prefHeight="31.0" prefWidth="188.0">
+      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="170.0" layoutY="282.0" prefHeight="31.0" prefWidth="159.0">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <Label layoutX="83.0" layoutY="178.0" text="Rent:">
+      <Label layoutX="92.0" layoutY="297.0" text="Rent:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -96,16 +96,16 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <Label layoutX="452.0" layoutY="235.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+      <Label layoutX="100.0" layoutY="340.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="529.0" layoutY="231.0" prefHeight="31.0" prefWidth="159.0">
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="171.0" layoutY="334.0" prefHeight="31.0" prefWidth="159.0">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <Label layoutX="32.0" layoutY="235.0" text="Paint Color:">
+      <Label layoutX="40.0" layoutY="235.0" text="Paint Color:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -117,11 +117,11 @@
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <JFXTextField fx:id="tfBedroomArea" alignment="CENTER" focusColor="#00e5ff" layoutX="170.0" layoutY="282.0" prefHeight="31.0" prefWidth="220.0">
+      <JFXTextField fx:id="tfBedroomArea" alignment="CENTER" focusColor="#00e5ff" layoutX="526.0" layoutY="231.0" prefHeight="30.0" prefWidth="214.0">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <Label layoutX="37.0" layoutY="286.0" text="Bedroom Area:">
+      <Label layoutX="407.0" layoutY="235.0" text="Bedroom Area:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -135,7 +135,7 @@
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <JFXTextField fx:id="tfKitchenArea" alignment="CENTER" focusColor="#00e5ff" layoutX="169.0" layoutY="334.0" prefHeight="31.0" prefWidth="220.0">
+      <JFXTextField fx:id="tfKitchenArea" alignment="CENTER" focusColor="#00e5ff" layoutX="170.0" layoutY="174.0" prefHeight="31.0" prefWidth="220.0">
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
@@ -148,7 +148,7 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="338.0" text="Kitchen Area:">
+      <Label layoutX="55.0" layoutY="178.0" text="Kitchen Area:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -215,12 +215,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <Label fx:id="lblRentCurrency" contentDisplay="TEXT_ONLY" layoutX="364.0" layoutY="178.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
+      <Label fx:id="lblRentCurrency" contentDisplay="TEXT_ONLY" layoutX="350.0" layoutY="297.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="691.0" layoutY="235.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
+      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="350.0" layoutY="341.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>

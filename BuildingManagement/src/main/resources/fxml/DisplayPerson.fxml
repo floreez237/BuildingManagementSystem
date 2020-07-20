@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXRadioButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.lang.String?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
 <Pane prefHeight="712.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DisplayPersonController">
    <children>
-      <Label layoutX="67.0" layoutY="98.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTACT INFORMATION" textAlignment="CENTER" underline="true">
+      <Label layoutX="53.0" layoutY="108.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTACT INFORMATION" textAlignment="CENTER">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -35,30 +27,30 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="239.0" text="Phone Number:">
+      <Label layoutX="39.0" layoutY="261.0" text="Phone Number:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="406.0" layoutY="242.0" text="National ID Number:">
+      <Label layoutX="406.0" layoutY="260.0" text="National ID Number:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfPhoneNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="169.0" layoutY="234.0" prefHeight="31.0" prefWidth="189.0">
+      <JFXTextField fx:id="tfPhoneNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="179.0" layoutY="243.0" prefHeight="31.0" prefWidth="189.0">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="tfNationalIdNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="573.0" layoutY="232.0">
+      <JFXTextField fx:id="tfNationalIdNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="575.0" layoutY="243.0">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
       <Separator layoutX="38.0" layoutY="308.0" prefHeight="0.0" prefWidth="735.0" />
-      <Label layoutX="43.0" layoutY="315.0" lineSpacing="5.0" text="PERSONAL INFORMATION" underline="true">
+      <Label layoutX="53.0" layoutY="318.0" lineSpacing="5.0" text="PERSONAL INFORMATION">
          <font>
-            <Font name="Cambria" size="18.0" />
+            <Font name="Cambria" size="20.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -75,25 +67,41 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXDatePicker fx:id="dateOfBirth" defaultColor="#00e5ff" layoutX="156.0" layoutY="350.0" prefHeight="31.0" prefWidth="197.0" promptText="dd/MM/yyyy">
+      <JFXDatePicker fx:id="dateOfBirth" layoutX="156.0" layoutY="350.0" prefHeight="31.0" prefWidth="197.0" promptText="dd/MM/yyyy">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></JFXDatePicker>
+         </cursor>
+         <defaultColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5485436893203883" startY="0.4368932038834951">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </defaultColor></JFXDatePicker>
       <Label layoutX="445.0" layoutY="352.0" text="Age:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfAge" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="484.0" layoutY="350.0">
+      <JFXTextField fx:id="tfAge" alignment="CENTER" editable="false" layoutX="484.0" layoutY="350.0">
          <font>
             <Font size="16.0" />
-         </font></JFXTextField>
-      <Label layoutX="38.0" layoutY="433.0" prefHeight="22.0" prefWidth="119.0" text="Marital Status:">
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5485436893203883" startY="0.4368932038834951">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="40.0" layoutY="423.0" prefHeight="22.0" prefWidth="119.0" text="Marital Status:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="82.0" layoutY="483.0" prefHeight="22.0" prefWidth="69.0" text="Gender:">
+      <Label layoutX="89.0" layoutY="487.0" prefHeight="22.0" prefWidth="69.0" text="Gender:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -121,11 +129,19 @@
             </JFXRadioButton>
          </children>
       </HBox>
-      <JFXTextField fx:id="tfMaritalStatus" alignment="CENTER" focusColor="#00e5ff" layoutX="163.0" layoutY="429.0" prefHeight="31.0" prefWidth="165.0">
+      <JFXTextField fx:id="tfMaritalStatus" alignment="CENTER" layoutX="167.0" layoutY="407.0" prefHeight="31.0" prefWidth="165.0">
          <font>
             <Font size="16.0" />
-         </font></JFXTextField>
-      <Label layoutX="110.0" layoutY="191.0" prefHeight="29.0" prefWidth="53.0" text="Name:">
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5485436893203883" startY="0.4368932038834951">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="106.0" layoutY="198.0" prefHeight="29.0" prefWidth="53.0" text="Name:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -143,7 +159,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="tfName" alignment="CENTER" focusColor="#00e5ff" layoutX="167.0" layoutY="190.0" prefHeight="31.0" prefWidth="452.0">
+      <JFXTextField fx:id="tfName" alignment="CENTER" focusColor="#00e5ff" layoutX="167.0" layoutY="194.0" prefHeight="37.0" prefWidth="579.0">
          <font>
             <Font size="16.0" />
          </font></JFXTextField>
@@ -161,7 +177,7 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfPersonId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="167.0" layoutY="151.0" prefHeight="25.0" prefWidth="157.0">
+      <JFXTextField fx:id="tfPersonId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="171.0" layoutY="147.0" prefHeight="25.0" prefWidth="157.0">
          <font>
             <Font size="16.0" />
          </font></JFXTextField>
@@ -182,10 +198,18 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="486.0" layoutY="432.0">
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" layoutX="503.0" layoutY="415.0">
          <font>
             <Font size="16.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5485436893203883" startY="0.4368932038834951">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <JFXButton fx:id="btnUpdate" layoutX="339.0" layoutY="597.0" onAction="#handleUpdate" prefHeight="44.0" prefWidth="96.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Update">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">

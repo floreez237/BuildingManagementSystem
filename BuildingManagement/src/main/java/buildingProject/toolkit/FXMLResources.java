@@ -99,9 +99,6 @@ public class FXMLResources {
     @Value("classpath:/fxml/MainView.fxml")
     private Resource mainViewResource;
 
-    @Value("classpath:/fxml/PayBill.fxml")
-    private Resource payBillResource;
-
     @Value("classpath:/fxml/RenewContract.fxml")
     private Resource renewContractResource;
 

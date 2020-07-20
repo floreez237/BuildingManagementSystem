@@ -67,12 +67,12 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <Label layoutX="431.0" layoutY="134.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+      <Label layoutX="56.0" layoutY="214.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="3.0" layoutY="202.0" text="Paint Color:">
+      <Label layoutX="375.0" layoutY="135.0" text="Paint Color:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -133,7 +133,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="534.0" layoutY="417.0" onAction="#handleDelete" text="Delete">
+      <JFXButton layoutX="534.0" layoutY="404.0" onAction="#handleDelete" text="Delete">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -159,12 +159,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="502.0" layoutY="129.0" prefHeight="33.0" prefWidth="147.0">
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="141.0" layoutY="209.0" prefHeight="33.0" prefWidth="147.0">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="135.0" layoutY="197.0" prefHeight="33.0" prefWidth="179.0">
+      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="514.0" layoutY="118.0" prefHeight="33.0" prefWidth="179.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -174,7 +174,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepositCurrency" layoutX="649.0" layoutY="133.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
+      <Label fx:id="lblDepositCurrency" layoutX="291.0" layoutY="213.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
          <font>
             <Font size="16.0" />
          </font>
