@@ -11,15 +11,13 @@ import buildingProject.services.BuildingLevelService;
 import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -94,8 +92,22 @@ public class DisplayAllLevelsController implements Initializable {
         buildingDTO.getListOfLevelId().forEach(levelId -> completeList.add(buildingLevelService.getLevelDto(levelId)));
         tblLevels.getSortOrder().add(colLevelNumber);
         tblLevels.getItems().clear();
+        tblLevels.setRowFactory(param -> {
+            TableRow<BuildingLevelDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    BuildingLevelDTO selectedDto = param.getSelectionModel().getSelectedItem();
+                    DisplayLevelController.setLevelDTO(selectedDto);
+
+                    try {
+                        viewFlow.loadResource(fxmlResources.getDisplayAllLevels(), fxmlResources.getDisplayLevelResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblLevels.getItems().addAll(completeList);
-        tblLevels.getSortOrder().add(colLevelNumber);
 
         colLevelNumber.setCellValueFactory(new PropertyValueFactory<>("levelNumber"));
         colOccupiedRooms.setCellValueFactory(param -> {

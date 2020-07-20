@@ -193,9 +193,23 @@ public class DisplayAllBillsController {
         });
 
         tblBills.getSortOrder().add(colBillId);
+        tblBills.setRowFactory(param -> {
+            TableRow<BillDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    BillDTO selectedDto = param.getSelectionModel().getSelectedItem();
+                    DisplayBillController.setBillDTO(selectedDto);
+                    try {
+                        viewFlow.loadResource(fxmlResources.getDisplayAllBillsResource(), fxmlResources.getDisplayBillResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblBills.getItems().addAll(completeList);
 
-        cmbBillType.getItems().addAll("ALL","ELECTRICITY","WATER");
+        cmbBillType.getItems().addAll("ALL", "ELECTRICITY", "WATER");
         cmbBillType.getSelectionModel().select(0);
         cmbBillType.getSelectionModel().selectedItemProperty().addListener(observable -> {
             tblBills.getItems().clear();

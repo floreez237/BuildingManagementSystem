@@ -36,14 +36,18 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXButton cancelButton="true" layoutX="5.0" layoutY="23.0" onAction="#handleGoBack" text=" ">
+      <JFXButton cancelButton="true" contentDisplay="GRAPHIC_ONLY" layoutX="5.0" layoutY="23.0" onAction="#handleGoBack"
+                 text=" ">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_back_arrow_32px.png" />
+                  <Image url="@../images/icons8_back_arrow_32px.png"/>
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
       </JFXButton>
       <JFXTextField fx:id="tfLevelNumber" alignment="CENTER" editable="false" layoutX="619.0" layoutY="98.0" prefHeight="31.0" prefWidth="80.0">
          <font>

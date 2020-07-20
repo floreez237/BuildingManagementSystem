@@ -89,6 +89,7 @@ public class LoginController implements Initializable {
             stage1.getIcons().add(new Image(logo.getURL().toString()));
             stage1.setTitle("BGESTIO");
             stage1.setScene(scene);
+            stage1.setResizable(false);
             stage1.show();
         } else if (pfPassword.getText().isEmpty()) {
             lbl.setText("Please enter your password");

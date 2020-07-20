@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
@@ -37,7 +38,7 @@ public class StageInitializer implements ApplicationListener<StageReadyEvent> {
             loader.setControllerFactory(applicationContext::getBean);
             Parent root = loader.load();
             Scene scene1 = new Scene(root);
-//            stage.initStyle(StageStyle.UNDECORATED);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.getIcons().add(new Image(logo.getURL().toString()));
             stage.setScene(scene1);
             stage.initModality(Modality.APPLICATION_MODAL);

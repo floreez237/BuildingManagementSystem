@@ -131,6 +131,20 @@ public class BuildingManagementController implements Initializable {
         });
 
         completeList = FXCollections.observableArrayList(buildingService.getListOfBuildings());
+        tblBuildings.setRowFactory(param -> {
+            TableRow<BuildingDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    BuildingDTO selectedDto = param.getSelectionModel().getSelectedItem();
+                    DisplayBuildingController.setCurrentBuildingDTO(selectedDto);
+                    try {
+                        viewFlow.loadResource(fxmlResources.getBuildingManagementResource(), fxmlResources.getDisplayBuildingResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblBuildings.getItems().addAll(completeList);
         tblBuildings.getSortOrder().addAll(colBuildingId);
         tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {

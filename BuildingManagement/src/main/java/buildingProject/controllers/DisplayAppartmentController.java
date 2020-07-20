@@ -218,6 +218,7 @@ public class DisplayAppartmentController {
         lvFurnitures.setPlaceholder(new Label("No Furniture Present"));
         lvFurnitures.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
+
         tblAdditionalRooms.getItems().addAll(appartmentDTO.getAdditionalRooms());
         tblAdditionalRooms.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         colAddRoomName.setCellValueFactory(new PropertyValueFactory<>("name"));

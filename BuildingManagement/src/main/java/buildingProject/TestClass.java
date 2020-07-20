@@ -12,6 +12,5 @@ public class TestClass {
         preferences.remove("db_user");
         preferences.remove("db_password");
         preferences.remove("db_url");
-
     }
 }

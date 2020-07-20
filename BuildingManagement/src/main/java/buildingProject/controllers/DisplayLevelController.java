@@ -211,6 +211,21 @@ public class DisplayLevelController {
         });
 
         completeList = roomService.findAllInRoomsInLevel(levelDTO.getId());
+        tblRooms.setRowFactory(param -> {
+            TableRow<RoomDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    RoomDTO selectedRoomDTO = param.getSelectionModel().getSelectedItem();
+                    DisplayAllBillsController.setRoomDTO(selectedRoomDTO.getId());
+
+                    try {
+                        viewFlow.loadResource(fxmlResources.getDisplayLevelResource(), fxmlResources.getDisplayAllBillsResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblRooms.getItems().addAll(completeList);
         tblRooms.getSortOrder().add(colRoomId);
 

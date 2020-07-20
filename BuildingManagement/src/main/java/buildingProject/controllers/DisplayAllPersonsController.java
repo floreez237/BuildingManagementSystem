@@ -5,13 +5,11 @@ import buildingProject.toolkit.FXMLResources;
 import buildingProject.toolkit.ViewFlow;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.SortType;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -112,7 +110,20 @@ public class DisplayAllPersonsController {
             gender = cGender == 'M' ? "Male" : "Female";
             return new ReadOnlyObjectWrapper<>(gender);
         });
-
+        tblPersons.setRowFactory(param -> {
+            TableRow<PersonDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    PersonDTO selectedDto = param.getSelectionModel().getSelectedItem();
+                    DisplayPersonController.setPersonDTO(selectedDto);
+                    try {
+                        viewFlow.loadResource(fxmlResources.getDisplayAllPersonsResource(), fxmlResources.getDisplayPersonResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblPersons.getItems().addAll(completeList);
         tblPersons.getSortOrder().add(colPersonId);
 

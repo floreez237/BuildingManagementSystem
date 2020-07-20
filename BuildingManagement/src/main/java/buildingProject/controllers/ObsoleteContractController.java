@@ -7,10 +7,7 @@ import buildingProject.toolkit.ViewFlow;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.stereotype.Component;
 
@@ -112,6 +109,20 @@ public class ObsoleteContractController {
         });
 
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        tblContracts.setRowFactory(param -> {
+            TableRow<ContractDTO> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    ContractDTO selectedDto = param.getSelectionModel().getSelectedItem();
+                    DisplayContractController.setContractDTO(selectedDto);
+                    try {
+                        viewFlow.loadResource(fxmlResources.getObsoleteContractsResource(), fxmlResources.getDisplayContractResource());
+                    } catch (IOException ignored) {
+                    }
+                }
+            });
+            return row;
+        });
         tblContracts.getItems().addAll(completeList);
         tblContracts.getSortOrder().add(colId);
         tfSearch.textProperty().addListener((observable, oldValue, newValue) -> {

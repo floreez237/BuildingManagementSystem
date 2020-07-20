@@ -20,6 +20,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Component
@@ -70,6 +71,11 @@ public class AddBillController {
 
         if (dueDatePicker.getValue().isBefore(issueDatePicker.getValue())) {
             new Alert(Alert.AlertType.ERROR, "Due date cannot occur before issue date.").showAndWait();
+            return;
+        }
+
+        if (issueDatePicker.getValue().isAfter(LocalDate.now())) {
+            new Alert(Alert.AlertType.ERROR, "Issue date cannot occur before date of today.").showAndWait();
             return;
         }
 

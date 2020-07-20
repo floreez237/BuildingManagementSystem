@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.lang.String?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
 <Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddBillController">
       <Label layoutX="56.0" layoutY="116.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="212.0" text="Bill  Information" textAlignment="CENTER">
          <textFill>
@@ -84,15 +79,18 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXButton layoutX="23.0" layoutY="32.0" onAction="#handleGoBack" text=" ">
-         <graphic>
+    <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="23.0" layoutY="32.0" onAction="#handleGoBack" text=" ">
+        <graphic>
             <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icons8_back_arrow_32px.png" />
-               </image>
+                <image>
+                    <Image url="@../images/icons8_back_arrow_32px.png"/>
+                </image>
             </ImageView>
-         </graphic>
-      </JFXButton>
+        </graphic>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </JFXButton>
       <Label layoutX="85.0" layoutY="262.0" prefHeight="29.0" prefWidth="78.0" text="Bill Type:">
          <font>
             <Font name="Cambria" size="18.0" />

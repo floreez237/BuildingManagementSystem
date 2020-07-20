@@ -59,11 +59,17 @@
             <Cursor fx:constant="HAND"/>
          </cursor>
       </JFXButton>
-      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="631.0" layoutY="10.0" pickOnBounds="true"
-                 preserveRatio="true" styleClass="button1">
-         <image>
-            <Image url="@../images/1.png"/>
-         </image>
-      </ImageView>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="632.0" layoutY="14.0" onAction="#handleExit">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="button1">
+               <image>
+                  <Image url="@../images/1.png"/>
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
