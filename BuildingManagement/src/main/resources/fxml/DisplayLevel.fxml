@@ -48,7 +48,15 @@
       <JFXTextField fx:id="tfLevelNumber" alignment="CENTER" editable="false" layoutX="619.0" layoutY="98.0" prefHeight="31.0" prefWidth="80.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.36893203883495146" startY="0.5922330097087378">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <TableView fx:id="tblRooms" layoutX="40.0" layoutY="196.0" prefHeight="451.0" prefWidth="664.0">
          <columns>
             <TableColumn fx:id="colRoomId" prefWidth="146.0" style="-fc-alignment: CENTER;" text="Room Id" />
@@ -141,17 +149,28 @@
             <Image url="@../images/icons8_search_30px_2.png" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cmbRoomType" focusColor="#00e5ff" layoutX="135.0" layoutY="155.0" onAction="#handleRoomTypeFilter" prefHeight="25.0" prefWidth="127.0" style="-fx-alignment: CENTER;" />
-      <Label layoutX="56.0" layoutY="157.0" text="Room Type: ">
+      <JFXComboBox fx:id="cmbRoomType" layoutX="135.0" layoutY="155.0" onAction="#handleRoomTypeFilter" prefHeight="25.0" prefWidth="127.0" promptText="RoomType" style="-fx-alignment: CENTER;">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.36893203883495146" startY="0.5922330097087378">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXComboBox>
+      <Label layoutX="56.0" layoutY="157.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbStatus" focusColor="#00e5ff" layoutX="376.0" layoutY="153.0" onAction="#handleStatusFilter" prefHeight="25.0" prefWidth="127.0" style="-fx-alignment: CENTER;" />
-      <Label layoutX="322.0" layoutY="157.0" text="Status:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
+      <JFXComboBox fx:id="cmbStatus" layoutX="376.0" layoutY="153.0" onAction="#handleStatusFilter" prefHeight="25.0" prefWidth="127.0" promptText="Status" style="-fx-alignment: CENTER;">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.36893203883495146" startY="0.5922330097087378">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXComboBox>
    </children>
 </Pane>

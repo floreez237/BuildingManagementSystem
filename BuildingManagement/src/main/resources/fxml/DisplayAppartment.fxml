@@ -24,10 +24,18 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="171.0" layoutY="117.0" prefHeight="31.0" prefWidth="212.0">
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" layoutX="171.0" layoutY="117.0" prefHeight="31.0" prefWidth="212.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <Label layoutX="104.0" layoutY="32.0" text="Room Information" underline="true">
          <font>
             <Font size="29.0" />
@@ -58,14 +66,30 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfStatus" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="532.0" layoutY="170.0" prefHeight="31.0" prefWidth="137.0">
+      <JFXTextField fx:id="tfStatus" alignment="CENTER" editable="false" layoutX="532.0" layoutY="170.0" prefHeight="31.0" prefWidth="169.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
-      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="171.0" layoutY="171.0" prefHeight="31.0" prefWidth="177.0">
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfRent" alignment="CENTER" layoutX="171.0" layoutY="171.0" prefHeight="31.0" prefWidth="177.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <Label layoutX="73.0" layoutY="175.0" text="Rent:">
          <font>
             <Font name="Cambria" size="18.0" />
@@ -74,16 +98,24 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <Label layoutX="450.0" layoutY="230.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+      <Label layoutX="79.0" layoutY="241.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="532.0" layoutY="225.0" prefHeight="31.0" prefWidth="130.0">
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" layoutX="171.0" layoutY="237.0" prefHeight="31.0" prefWidth="177.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
-      <Label layoutX="24.0" layoutY="232.0" text="Paint Color:">
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="399.0" layoutY="242.0" text="Paint Color:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -91,21 +123,37 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="171.0" layoutY="228.0" prefHeight="31.0" prefWidth="212.0">
+      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" layoutX="528.0" layoutY="237.0" prefHeight="31.0" prefWidth="177.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <Label layoutX="462.0" layoutY="119.0" text="Type: ">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="532.0" layoutY="116.0" prefHeight="31.0" prefWidth="137.0" text="Appartment">
+      <JFXTextField alignment="CENTER" editable="false" layoutX="532.0" layoutY="116.0" prefHeight="31.0" prefWidth="137.0" text="Appartment">
          <font>
             <Font size="14.0" />
          </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.39805825242718446" startY="0.5145631067961165">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
-      <JFXButton defaultButton="true" layoutX="343.0" layoutY="652.0" onAction="#handleUpdate" prefHeight="44.0" prefWidth="96.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Update">
+      <JFXButton defaultButton="true" layoutX="343.0" layoutY="652.0" onAction="#handleUpdate" prefHeight="30.0" prefWidth="96.0" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Update">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -132,7 +180,7 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="660.0" layoutY="230.0" prefHeight="22.0" prefWidth="60.0" text="XAF">
+      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="350.0" layoutY="242.0" prefHeight="22.0" prefWidth="60.0" text="XAF">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -144,7 +192,7 @@
                   <TableView fx:id="tblBedRoom" prefHeight="183.0" prefWidth="328.0" style="-fx-background-color: white;">
                      <columns>
                         <TableColumn prefWidth="102.0" text="Bedroom" />
-                        <TableColumn  prefWidth="227.0" text="Area" />
+                        <TableColumn prefWidth="227.0" text="Area" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -152,7 +200,7 @@
                   </TableView>
                </content>
             </TitledPane>
-            <TitledPane  animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Kitchen/Area:">
+            <TitledPane animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Kitchen/Area:">
                <content>
                   <TableView fx:id="tblKitchen" prefHeight="145.0" prefWidth="330.0" style="-fx-background-color: white;">
                      <columns>
@@ -165,12 +213,12 @@
                   </TableView>
                </content>
             </TitledPane>
-            <TitledPane  animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Parlours /Area:">
+            <TitledPane animated="false" layoutX="10.0" layoutY="10.0" prefHeight="212.0" prefWidth="278.0" text="Parlours /Area:">
                <content>
                   <TableView fx:id="tblParlours" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white;">
                      <columns>
                         <TableColumn prefWidth="113.0" text="Parlour" />
-                        <TableColumn  prefWidth="215.0" text="Area" />
+                        <TableColumn prefWidth="215.0" text="Area" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

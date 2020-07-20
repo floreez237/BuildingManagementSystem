@@ -6,8 +6,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddAppartmentController">
@@ -45,12 +44,12 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <Label layoutX="428.0" layoutY="103.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+      <Label layoutX="58.0" layoutY="172.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutY="171.0" text="Paint Color:">
+      <Label layoutX="372.0" layoutY="103.0" text="Paint Color:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -193,15 +192,39 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="137.0" layoutY="98.0" prefHeight="33.0" prefWidth="166.0" />
-      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="502.0" layoutY="98.0" prefHeight="33.0" prefWidth="149.0" />
-      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="136.0" layoutY="166.0" prefHeight="33.0" prefWidth="166.0" />
+      <JFXTextField fx:id="tfRent" alignment="CENTER" layoutX="137.0" layoutY="98.0" prefHeight="33.0" prefWidth="166.0">
+         <focusColor>
+            <LinearGradient endX="0.19417475728155342" endY="1.0" startY="0.8155339805825242">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" layoutX="137.0" layoutY="167.0" prefHeight="33.0" prefWidth="166.0">
+         <focusColor>
+            <LinearGradient endX="0.19417475728155342" endY="1.0" startY="0.8155339805825242">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" layoutX="518.0" layoutY="98.0" prefHeight="33.0" prefWidth="166.0">
+         <focusColor>
+            <LinearGradient endX="0.19417475728155342" endY="1.0" startY="0.8155339805825242">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <Label fx:id="lblRentCurrency" layoutX="303.0" layoutY="102.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepositCurrency" layoutX="651.0" layoutY="102.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
+      <Label fx:id="lblDepositCurrency" layoutX="303.0" layoutY="171.0" prefHeight="25.0" prefWidth="56.0" text="XAF">
          <font>
             <Font size="16.0" />
          </font>

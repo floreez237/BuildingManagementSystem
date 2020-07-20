@@ -23,7 +23,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextField fx:id="tfSearch" layoutX="325.0" layoutY="118.0" prefHeight="31.0" prefWidth="369.0" promptText="search level number" style="-fx-background-radius: 50;" />
+      <TextField fx:id="tfSearch" layoutX="325.0" layoutY="118.0" prefHeight="31.0" prefWidth="369.0" promptText="Search level number" style="-fx-background-radius: 50;" />
       <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="653.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_search_30px_2.png" />

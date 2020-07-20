@@ -13,7 +13,7 @@
 <?import java.lang.String?>
 <Pane prefHeight="684.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddPersonController">
    <children>
-      <Label layoutX="70.0" layoutY="75.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTACT INFORMATION" textAlignment="CENTER" underline="true">
+      <Label layoutX="32.0" layoutY="84.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTACT INFORMATION" textAlignment="CENTER">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -38,7 +38,7 @@
          </font>
       </Label>
       <Separator layoutX="16.0" layoutY="269.0" prefHeight="1.0" prefWidth="703.0" />
-      <Label layoutX="33.0" layoutY="283.0" lineSpacing="5.0" text="PERSONAL INFORMATION" underline="true">
+      <Label layoutX="33.0" layoutY="283.0" lineSpacing="5.0" text="PERSONAL INFORMATION">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -57,11 +57,27 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXDatePicker fx:id="dateOfBirth" defaultColor="#00e5ff" layoutX="141.0" layoutY="320.0" prefHeight="31.0" prefWidth="197.0" style="-fx-alignment: CENTER;" />
-      <JFXTextField fx:id="tfMaritalStatus" alignment="CENTER" focusColor="#00e5ff" layoutX="146.0" layoutY="391.0">
+      <JFXDatePicker fx:id="dateOfBirth" layoutX="141.0" layoutY="320.0" prefHeight="31.0" prefWidth="197.0" style="-fx-alignment: CENTER;">
+         <defaultColor>
+            <LinearGradient endX="0.8883495145631068" endY="0.7718446601941747" startX="0.5194174757281553" startY="0.30097087378640774">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </defaultColor></JFXDatePicker>
+      <JFXTextField fx:id="tfMaritalStatus" alignment="CENTER" layoutX="146.0" layoutY="391.0">
          <font>
             <Font size="14.0" />
          </font>
+         <focusColor>
+            <LinearGradient endX="0.8883495145631068" endY="0.7718446601941747" startX="0.5194174757281553" startY="0.30097087378640774">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
       <Label layoutX="28.0" layoutY="395.0" prefHeight="22.0" prefWidth="119.0" text="Marital Status:">
          <font>
@@ -147,9 +163,41 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="510.0" layoutY="328.0" prefHeight="31.0" prefWidth="163.0" />
-      <JFXTextField fx:id="tfName" alignment="CENTER" focusColor="#00e5ff" layoutX="172.0" layoutY="128.0" prefHeight="31.0" prefWidth="297.0" />
-      <JFXTextField fx:id="tfPhone" alignment="CENTER" focusColor="#00e5ff" layoutX="172.0" layoutY="185.0" prefHeight="31.0" prefWidth="174.0" />
-      <JFXTextField fx:id="tfNationalId" alignment="CENTER" focusColor="#00e5ff" layoutX="556.0" layoutY="184.0" prefHeight="31.0" prefWidth="153.0" />
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" layoutX="510.0" layoutY="328.0" prefHeight="31.0" prefWidth="163.0">
+         <focusColor>
+            <LinearGradient endX="0.8883495145631068" endY="0.7718446601941747" startX="0.5194174757281553" startY="0.30097087378640774">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfName" alignment="CENTER" layoutX="172.0" layoutY="128.0" prefHeight="31.0" prefWidth="534.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="0.8737864077669903" startX="0.3737864077669903" startY="0.4563106796116505">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfPhone" alignment="CENTER" layoutX="172.0" layoutY="185.0" prefHeight="31.0" prefWidth="174.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="0.8737864077669903" startX="0.3737864077669903" startY="0.4563106796116505">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfNationalId" alignment="CENTER" layoutX="556.0" layoutY="184.0" prefHeight="31.0" prefWidth="153.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="0.8737864077669903" startX="0.3737864077669903" startY="0.4563106796116505">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
    </children>
 </Pane>

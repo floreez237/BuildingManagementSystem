@@ -11,7 +11,7 @@
 <?import java.lang.String?>
 <Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.RenewContractController">
    <children>
-      <Label layoutX="22.0" layoutY="99.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTRACT INFORMATION" textAlignment="CENTER" underline="true">
+      <Label layoutX="22.0" layoutY="99.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="252.0" text="CONTRACT INFORMATION" textAlignment="CENTER">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -25,19 +25,19 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="421.0" layoutY="261.0" text="Date of Payment:">
+      <Label layoutX="411.0" layoutY="218.0" text="Date of Payment:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="260.0" text="Date of Creation:">
+      <Label layoutX="23.0" layoutY="219.0" text="Date of Creation:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" layoutX="576.0" layoutY="256.0" prefHeight="31.0" prefWidth="141.0" />
-      <JFXDatePicker fx:id="creationDatePicker" defaultColor="#00e5ff" layoutX="197.0" layoutY="256.0" prefHeight="31.0" prefWidth="168.0" />
-      <JFXButton layoutX="334.0" layoutY="426.0" onAction="#handleSave" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
+      <JFXDatePicker fx:id="paymentDatePicker" defaultColor="#00e5ff" layoutX="559.0" layoutY="214.0" prefHeight="31.0" prefWidth="168.0" />
+      <JFXDatePicker fx:id="creationDatePicker" defaultColor="#00e5ff" layoutX="180.0" layoutY="214.0" prefHeight="31.0" prefWidth="168.0" />
+      <JFXButton layoutX="325.0" layoutY="368.0" onAction="#handleSave" style="-fx-background-radius: 50;" stylesheets="@../style/mainview.css" text="Save">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -81,7 +81,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="24.0" layoutY="299.0" prefHeight="29.0" prefWidth="168.0" text="Duration (In months):">
+      <Label layoutX="372.0" layoutY="155.0" prefHeight="29.0" prefWidth="168.0" text="Duration (In months):">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
@@ -91,17 +91,17 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="tfDuration" alignment="CENTER" focusColor="#00e5ff" layoutX="192.0" layoutY="299.0" prefHeight="30.0" prefWidth="110.0">
+      <JFXTextField fx:id="tfDuration" alignment="CENTER" focusColor="#00e5ff" layoutX="569.0" layoutY="155.0" prefHeight="30.0" prefWidth="148.0">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="52.0" layoutY="206.0" text="Tenant Name:">
+      <Label layoutX="48.0" layoutY="285.0" text="Tenant Name:">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfTenantName" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="168.0" layoutY="198.0" prefHeight="37.0" prefWidth="483.0">
+      <JFXTextField fx:id="tfTenantName" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="180.0" layoutY="278.0" prefHeight="37.0" prefWidth="532.0">
          <font>
             <Font size="16.0" />
          </font>
