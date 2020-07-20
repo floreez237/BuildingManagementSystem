@@ -26,6 +26,7 @@ public class InstallationApp extends Application {
             primaryStage.setScene(scene1);
             primaryStage.setResizable(false);
             primaryStage.show();
+            primaryStage.setTitle("BGESTIO");
         } catch (IOException e) {
             e.printStackTrace();
         }

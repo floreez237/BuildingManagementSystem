@@ -11,15 +11,15 @@
 <?import java.lang.String?>
 <Pane prefHeight="722.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DisplayBedRoomController">
    <children>
-      <Label layoutX="49.0" layoutY="117.0" text="Room ID:">
+      <Label layoutX="49.0" layoutY="117.0" text="Room ID:">a
          <font>
-            <Font size="20.0" />
+            <Font size="20.0"/>
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
          </textFill>
