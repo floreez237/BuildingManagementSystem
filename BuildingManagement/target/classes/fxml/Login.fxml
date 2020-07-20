@@ -2,68 +2,73 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="701.0" styleClass="anchorPane" stylesheets="@../style/mainview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.LoginController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="701.0" styleClass="anchorPane"
+            stylesheets="@../style/mainview.css" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="buildingProject.controllers.LoginController">
    <children>
-      <PasswordField fx:id="pfPassword" layoutX="242.0" layoutY="180.0" onAction="#handleLogin" prefHeight="31.0" prefWidth="323.0" promptText="Enter the password" style="-fx-background-radius: 20;" />
-      <Label layoutX="149.0" layoutY="176.0" prefHeight="37.0" prefWidth="93.0" text="Password :" AnchorPane.leftAnchor="149.0">
+      <PasswordField fx:id="pfPassword" layoutX="242.0" layoutY="180.0" onAction="#handleLogin" prefHeight="31.0"
+                     prefWidth="323.0" promptText="Enter the password" style="-fx-background-radius: 20;"/>
+      <Label layoutX="149.0" layoutY="176.0" prefHeight="37.0" prefWidth="93.0" text="Password :"
+             AnchorPane.leftAnchor="149.0">
          <font>
-            <Font name="Cambria" size="18.0" />
+            <Font name="Cambria" size="18.0"/>
          </font>
       </Label>
-      <Label fx:id="lbl" alignment="CENTER" layoutX="196.0" layoutY="263.0" prefHeight="21.0" prefWidth="396.0" />
+      <Label fx:id="lbl" alignment="CENTER" layoutX="196.0" layoutY="263.0" prefHeight="21.0" prefWidth="396.0"/>
       <Label layoutX="298.0" layoutY="28.0" text="SIGN IN" textOverrun="WORD_ELLIPSIS" underline="true" wrapText="true">
          <font>
-            <Font name="Cambria" size="39.0" />
+            <Font name="Cambria" size="39.0"/>
          </font>
       </Label>
-      <Label layoutX="149.0" layoutY="113.0" prefHeight="26.0" prefWidth="455.0" text="Welcome Back. Please login to gain access to your account.">
+      <Label layoutX="149.0" layoutY="113.0" prefHeight="26.0" prefWidth="455.0"
+             text="Welcome Back. Please login to gain access to your account.">
          <font>
-            <Font name="Cambria" size="17.0" />
+            <Font name="Cambria" size="17.0"/>
          </font>
       </Label>
       <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="236.0" layoutY="31.0">
          <image>
-            <Image url="@../images/icons8-building-with-top-view-24.png" />
+            <Image url="@../images/icons8-building-with-top-view-24.png"/>
          </image>
       </ImageView>
       <JFXCheckBox fx:id="chkPassword" layoutX="565.0" layoutY="187.0" text="Show password">
          <font>
-            <Font size="12.0" />
+            <Font size="12.0"/>
          </font>
       </JFXCheckBox>
-      <TextField fx:id="tfPassword" layoutX="242.0" layoutY="180.0" onAction="#handleLogin" prefHeight="31.0" prefWidth="323.0" style="-fx-background-radius: 20;" />
-      <JFXButton layoutX="661.0" layoutY="14.0" onAction="#handleExit" text=" " />
-      <JFXButton layoutX="336.0" layoutY="221.0" onAction="#handleLogin" prefHeight="26.0" prefWidth="93.0" style="-fx-background-radius: 10;" styleClass="button1" stylesheets="@../style/login.css" text="   login">
+      <TextField fx:id="tfPassword" layoutX="242.0" layoutY="180.0" onAction="#handleLogin" prefHeight="31.0"
+                 prefWidth="323.0" style="-fx-background-radius: 20;"/>
+      <JFXButton layoutX="661.0" layoutY="14.0" onAction="#handleExit" text=" "/>
+      <JFXButton layoutX="336.0" layoutY="221.0" onAction="#handleLogin" prefHeight="26.0" prefWidth="93.0"
+                 style="-fx-background-radius: 10;" styleClass="button1" stylesheets="@../style/login.css"
+                 text="   login">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icons8_checked_32px_1.png" />
+                  <Image url="@../images/icons8_checked_32px_1.png"/>
                </image>
             </ImageView>
          </graphic>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="HAND"/>
          </cursor>
       </JFXButton>
       <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="632.0" layoutY="14.0" onAction="#handleExit">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="button1">
                <image>
-                  <Image url="@../images/1.png" />
+                  <Image url="@../images/1.png"/>
                </image>
             </ImageView>
          </graphic>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="HAND"/>
          </cursor>
       </JFXButton>
    </children>

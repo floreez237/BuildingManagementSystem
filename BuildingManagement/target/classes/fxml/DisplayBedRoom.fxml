@@ -24,7 +24,15 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="tfRoomId" alignment="CENTER" focusColor="#00e5ff" layoutX="144.0" layoutY="117.0" prefHeight="31.0" prefWidth="220.0" />
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" layoutX="144.0" layoutY="117.0" prefHeight="31.0" prefWidth="220.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <Label layoutX="85.0" layoutY="32.0" text="Room Information" underline="true">
          <font>
             <Font size="29.0" />
@@ -55,9 +63,25 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfStatus" alignment="CENTER" focusColor="#00e5ff" layoutX="547.0" layoutY="171.0" prefHeight="31.0" prefWidth="206.0" />
-      <JFXTextField fx:id="tfRent" alignment="CENTER" focusColor="#00e5ff" layoutX="144.0" layoutY="167.0" prefHeight="31.0" prefWidth="193.0" />
-      <Label layoutX="57.0" layoutY="169.0" text="Rent:">
+      <JFXTextField fx:id="tfStatus" alignment="CENTER" layoutX="547.0" layoutY="171.0" prefHeight="31.0" prefWidth="206.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXTextField fx:id="tfRent" alignment="CENTER" layoutX="144.0" layoutY="219.0" prefHeight="31.0" prefWidth="193.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="54.0" layoutY="223.0" text="Rent:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -65,13 +89,21 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <Label layoutX="468.0" layoutY="233.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
+      <Label layoutX="67.0" layoutY="276.0" prefHeight="22.0" prefWidth="71.0" text="Deposit:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfDeposit" alignment="CENTER" focusColor="#00e5ff" layoutX="547.0" layoutY="228.0" prefHeight="31.0" prefWidth="171.0" />
-      <Label layoutX="6.0" layoutY="220.0" text="Paint Color:">
+      <JFXTextField fx:id="tfDeposit" alignment="CENTER" layoutX="144.0" layoutY="272.0" prefHeight="31.0" prefWidth="193.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="424.0" layoutY="223.0" text="Paint Color:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
@@ -79,8 +111,16 @@
             <Insets left="30.0" />
          </padding>
       </Label>
-      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" focusColor="#00e5ff" layoutX="141.0" layoutY="216.0" prefHeight="31.0" prefWidth="220.0" />
-      <Label layoutX="468.0" layoutY="285.0" text="Internal Toillet:">
+      <JFXTextField fx:id="tfPaintColor" alignment="CENTER" layoutX="550.0" layoutY="219.0" prefHeight="31.0" prefWidth="206.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3786407766990291" startY="0.441747572815534">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <Label layoutX="454.0" layoutY="277.0" text="Internal Toillet:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font></Label>
@@ -136,7 +176,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXRadioButton fx:id="radNo" layoutX="674.0" layoutY="287.0" style="-jfx-selected-color: #2979ff;" text="No">
+      <JFXRadioButton fx:id="radNo" layoutX="675.0" layoutY="276.0" style="-jfx-selected-color: #2979ff;" text="No">
          <font>
             <Font size="14.0" />
          </font>
@@ -144,7 +184,7 @@
             <ToggleGroup fx:id="isToiletInternal" />
          </toggleGroup>
       </JFXRadioButton>
-      <JFXRadioButton fx:id="radYes" layoutX="602.0" layoutY="287.0" style="-jfx-selected-color: #2979ff;" text="Yes" toggleGroup="$isToiletInternal">
+      <JFXRadioButton fx:id="radYes" layoutX="603.0" layoutY="278.0" style="-jfx-selected-color: #2979ff;" text="Yes" toggleGroup="$isToiletInternal">
          <font>
             <Font size="14.0" />
          </font>
@@ -176,27 +216,43 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="547.0" layoutY="117.0" prefHeight="31.0" prefWidth="206.0" text="Bedroom">
+      <JFXTextField alignment="CENTER" editable="false" layoutX="547.0" layoutY="117.0" prefHeight="31.0" prefWidth="206.0" text="Bedroom">
          <font>
             <Font size="14.0" />
          </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
-      <Label layoutX="80.0" layoutY="269.0" prefHeight="22.0" prefWidth="52.0" text=" Area:">
+      <Label layoutX="76.0" layoutY="176.0" prefHeight="22.0" prefWidth="52.0" text=" Area:">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfArea" alignment="CENTER" focusColor="#00e5ff" layoutX="141.0" layoutY="265.0" prefHeight="31.0" prefWidth="220.0">
+      <JFXTextField fx:id="tfArea" alignment="CENTER" layoutX="144.0" layoutY="172.0" prefHeight="31.0" prefWidth="220.0">
          <font>
             <Font size="14.0" />
          </font>
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3398058252427184" startY="0.5194174757281553">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
-      <Label fx:id="lblRentCurrency" contentDisplay="TEXT_ONLY" layoutX="346.0" layoutY="175.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
+      <Label fx:id="lblRentCurrency" contentDisplay="TEXT_ONLY" layoutX="346.0" layoutY="239.0" prefHeight="22.0" prefWidth="52.0" text="XAF">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="723.0" layoutY="233.0" prefHeight="22.0" prefWidth="60.0" text="XAF">
+      <Label fx:id="lblDepositCurrency" contentDisplay="TEXT_ONLY" layoutX="344.0" layoutY="286.0" prefHeight="22.0" prefWidth="60.0" text="XAF">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>

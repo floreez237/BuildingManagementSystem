@@ -32,7 +32,7 @@
       </Label>
       <Group layoutX="75.0" layoutY="492.0" onMouseClicked="#displayExpiredContracts">
          <children>
-            <Rectangle arcHeight="64.0" arcWidth="64.0" height="282.0" layoutX="-33.0" layoutY="-82.0" stroke="BLACK" strokeType="INSIDE" width="353.0">
+            <Rectangle arcHeight="64.0" arcWidth="64.0" height="282.0" layoutX="-23.0" layoutY="-67.0" stroke="BLACK" strokeType="INSIDE" width="353.0">
                <effect>
                   <InnerShadow blurType="GAUSSIAN" choke="0.35" color="#110ee1" height="0.0" radius="4.0075" width="18.03" />
                </effect>
@@ -78,7 +78,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Group>
-      <LineChart fx:id="lineChart" layoutX="404.0" layoutY="411.0" prefHeight="309.0" prefWidth="363.0" stylesheets="@../style/mainview.css" title="Revenue Variation">
+      <LineChart fx:id="lineChart" layoutX="415.0" layoutY="425.0" prefHeight="282.0" prefWidth="353.0" stylesheets="@../style/mainview.css" title="Revenue Variation">
          <xAxis>
             <CategoryAxis side="BOTTOM" />
          </xAxis>

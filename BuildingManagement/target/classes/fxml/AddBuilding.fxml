@@ -6,8 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <Pane prefHeight="659.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.AddBuildingController">
@@ -42,10 +41,18 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfNumberOfLevel" alignment="CENTER" focusColor="#00e5ff" layoutX="250.0" layoutY="132.0" prefHeight="38.0" prefWidth="80.0">
+      <JFXTextField fx:id="tfNumberOfLevel" alignment="CENTER" layoutX="250.0" layoutY="132.0" prefHeight="38.0" prefWidth="223.0">
          <font>
             <Font size="14.0" />
-         </font></JFXTextField>
+         </font>
+         <focusColor>
+            <LinearGradient endX="0.7330097087378641" endY="0.8203883495145632" startX="0.4077669902912621" startY="0.6067961165048543">
+               <stops>
+                  <Stop color="#00e5ff" />
+                  <Stop color="#2979ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
       <HBox layoutX="187.0" layoutY="186.0" spacing="15.0">
          <children>
             <Label text="Name:">
@@ -53,10 +60,18 @@
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="tfBuildingName" alignment="CENTER" focusColor="#00e5ff" prefHeight="25.0" prefWidth="220.0" promptText="Building Name">
+            <JFXTextField fx:id="tfBuildingName" alignment="CENTER" prefHeight="25.0" prefWidth="220.0">
                <font>
                   <Font size="14.0" />
-               </font></JFXTextField>
+               </font>
+               <focusColor>
+                  <LinearGradient endX="0.7038834951456311" endY="0.6990291262135923" startX="0.49029126213592233" startY="0.4223300970873787">
+                     <stops>
+                        <Stop color="#00e5ff" />
+                        <Stop color="#2979ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </focusColor></JFXTextField>
          </children>
       </HBox>
       <HBox layoutX="167.0" layoutY="231.0" spacing="6.0">
@@ -66,10 +81,18 @@
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="tfBuildingLocation" alignment="CENTER" focusColor="#00e5ff" prefHeight="25.0" prefWidth="223.0" promptText="Building Location">
+            <JFXTextField fx:id="tfBuildingLocation" alignment="CENTER" prefHeight="25.0" prefWidth="223.0">
                <font>
                   <Font size="14.0" />
-               </font></JFXTextField>
+               </font>
+               <focusColor>
+                  <LinearGradient endX="0.7330097087378641" endY="0.8203883495145632" startX="0.4077669902912621" startY="0.6067961165048543">
+                     <stops>
+                        <Stop color="#00e5ff" />
+                        <Stop color="#2979ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </focusColor></JFXTextField>
          </children>
       </HBox>
       <Accordion layoutX="178.0" layoutY="293.0" prefHeight="215.0" prefWidth="331.0">
