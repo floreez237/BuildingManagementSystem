@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.lang.String?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
 <Pane prefHeight="722.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingProject.controllers.DisplayContractController">
    <children>
       <Label layoutX="90.0" layoutY="200.0" prefHeight="29.0" prefWidth="78.0" text="Room Id:">
@@ -34,91 +31,107 @@
       </Label>
       <Label layoutX="377.0" layoutY="151.0" prefHeight="29.0" prefWidth="168.0" text="Duration (In months):">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="18.0"/>
          </font>
       </Label>
-      <JFXTextField fx:id="tfContractId" alignment="CENTER" editable="false" layoutX="176.0" layoutY="143.0" prefHeight="31.0" prefWidth="168.0">
+      <JFXTextField fx:id="tfContractId" alignment="CENTER" editable="false" layoutX="176.0" layoutY="143.0"
+                    prefHeight="31.0" prefWidth="168.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
-      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" layoutX="182.0" layoutY="199.0" prefHeight="30.0" prefWidth="168.0">
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="tfRoomId" alignment="CENTER" editable="false" layoutX="182.0" layoutY="199.0"
+                    prefHeight="30.0" prefWidth="168.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
+         </focusColor>
+      </JFXTextField>
       <Label layoutX="40.0" layoutY="256.0" text="Date of Payment:">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfDateOfPayment" alignment="CENTER" editable="false" layoutX="182.0" layoutY="252.0" prefHeight="30.0" prefWidth="168.0">
+      <JFXTextField fx:id="tfDateOfPayment" alignment="CENTER" editable="false" layoutX="182.0" layoutY="252.0"
+                    prefHeight="30.0" prefWidth="168.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
+         </focusColor>
+      </JFXTextField>
       <Label layoutX="402.0" layoutY="256.0" text="Expiration Date:">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="18.0"/>
          </font>
       </Label>
       <JFXTextField fx:id="tfDateOfCreation" alignment="CENTER" editable="false" layoutX="557.0" layoutY="199.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
-      <JFXTextField fx:id="tfDuration" alignment="CENTER" editable="false" layoutX="551.0" layoutY="135.0" prefHeight="30.0" prefWidth="168.0">
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="tfDuration" alignment="CENTER" editable="false" layoutX="551.0" layoutY="135.0"
+                    prefHeight="30.0" prefWidth="168.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
+         </focusColor>
+      </JFXTextField>
       <JFXTextField fx:id="tfExpirationDate" alignment="CENTER" editable="false" layoutX="557.0" layoutY="252.0">
          <font>
-            <Font size="14.0" />
+            <Font size="14.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
+         </focusColor>
+      </JFXTextField>
       <Label layoutX="398.0" layoutY="204.0" text="Date of Creation:">
          <font>
             <Font name="Calibri" size="18.0" />
@@ -129,18 +142,21 @@
             <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfTenantName" alignment="CENTER" editable="false" layoutX="176.0" layoutY="300.0" prefHeight="0.0" prefWidth="421.0">
+      <JFXTextField fx:id="tfTenantName" alignment="CENTER" editable="false" layoutX="176.0" layoutY="300.0"
+                    prefHeight="0.0" prefWidth="421.0">
          <font>
-            <Font size="16.0" />
+            <Font size="16.0"/>
          </font>
          <focusColor>
-            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286" startY="0.26666666666666666">
+            <LinearGradient endX="0.7" endY="0.5904761904761904" startX="0.34285714285714286"
+                            startY="0.26666666666666666">
                <stops>
-                  <Stop color="#00e5ff" />
-                  <Stop color="#2979ff" offset="1.0" />
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
                </stops>
             </LinearGradient>
-         </focusColor></JFXTextField>
+         </focusColor>
+      </JFXTextField>
       <Label layoutX="113.0" layoutY="54.0" text="Contract Information" underline="true">
          <font>
             <Font size="29.0" />

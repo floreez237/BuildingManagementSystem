@@ -37,15 +37,34 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfPhoneNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="179.0" layoutY="243.0" prefHeight="31.0" prefWidth="189.0">
+      <JFXTextField fx:id="tfPhoneNumber" alignment="CENTER" layoutX="179.0" layoutY="243.0" prefHeight="31.0"
+                    prefWidth="189.0">
          <font>
-            <Font size="16.0" />
+            <Font size="16.0"/>
          </font>
+         <focusColor>
+            <LinearGradient endX="0.7904761904761904" endY="0.8428571428571429" startX="0.3952380952380952"
+                            startY="0.5190476190476191">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
-      <JFXTextField fx:id="tfNationalIdNumber" alignment="CENTER" focusColor="#00e5ff" layoutX="575.0" layoutY="243.0">
+      <JFXTextField fx:id="tfNationalIdNumber" alignment="CENTER" layoutX="575.0" layoutY="243.0">
          <font>
-            <Font size="16.0" />
+            <Font size="16.0"/>
          </font>
+         <focusColor>
+            <LinearGradient endX="0.7904761904761904" endY="0.8428571428571429" startX="0.3952380952380952"
+                            startY="0.5190476190476191">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </focusColor>
       </JFXTextField>
       <Separator layoutX="38.0" layoutY="308.0" prefHeight="0.0" prefWidth="735.0" />
       <Label layoutX="53.0" layoutY="318.0" lineSpacing="5.0" text="PERSONAL INFORMATION">
@@ -159,10 +178,21 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="tfName" alignment="CENTER" focusColor="#00e5ff" layoutX="167.0" layoutY="194.0" prefHeight="37.0" prefWidth="579.0">
+      <JFXTextField fx:id="tfName" alignment="CENTER" layoutX="167.0" layoutY="194.0" prefHeight="37.0"
+                    prefWidth="579.0">
          <font>
-            <Font size="16.0" />
-         </font></JFXTextField>
+            <Font size="16.0"/>
+         </font>
+         <focusColor>
+            <LinearGradient endX="0.7904761904761904" endY="0.8428571428571429" startX="0.3952380952380952"
+                            startY="0.5190476190476191">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
       <Label layoutX="67.0" layoutY="147.0" lineSpacing="10.0" prefHeight="44.0" prefWidth="96.0" text="Person Id:" textAlignment="CENTER">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -177,10 +207,21 @@
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="tfPersonId" alignment="CENTER" editable="false" focusColor="#00e5ff" layoutX="171.0" layoutY="147.0" prefHeight="25.0" prefWidth="157.0">
+      <JFXTextField fx:id="tfPersonId" alignment="CENTER" editable="false" layoutX="171.0" layoutY="147.0"
+                    prefHeight="25.0" prefWidth="157.0">
          <font>
-            <Font size="16.0" />
-         </font></JFXTextField>
+            <Font size="16.0"/>
+         </font>
+         <focusColor>
+            <LinearGradient endX="0.7904761904761904" endY="0.8428571428571429" startX="0.3952380952380952"
+                            startY="0.5190476190476191">
+               <stops>
+                  <Stop color="#00e5ff"/>
+                  <Stop color="#2979ff" offset="1.0"/>
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
       <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" layoutX="27.0" layoutY="46.0" onAction="#handleGoBack" text=" ">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
